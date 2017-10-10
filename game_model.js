@@ -3,6 +3,7 @@ function game_model(){
     this.playerTurn = 0;
     this.timerValue = 0;
     this.timerInterval = null;
+    this.winner = null;
 }
 
 
