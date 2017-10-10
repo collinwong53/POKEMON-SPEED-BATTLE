@@ -27,3 +27,4 @@ function get_card_data(){
     return promise;
 }//get get data
 
+
