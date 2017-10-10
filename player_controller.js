@@ -1,4 +1,4 @@
-function player_controller(pokemon){
+function Player_controller(){
     this.takeDamage = function(playerObject, damageAmount) {
         playerObject.hp -= damageAmount;
     };
@@ -7,5 +7,8 @@ function player_controller(pokemon){
     };
     this.missMove = function(playerObject){
         playerObject.completedMoves -=1;
+        if(playerObject.completedMoves < 0){
+            playerObject.completedMoves = 0;
+        }
     }
 }
