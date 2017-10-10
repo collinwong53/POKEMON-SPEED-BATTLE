@@ -13,16 +13,11 @@
     <script src="game_controller.js"></script>
     <script src="player_model.js"></script>
     <script src="player_controller.js"></script>
-    <script src="dom_view.js"></script>
+    <script src="view.js"></script>
 </head>
 <body>
     <div id="game_container">
-        <div class="center_box" id="counter">
-        </div>
-        <div class="center_box" id="video_player">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#winner_modal">
-                Launch demo modal
-            </button>
+        <div id="counter">
         </div>
         <div class="player_box" id="player_1">
         </div>
@@ -46,7 +41,9 @@
                     <h4 class="modal-title" id="winning_modal">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe id= "video_display" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -30,8 +30,10 @@
 
 function displayWinVideo(){
 
-    this. displayVideo = function () {
-        $("#video_player").css('z-index', '+1');
+    this.displayVideo = function () {
+        $(".modal-title").text("You won!"); // The text will be the name of the pokemon
+        $("#video_display").attr('src', "https://www.youtube.com/embed/w6DW4i-mfbA");
+        $("#winner_modal").modal('show');
     };
     this.displayVideo();
 }

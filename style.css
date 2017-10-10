@@ -8,21 +8,13 @@
 }
 
 #counter {
-    border: 2px solid black;
-}
-
-#video_player {
-    /*z-index: -1;*/
-    border: 2px solid orange;
-}
-
-.center_box {
     position: absolute;
     height: 15%;
     width: 10%;
-    top: 40%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid black;
 }
 
 #player_1 {
