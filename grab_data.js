@@ -49,7 +49,7 @@ function Grab_data(){
         })//end call
         return promise;
     }//get get data
-    this.random_number_gen(end_num){
+    this.random_number_gen = function(end_num){
         var number = Math.floor(Math.random()*end_num+1)
         return number;
     }
