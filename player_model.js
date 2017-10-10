@@ -1,4 +1,4 @@
-function player(){
+function player(card){
     this.wins = 0;
     this.pokemon = {};
     this.pokemonName = "";
@@ -7,8 +7,6 @@ function player(){
     this.availableKeys = [];
     this.requiredMoves = [];
     this.completedMoves = 0;
-    this.missedMoves = 0;
-
     this.initializeAvailableKeys = function(playerNumber){
         if(playerNumber === 1){
             this.availableKeys = ["w", "a", "s", "d"];

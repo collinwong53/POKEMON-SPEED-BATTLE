@@ -29,5 +29,12 @@ function get_card_data(){
 function get_poke_data(){
 
 }
+function random_number_gen(end_num){
+    var number = Math.floor(Math.random()*end_num)
+    return number;
+}
+function make_pokemon(){
+
+}
 
 
