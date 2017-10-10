@@ -1,3 +1,8 @@
+$(window).keydown(function(event){
+    console.log(event.key);
+    game.handleKeyPress(event.key);
+});
+
 function game_controller(){
     this.changePlayerTurn = function(){
         game.playerTurn = game.playerTurn - 1;
@@ -14,5 +19,8 @@ function game_controller(){
     };
     this.stopTimer = function(){
         clearInterval(game.timerInterval)
+    }
+    this.handleKeyPress = function(keyPress){
+
     }
 }
