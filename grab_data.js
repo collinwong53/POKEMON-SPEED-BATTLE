@@ -1,3 +1,3 @@
-function get_card_date(){
+function get_card_data(){
 
 }
