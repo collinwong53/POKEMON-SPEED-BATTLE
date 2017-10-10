@@ -1,14 +1,33 @@
 function Player_controller(){
-    this.takeDamage = function(playerObject, damageAmount) {
-        playerObject.hp -= damageAmount;
+    this.getPokemon = function(player_model){
+
     };
-    this.completeMove = function(playerObject){
-        playerObject.completedMoves +=1;
+    this.takeDamage = function(player_model, damageAmount) {
+        player_model.hp -= damageAmount;
     };
-    this.missMove = function(playerObject){
-        playerObject.completedMoves -=1;
-        if(playerObject.completedMoves < 0){
-            playerObject.completedMoves = 0;
+    this.completeMove = function(player_model){
+        player_model.completedMoves +=1;
+        console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
+        this.getRequiredMove(player_model);
+        this.checkIfWinRound(player_model);
+
+    };
+    this.missMove = function(player_model){
+        player_model.completedMoves -=1;
+        if(player_model.completedMoves < 0){
+            player_model.completedMoves = 0;
         }
+        console.log(player_model.index + " MISSED!  Now has " + player_model.completedMoves);
+        this.getRequiredMove(player_model);
+    };
+    this.getRequiredMove = function(player_model){
+        var availableKeys = player_model.availableKeys;
+        var randomIndex = Math.floor(Math.random()*availableKeys.length);
+        console.log(player_model.availableKeys[randomIndex]);
+        player_model.requiredMove = player_model.availableKeys[randomIndex];
+    };
+    this.checkIfWinRound = function(){
+
+        //IF win, run game_model.roundStarted = false;
     }
 }

@@ -1,12 +1,15 @@
 function Player_model(){
+    this.index = null;
     this.wins = 0;
     this.pokemon = {};
     this.pokemonName = "";
     this.hp = 0;
     this.attack = 0;
     this.availableKeys = [];
-    this.requiredMoves = [];
+    this.requiredMove = null;
     this.completedMoves = 0;
+
+
 
     this.initializeAvailableKeys = function(playerNumber){
         if(playerNumber === 1){

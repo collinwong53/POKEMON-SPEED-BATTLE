@@ -45,11 +45,8 @@
  * @returns {undefined} none
  * @calls {undefined} none
  */
-$(document).ready(initializeApp);
-var available_cards = null;
-function initializeApp(){
-   get_card_data().then(make_pokemon_object, failed_to_get_data);
-}
+
+
 
 // var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
 // console.log(card_list);
@@ -85,13 +82,25 @@ function initializeApp(){
  * @calls {undefined} none
  */
 
+$(document).ready(initializeApp);
+
+var available_cards = null;
+var get_card_api_data = null;
+var video_list = null;
 var game_model = null;
 var game_controller = null;
+var player_controller = null;
 function initializeApp(){
-    get_card_data().then(make_pokemon_object,failed_to_get_data);
+    get_youtube_data().then(winner,failed_video);
     console.log('im here');
     game_model = new Game_model()
+    get_card_api_data = new Grab_data();
+    get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
+    console.log('im here');
+    game_model = new Game_model();
     game_controller = new Game_controller();
+    player_controller = new Player_controller();
+    game_controller.startGame();
 }
 
 
