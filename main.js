@@ -47,8 +47,11 @@
  */
 $(document).ready(initializeApp);
 var available_cards = null;
+var get_card_api_data = null;
 function initializeApp(){
-   get_card_data().then(make_pokemon_object, failed_to_get_data);
+    get_card_api_data = new Grab_data();
+    get_card_api_data.get_card_data().then(make_pokemon_object, failed_to_get_data);
+
 }
 
 // var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
