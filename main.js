@@ -87,11 +87,13 @@ function initializeApp(){
 
 var game_model = null;
 var game_controller = null;
+var player_controller = null;
 function initializeApp(){
     get_card_data().then(make_pokemon_object,failed_to_get_data);
     console.log('im here');
-    game_model = new Game_model()
+    game_model = new Game_model();
     game_controller = new Game_controller();
+    player_controller = new Player_controller();
     game_controller.startGame();
 }
 
