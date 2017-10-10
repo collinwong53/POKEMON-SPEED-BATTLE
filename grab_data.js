@@ -1,6 +1,5 @@
 function make_pokemon_object(data){
-    console.log('success',data);
-    return data;
+    available_cards = data.cards;
 }
 function failed_to_get_data(data){
     console.log('failed',data)
@@ -27,5 +26,15 @@ function get_card_data(){
     })//end call
     return promise;
 }//get get data
+function get_poke_data(){
+
+}
+function random_number_gen(end_num){
+    var number = Math.floor(Math.random()*end_num)
+    return number;
+}
+function make_pokemon(){
+
+}
 
 

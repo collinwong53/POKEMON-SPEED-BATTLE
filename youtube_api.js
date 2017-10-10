@@ -1,4 +1,4 @@
-function get_youtube_data() {
+function get_youtube_data(pokemon_name) {
 
     var promise = { //create an object that will handle the promise itself
         then: function(resolve, reject){
@@ -8,9 +8,14 @@ function get_youtube_data() {
     }
 
     $.ajax({
-        url: 's-apis.learningfuze.com/hackathon/youtube/search.php',
+        url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',
         dataType: 'json',
         method: 'post',
+        data: {
+            q: pokemon_name,
+            maxResults: 10,
+            type: "video"
+    },
         success: function(data) {
             promise.resolve(data);  //use the promise object to trigger the success function
         },
@@ -22,12 +27,13 @@ function get_youtube_data() {
 }
 
 function winner (data){
-    "https://youtu.be/" + data.video[Math.floor(Math.random(video.length)).id
+    video_list = data;
+    var random_vid = data.video[Math.floor(Math.random(video_list.video.length))].id;
+    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
+
     console.log('it worked!',data);
 }
 function failed_video(message){
-    "https://www.youtube.com/watch?v=OmJhiUhpa0Y"
+    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
     console.log(message);
 }
-
-getData().then(winner,failed_video);

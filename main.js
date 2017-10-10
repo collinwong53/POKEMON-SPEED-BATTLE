@@ -1,4 +1,3 @@
-
 //****************************************Model****************************************//
 
 /***************************************************************************************************
@@ -46,16 +45,17 @@
  * @returns {undefined} none
  * @calls {undefined} none
  */
+$(document).ready(initializeApp);
+var available_cards = null;
 
+// var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
+// console.log(card_list);
 /***************************************************************************************************
  * start game - starts function in model to make text appear for player (called by start button)
  * @param  {undefined} none
  * @returns {undefined} none
  * @calls {undefined} none
  */
-
-
-
 
 
 
@@ -82,10 +82,16 @@
  * @calls {undefined} none
  */
 
-$(document).ready(initializeApp);
-
+var video_list = null;
+var game_model = null;
+var game_controller = null;
 function initializeApp(){
     get_card_data().then(make_pokemon_object,failed_to_get_data);
+    get_youtube_data().then(winner,failed_video);
     console.log('im here');
+    game_model = new Game_model()
+    game_controller = new Game_controller();
+
 }
+
 
