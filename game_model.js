@@ -1,4 +1,4 @@
-function game_model(){
+function Game_model(){
     this.players = [{}, {}];
     this.playerTurn = 0;
     this.timerValue = 0;
