@@ -95,6 +95,7 @@ function initializeApp(){
     console.log('im here');
     game_model = new Game_model()
     game_controller = new Game_controller();
+    game_controller.startGame();
 }
 
 
