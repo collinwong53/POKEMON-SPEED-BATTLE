@@ -56,13 +56,14 @@ function Grab_data(){
     this.make_pokemon = function(){
         var random_pick = this.random_number_gen(1000);
         var pokemon_card = available_cards[random_pick];
-        var additional_pokemon_data;
+        var additional_pokemon_data = additional_pokemon_info.weight;
         var poke_stats = {}
         poke_stats.name = pokemon_card.name;
         poke_stats.hp = pokemon_card.hp;
         poke_stats.image = pokemon_card.imageUrl;
         poke_stats.type = pokemon_card.types;
         poke_stats.attack = this.pick_attack(pokemon_card.attacks);
+        // poke_stats.weight = this.additional_
         return poke_stats;
     }
     this.pick_attack = function(card_attack){

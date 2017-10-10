@@ -46,8 +46,6 @@
  * @calls {undefined} none
  */
 $(document).ready(initializeApp);
-var available_cards = null;
-var get_card_api_data = null;
 
 
 // var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
@@ -83,7 +81,9 @@ var get_card_api_data = null;
  * @returns {undefined} none
  * @calls {undefined} none
  */
-
+var additional_pokemon_info = null
+var available_cards = null;
+var get_card_api_data = null;
 var game_model = null;
 var game_controller = null;
 function initializeApp(){
