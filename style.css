@@ -62,19 +62,19 @@ body {
     border-radius: 25px;
 }
 
-#player_0_key_display {
+#player_0_key_display, #player_0_hpAndPower {
     left: 30%
 }
 
-#player_1_key_display {
+#player_1_key_display, #player_1_hpAndPower {
     left: 70%
 }
 
-.player_key_display {
+.player_key_display, .player_hpAndPower {
     top: 85%;
     position: absolute;
     height: 15%;
-    width: 25%;
+    width: 10%;
     transform: translate(-50%, -50%);
     z-index : 5;
     background-size: auto 100%;
@@ -83,6 +83,40 @@ body {
     box-sizing: content-box;
     border-radius: 25px;
 }
+.player_hpAndPower{
+    top:105%;
+    width:35%;
+
+
+}
+.hpAndPowerTextDiv{
+    margin-top: 15px;
+    width:15%;
+    color:white;
+    font-size: 20px;
+    font-family: manaspc, Arial;
+}
+
+.hpAndPowerBar{
+    width:79%
+}
+
+
+.hp{
+    height: 49%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+}
+.power{
+    height: 49%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    justify-items: center;
+}
+
 
 #player_0_stats {
     left: 3%;
@@ -152,7 +186,7 @@ body {
     height: 8%;
     top: 36%;
     left: 43%;
-    font-size: 4em;
+    font-size: 3em;
     line-height: 20%;
     color: #345da4;
     border: 6px solid #345da4;
@@ -179,10 +213,9 @@ background-color: whitesmoke;
     color:white;
     text-shadow: 10px 10px black;
     position:absolute;
-    bottom:100px;
     width: 100%;
-    height: 100%;
-    font-size: 800px;
+    height: 50%;
+    font-size: 300px;
     align-items: center;
     justify-content: center;
     z-index: 500;
