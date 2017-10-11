@@ -72,16 +72,17 @@ function Grab_data(){
         poke_stats.attack = this.pick_attack(pokemon_card.attacks);
         // poke_stats.weight = additional_pokemon_data;
         return poke_stats;
-    }
+    };
     this.pick_attack = function(card_attack){
-        for(var i = 0; i<card_attack.length; i++){
-            if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
-                return card_attack[i].damage
-            }
-            else{
-                return 50;
+        var result = 50;
+        if(typeof card_attack !== "undefined"){
+            for(var i = 0; i<card_attack.length; i++){
+                if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
+                    result = card_attack[i].damage
+                }
             }
         }
+        return result;
     }
 }
 
