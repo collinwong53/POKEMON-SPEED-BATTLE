@@ -15,6 +15,7 @@ function Game_controller(){
         game_model.players = [playerOne, playerTwo]
     };
     this.endGame = function(winnerPlayerModel){
+        get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
         displayWinVideo(winnerPlayerModel);
         backgroundImage();
     };
