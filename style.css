@@ -72,10 +72,13 @@ body {
 .player_stats {
     top: 40%;
     position: absolute;
-    height: 50%;
-    width: 10%;
+    height: 75vh;
+    width: 10vw;
     border: 2px solid red;
     transform: translate(-50%, -50%);
     overflow: auto;
-    color:red;
+    color:white;
+    /*-webkit-text-stroke-width: 1px;*/
+    /*-webkit-text-stroke-color: black;*/
+    /*font-size:1.5em;*/
 }
