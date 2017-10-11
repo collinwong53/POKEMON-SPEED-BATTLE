@@ -31,7 +31,7 @@
 function displayWinVideo(){
 
     this.displayVideo = function (winnerPlayerModel) {
-        $(".modal-title").text("Winner Player " + (winnerPlayerModel.index +1));
+        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1));
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
