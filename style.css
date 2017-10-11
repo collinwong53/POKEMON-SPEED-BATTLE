@@ -25,8 +25,17 @@ body {
     left: 30%;
 }
 
+#player_0>img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 #player_1 {
     left: 70%;
+}
+#player_1>img {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .player_box {
@@ -73,7 +82,6 @@ body {
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
->>>>>>> df4fec542e08a8f07097d5255dc08a6b623994bb
 }
 
 #player_0_stats {
@@ -129,4 +137,30 @@ body {
     /*!*-webkit-text-stroke-color: black;*!*/
     /*!*font-size:1.5em;*!*/
 
+}
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        /*-webkit-transform: translate3d(-100%,0,0);*/
+        transform: translate(-150%,-50%)
+    }
+
+    to {
+        opacity: 1;
+        /*-webkit-transform: none;*/
+        transform: translate(-50%,-50%)
+    }
+}
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        /*-webkit-transform: translate3d(-100%,0,0);*/
+        transform: translate(50%,-50%)
+    }
+
+    to {
+        opacity: 1;
+        /*-webkit-transform: none;*/
+        transform: translate(-50%,-50%)
+    }
 }
