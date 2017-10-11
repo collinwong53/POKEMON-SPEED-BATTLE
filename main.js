@@ -83,14 +83,9 @@
  * @returns {undefined} none
  * @calls {undefined} none
  */
-
-
-
-
-
 $(document).ready(initializeApp);
-var get_yt_api_data = null;
-var additional_pokemon_info = null
+
+var winner_video_link = null;
 var available_cards = null;
 var get_card_api_data = null;
 var video_list = null;
@@ -105,6 +100,7 @@ function initializeApp(){
     game_controller = new Game_controller();
     player_controller = new Player_controller();
     game_controller.startGame();
+    backgroundImage();
 }
 
 

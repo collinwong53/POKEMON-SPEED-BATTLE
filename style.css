@@ -1,3 +1,8 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #game_container {
     position: relative;
     height: 80vh;
@@ -32,6 +37,18 @@
     width: 20%;
     border: 2px solid blue;
     transform: translate(-50%, -50%);
+}
+
+#player_1_name {
+
+}
+
+#player_2_name {
+
+}
+
+.player_name {
+    top:
 }
 
 #player_1_key_display {
