@@ -108,6 +108,9 @@ function initializeApp(){
     // displayPlayerIcon();
     handle_audio = new audio_handler;
     $("#start_button").on('click', function(){
+        if(available_cards === null){
+            return
+        }
         game_controller.startTimer(3000, true);
         $("#start_button").hide();
     });

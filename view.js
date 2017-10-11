@@ -154,6 +154,22 @@ function View(){
         setTimeout(function(){
             $("#countDown").text(number).hide();
         }, 500)
+    };
+    this.updateBars = function(){
+        var player0HPpercentage = game_model.players[0].pokemon.hp/game_model.players[0].hp;
+        var player1HPpercentage = game_model.players[1].pokemon.hp/game_model.players[1].hp;
+        var player0Powerpercentage = game_model.players[0].pokemon.attack/game_model.players[0].attack;
+        var player1Powerpercentage = game_model.players[1].pokemon.attack/game_model.players[1].attack;
+
+        console.log("player0HPpercentage",player0HPpercentage);
+        console.log("player1HPpercentage",player1HPpercentage);
+        console.log("player1HPpercentage",player0Powerpercentage);
+        console.log("player1HPpercentage",player1Powerpercentage);
+
+        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"))
+        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"))
+        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"))
+        $("player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     }
 }
 
