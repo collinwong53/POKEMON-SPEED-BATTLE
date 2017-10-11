@@ -87,7 +87,6 @@ function View(){
         var player1BackgroundImage = game_model.players[1].pokemon.image;
         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
     }
-
 }
 
 /***************************************************************************************************
@@ -112,4 +111,3 @@ function backgroundImage() {
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
 }
-
