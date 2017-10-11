@@ -128,12 +128,32 @@ body {
 }
 
 #start_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     width: 12%;
     height: 8%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 4em;
+    line-height: 20%;
+    color: #345da4;
+    border: 6px solid #345da4;
+    box-sizing: content-box;
+    background-color: #fcc31d;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#start_button:hover {
+background-color: whitesmoke;
+}
+
+#start_button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #countDown{

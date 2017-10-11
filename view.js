@@ -192,3 +192,10 @@ function backgroundImage() {
 //     this.removeImageFromArray()
 //
 // }
+
+/***************************************************************************************************
+ * startButtonClick - handles when the start button is clicked
+ * @param  3000, true
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
