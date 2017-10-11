@@ -39,6 +39,18 @@ body {
     transform: translate(-50%, -50%);
 }
 
+#player_1_name {
+
+}
+
+#player_2_name {
+
+}
+
+.player_name {
+    top:
+}
+
 #player_1_key_display {
     left: 30%
 }

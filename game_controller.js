@@ -14,8 +14,9 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
-    this.endGame = function(winnerIndex){
-        displayWinVideo();
+    this.endGame = function(winnerPlayerModel){
+        displayWinVideo(winnerPlayerModel);
+        backgroundImage();
 
     };
     this.startRound = function(){
