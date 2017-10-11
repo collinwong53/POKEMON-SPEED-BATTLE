@@ -84,6 +84,8 @@
  * @calls {undefined} none
  */
 $(document).ready(initializeApp);
+
+var winnerPlayerModel = null;
 var handle_audio = null;
 var winner_video_link = null;
 var available_cards = null;
