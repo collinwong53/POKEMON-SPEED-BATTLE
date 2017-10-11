@@ -109,7 +109,9 @@ function initializeApp(){
     handle_audio = new audio_handler;
     $("#start_button").on('click', function(){
         game_controller.startTimer(3000, true)
-    })
+    });
+    $("#countDown").css("display", "none")
+
 }
 
 
