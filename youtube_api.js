@@ -1,4 +1,4 @@
-function get_youtube_data() {
+function get_youtube_data(pokemon_name) {
 
     var promise = { //create an object that will handle the promise itself
         then: function(resolve, reject){
@@ -12,7 +12,7 @@ function get_youtube_data() {
         dataType: 'json',
         method: 'post',
         data: {
-            q: "bulbasaur",
+            q: pokemon_name,
             maxResults: 10,
             type: "video"
     },
