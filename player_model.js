@@ -8,9 +8,6 @@ function Player_model(){
     this.availableKeys = [];
     this.requiredMove = null;
     this.completedMoves = 0;
-
-
-
     this.initializeAvailableKeys = function(playerNumber){
         if(playerNumber === 1){
             this.availableKeys = ["w", "a", "s", "d"];
