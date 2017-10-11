@@ -14,12 +14,14 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
-    this.endGame = function(winnerIndex){
-        displayWinVideo();
-
+    this.endGame = function(winnerPlayerModel){
+        get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
+        displayWinVideo(winnerPlayerModel);
+        backgroundImage();
     };
     this.startRound = function(){
         game_model.roundStarted = true;
+        view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };
@@ -27,8 +29,8 @@ function Game_controller(){
         game_model.roundStarted = false;
     };
 
-    this.startTimer = function(time, startOfRound){       //Countdown that starts the round - triggered by button press
-        if(startOfRound) {
+    this.startTimer = function(time, startOfGame){       //Countdown that starts the round - triggered by button press
+        if(startOfGame) {
             player_controller.getPokemon(game_model.players[0]);
             player_controller.getPokemon(game_model.players[1]);
         }
