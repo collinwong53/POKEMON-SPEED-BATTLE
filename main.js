@@ -84,7 +84,7 @@
  * @calls {undefined} none
  */
 $(document).ready(initializeApp);
-
+var handle_audio = null;
 var winner_video_link = null;
 var available_cards = null;
 var get_card_api_data = null;
@@ -104,6 +104,7 @@ function initializeApp(){
     view = new View();
     backgroundImage();
     displayPlayerIcon();
+    handle_audio = new audio_handler;
 }
 
 
