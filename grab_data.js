@@ -90,7 +90,7 @@ function Grab_data(){
         }
         for(var i = 0; i<card_attack.length; i++){
             if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
-                return card_attack[i].damage
+                return card_attack[i].damage;
             }
             else{
                 return 50;
