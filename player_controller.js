@@ -11,13 +11,16 @@ function Player_controller(){
         player_model.hp -= damageAmount;
     };
     this.completeMove = function(player_model){
+        view.arrowBoxMadeMove(player_model);
+        view.hideArrowForMoment(player_model);
         player_model.completedMoves +=1;
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
-        this.getRequiredMove(player_model);
         this.checkIfWinRound(player_model);
-
+        this.getRequiredMove(player_model);
     };
     this.missMove = function(player_model){
+        view.arrowBoxMissMove(player_model);
+        view.hideArrowForMoment(player_model);
         player_model.completedMoves -=1;
         if(player_model.completedMoves < 0){
             player_model.completedMoves = 0;
@@ -31,6 +34,7 @@ function Player_controller(){
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
         view.displayArrow(player_model.requiredMove, player_model)
+
     };
     this.resetCompletedMoves = function(player_model){
         player_model.completedMoves = 0;
@@ -44,14 +48,15 @@ function Player_controller(){
             this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
             this.takeDamage(game_model.players[otherPlayerIndex], player_model.attack);
             console.log("player " + otherPlayerIndex + " takes " + player_model.attack + " damage and is now at " + game_model.players[otherPlayerIndex].hp + " hp")
-            game_controller.endRound();
+            // game_controller.endRound();
             if(game_model.players[0].hp > 0 && game_model.players[1].hp > 0){
                 game_controller.startTimer(3000, false);
             }
             else{
                 console.log("player " + player_model.index + " won the game!");
                 player_model.wins += 1;
-                game_controller.endGame(player_model);
+                winnerPlayerModel = player_model;
+                game_controller.endGame(winnerPlayerModel);
             }
         }
     }
