@@ -11,13 +11,18 @@ function Player_controller(){
         player_model.hp -= damageAmount;
     };
     this.completeMove = function(player_model){
+        view.arrowBoxMadeMove(player_model);
+        view.hideArrowForMoment(player_model);
         player_model.completedMoves +=1;
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
-        this.getRequiredMove(player_model);
         this.checkIfWinRound(player_model);
-
+        // if(game_model.roundStarted === false) {
+            this.getRequiredMove(player_model);
+        // }
     };
     this.missMove = function(player_model){
+        view.arrowBoxMissMove(player_model);
+        view.hideArrowForMoment(player_model);
         player_model.completedMoves -=1;
         if(player_model.completedMoves < 0){
             player_model.completedMoves = 0;

@@ -19,7 +19,7 @@
 </head>
 <body>
 <div id="game_container">
-    <div id="counter">
+    <div id="countDown">
     </div>
     <div class="player_box container" id="player_0">
     </div>
@@ -45,6 +45,33 @@
     </div>
     <div class="player_key_display container" id="player_1_key_display">
     </div>
+    <div class="player_hpAndPower container" id="player_0_hpAndPower">
+        <div class="hp" id="player_0_hp">
+            <div class="hpAndPowerTextDiv">Health</div>
+            <div class="hpAndPowerBar"></div>
+        </div>
+        <div class="power" id="player_0_power">
+            <div class="hpAndPowerTextDiv">Power</div>
+            <div class="hpAndPowerBar progress">
+                <div class="progress-bar active" id="" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:45%">
+                    <!--<span class="sr-only">45% Complete</span>-->
+                    45%
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="player_hpAndPower container" id="player_1_hpAndPower">
+        <div class="hp" id="player_1_hp">
+            <div class="hpAndPowerTextDiv">Health</div>
+            <div class="hpAndPowerBar"></div>
+        </div>
+        <div class="power" id="player_1_power">
+            <div class="hpAndPowerTextDiv">Power</div>
+            <div class="hpAndPowerBar"></div>
+        </div>
+    </div>
+    <button id="start_button" class="btn btn-default">Start</button>
 </div>
 
 <div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="winning_modal">

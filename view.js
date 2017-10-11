@@ -110,37 +110,64 @@ function View(){
         var player1cardback = $("<div>").addClass("player_box container animated fadeInRight").css("background-image", "url(images/cardback.png)").attr("id", "player_1");
         $(player1cardback).insertAfter("#player_0_name");
         var player1BackgroundImage = game_model.players[1].pokemon.image;
+
         var player_1_cardimg = $("<img>").addClass("animated flip").attr("src", player1BackgroundImage);
         this.cardflip1 = function() {
             setTimeout(function(){ $("#player_1").append(player_1_cardimg); }, 2000);
         };
     }
+
     this.displayArrow = function(keyInput, playerModel){
-        var divID = "#player_" + playerModel.index + "_key_display";
-        var image = null;
-        switch(keyInput) {
-            case "w":
-            case "ArrowUp":
-                image = "'images/arrow_up.png'";
-                break;
-            case "a":
-            case "ArrowLeft":
-                image = "'images/arrow_left.png'";
-                break;
-            case "s":
-            case "ArrowDown":
-                image = "'images/arrow_down.png'";
-                break;
-            case "d":
-            case "ArrowRight":
-                image = "'images/arrow_right.png'";
-                break;
-        }
-        console.log("divID", divID);
-        console.log("image", image);
-        console.log("url(" + image + ")");
-        $(divID).css('"background-image", "url(" + image + ")"')
-        $(divID).css("background-image", "url(" + image + ")");
+        setTimeout(function(){
+            var divID = "#player_" + playerModel.index + "_key_display";
+            var image = null;
+            switch(keyInput) {
+                case "w":
+                case "ArrowUp":
+                    image = "'images/arrow_up.png'";
+                    break;
+                case "a":
+                case "ArrowLeft":
+                    image = "'images/arrow_left.png'";
+                    break;
+                case "s":
+                case "ArrowDown":
+                    image = "'images/arrow_down.png'";
+                    break;
+                case "d":
+                case "ArrowRight":
+                    image = "'images/arrow_right.png'";
+                    break;
+            }
+            $(divID).css('"background-image", "url(" + image + ")"')
+            $(divID).css("background-image", "url(" + image + ")");
+        }, 150)
+    };
+    this.hideArrowForMoment = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("background-image", "none");
+    };
+    this.arrowBoxMadeMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove green");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 150)
+    };
+    this.arrowBoxMissMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove red");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 150)
+    };
+    this.displayCountdownNumber = function(number){
+        $("#countDown").text(number).show();
+        $("#player_0_key_display").css("background-image", "none");
+        $("#player_1_key_display").css("background-image", "none");
+        setTimeout(function(){
+            $("#countDown").text(number).hide();
+        }, 500)
     }
 }
 
@@ -175,26 +202,26 @@ function backgroundImage() {
  * @calls {undefined} none
  */
 
-function displayPlayerIcon() {
-    this.playerIconArray = [
-        "images/trainer_1.jpg",
-        "images/trainer_2.jpg",
-        "images/trainer_3.jpg",
-        "images/trainer_4.jpg",
-        "images/trainer_5.jpg",
-        "images/trainer_6.jpg"
-    ];
-
-    this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
-
-    this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
-
-    $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-
-    this.removeImageFromArray();
-
-    $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-
-    this.removeImageFromArray()
-
-}
+// function displayPlayerIcon() {
+//     this.playerIconArray = [
+//         "images/trainer_1.jpg",
+//         "images/trainer_2.jpg",
+//         "images/trainer_3.jpg",
+//         "images/trainer_4.jpg",
+//         "images/trainer_5.jpg",
+//         "images/trainer_6.jpg"
+//     ];
+//
+//     this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
+//
+//     this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
+//
+//     $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray();
+//
+//     $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray()
+//
+// }

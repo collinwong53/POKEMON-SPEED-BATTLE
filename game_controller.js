@@ -18,8 +18,11 @@ function Game_controller(){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
         // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         backgroundImage();
+        $("#start_button").show();
     };
     this.startRound = function(){
+        get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name,'#player_0_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
+        get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name,'#player_1_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         view.displayCards();
@@ -39,10 +42,12 @@ function Game_controller(){
         }
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
+        view.displayCountdownNumber(game_model.timerValue/1000);
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
             console.log(game_model.timerValue);
+            view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
                 game_controller.startRound();
                 this.clearInterval(game_model.timerInterval)
