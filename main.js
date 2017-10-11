@@ -92,6 +92,7 @@ var video_list = null;
 var game_model = null;
 var game_controller = null;
 var player_controller = null;
+var view = null;
 function initializeApp(){
     console.log('im here');
     get_card_api_data = new Grab_data();
@@ -100,6 +101,7 @@ function initializeApp(){
     game_controller = new Game_controller();
     player_controller = new Player_controller();
     game_controller.startGame();
+    view = new View();
     backgroundImage();
 }
 
