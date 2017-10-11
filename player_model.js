@@ -8,6 +8,7 @@ function Player_model(){
     this.availableKeys = [];
     this.requiredMove = null;
     this.completedMoves = 0;
+    this.completedMovesGoal = 0;
 
 
 
