@@ -30,6 +30,33 @@ function Grab_data(){
         })//end call
         return promise;
     }//get get data
+    this.get_wiki = function(name){
+        $.ajax({
+            url: "https://en.wikipedia.org/w/api.php",
+            data: {
+                format: "json",
+                action: "parse",
+                page: name,
+                prop:"text",
+                section:0,
+            },
+            dataType: 'jsonp',
+            success: function (data) {
+                console.log(data)
+                var markup = data.parse.text["*"];
+                var i = $('<div></div>').html(markup);
+                i[0].children[0].children[1].innerText;
+                // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
+                // i.find('sup').remove();
+                // // i.find('.mw-ext-cite-error').remove();
+                // $('.player_stats').html($(i).find('p'));
+                $('.player_stats').html(i[0].children[0].children[1].innerText);
+            },
+            error: function(data){
+                console.log('error')
+            }
+        });
+    }
     // this.get_poke_data = function(name){
     //     var promise = {
     //         then:function(resolve,reject){
