@@ -107,6 +107,7 @@ function initializeApp(){
     backgroundImage();
     // displayPlayerIcon();
     handle_audio = new audio_handler;
+    $("#countDown").css("display", "none")
 }
 
 

@@ -102,34 +102,54 @@ function View(){
         var player1BackgroundImage = game_model.players[1].pokemon.image;
         console.log(player0BackgroundImage);
         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
-    }
+    };
     this.displayArrow = function(keyInput, playerModel){
-        var divID = "#player_" + playerModel.index + "_key_display";
-        var image = null;
-        switch(keyInput) {
-            case "w":
-            case "ArrowUp":
-                image = "'images/arrow_up.png'";
-                break;
-            case "a":
-            case "ArrowLeft":
-                image = "'images/arrow_left.png'";
-                break;
-            case "s":
-            case "ArrowDown":
-                image = "'images/arrow_down.png'";
-                break;
-            case "d":
-            case "ArrowRight":
-                image = "'images/arrow_right.png'";
-                break;
-        }
-        console.log("divID", divID);
-        console.log("image", image);
-        console.log("url(" + image + ")");
-        $(divID).css('"background-image", "url(" + image + ")"')
-        $(divID).css("background-image", "url(" + image + ")");
-    }
+        setTimeout(function(){
+            var divID = "#player_" + playerModel.index + "_key_display";
+            var image = null;
+            switch(keyInput) {
+                case "w":
+                case "ArrowUp":
+                    image = "'images/arrow_up.png'";
+                    break;
+                case "a":
+                case "ArrowLeft":
+                    image = "'images/arrow_left.png'";
+                    break;
+                case "s":
+                case "ArrowDown":
+                    image = "'images/arrow_down.png'";
+                    break;
+                case "d":
+                case "ArrowRight":
+                    image = "'images/arrow_right.png'";
+                    break;
+            }
+            $(divID).css('"background-image", "url(" + image + ")"')
+            $(divID).css("background-image", "url(" + image + ")");
+        }, 500)
+    };
+    this.hideArrowForMoment = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("background-image", "none");
+        setTimeout(function(){
+            $(divID).show()
+        }, 500)
+    };
+    this.arrowBoxMadeMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove green");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 500)
+    };
+    this.arrowBoxMissMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove red");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 500)
+    };
     this.displayCountdownNumber = function(number){
         $("#countDown").text(number).show();
         setTimeout(function(){
