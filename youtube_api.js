@@ -29,10 +29,9 @@ function get_youtube_data() {
 function winner (data){
     video_list = data;
     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-    var winner_video_link = "https://www.youtube.com/embed/' + random_vid + '";
+    winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 
     // $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
-
 
     console.log('it worked!',data);
     return winner_video_link

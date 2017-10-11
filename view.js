@@ -32,7 +32,7 @@ function displayWinVideo(){
 
     this.displayVideo = function () {
         $(".modal-title").text("You won!"); // The text will be the name of the pokemon
-        $("#video_display").attr('src', winner());
+        $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
     this.displayVideo();
