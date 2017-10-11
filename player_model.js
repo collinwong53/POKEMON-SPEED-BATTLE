@@ -1,4 +1,5 @@
 function Player_model(){
+    this.index = null;
     this.wins = 0;
     this.pokemon = {};
     this.pokemonName = "";
