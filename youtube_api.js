@@ -5,7 +5,7 @@ function get_youtube_data(pokemon_name) {
             this.reject = reject;
             this.resolve = resolve;
         }
-    }
+    };
 
     $.ajax({
         url: 'http://s-apis.learningfuze.com/hackathon/youtube/search.php',

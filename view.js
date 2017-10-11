@@ -37,3 +37,14 @@ function displayWinVideo(){
     };
     this.displayVideo();
 }
+
+function View(){
+    this.displayCards = function(){
+        var player0BackgroundImage = game_model.players[0].pokemon.image;
+        console.log(player0BackgroundImage);
+        $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
+        var player1BackgroundImage = game_model.players[1].pokemon.image;
+        $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
+    }
+
+}

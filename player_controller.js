@@ -50,7 +50,7 @@ function Player_controller(){
             else{
                 console.log("player " + player_model.index + " won the game!");
                 player_model.wins += 1;
-                game_controller.endGame(player_model.index);
+                game_controller.endGame(player_model);
             }
         }
     }
