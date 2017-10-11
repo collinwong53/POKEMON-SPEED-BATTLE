@@ -138,4 +138,3 @@ function backgroundImage() {
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
 }
-
