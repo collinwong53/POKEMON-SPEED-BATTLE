@@ -83,7 +83,7 @@ function Grab_data(){
         pokeData.type = pokemon_card.types;
         pokeData.attack = this.pick_attack(pokemon_card.attacks);
         return  pokeData;
-    }
+    };
     this.pick_attack = function(card_attack){
         if(card_attack===undefined){
             return 50;
