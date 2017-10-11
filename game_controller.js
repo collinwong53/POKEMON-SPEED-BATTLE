@@ -26,6 +26,8 @@ function Game_controller(){
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         view.displayCards();
+        view.cardflip0();
+        view.cardflip1();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };

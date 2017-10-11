@@ -97,12 +97,26 @@ function displayWinVideo(winnerPlayerModel){
 
 function View(){
     this.displayCards = function(){
+        $("#player_0").remove();
+        var player0cardback = $("<div>").addClass("player_box container animated fadeInLeft").css("background-image", "url(images/cardback.png)").attr("id", "player_0");
+        $(player0cardback).insertAfter("#counter");
         var player0BackgroundImage = game_model.players[0].pokemon.image;
-        $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
+        var player_0_cardimg = $("<img>").addClass("animated flip").attr("src", player0BackgroundImage);
+        this.cardflip0 = function() {
+            setTimeout(function(){ $("#player_0").append(player_0_cardimg); }, 2000);
+        };
+
+        $("#player_1").remove();
+        var player1cardback = $("<div>").addClass("player_box container animated fadeInRight").css("background-image", "url(images/cardback.png)").attr("id", "player_1");
+        $(player1cardback).insertAfter("#player_0_name");
         var player1BackgroundImage = game_model.players[1].pokemon.image;
-        console.log(player0BackgroundImage);
-        $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
-    };
+
+        var player_1_cardimg = $("<img>").addClass("animated flip").attr("src", player1BackgroundImage);
+        this.cardflip1 = function() {
+            setTimeout(function(){ $("#player_1").append(player_1_cardimg); }, 2000);
+        };
+    }
+
     this.displayArrow = function(keyInput, playerModel){
         setTimeout(function(){
             var divID = "#player_" + playerModel.index + "_key_display";
