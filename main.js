@@ -83,11 +83,6 @@
  * @returns {undefined} none
  * @calls {undefined} none
  */
-
-
-
-
-
 $(document).ready(initializeApp);
 var winner_video_link = null;
 var available_cards = null;
