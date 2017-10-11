@@ -37,3 +37,31 @@ function displayWinVideo(){
     };
     this.displayVideo();
 }
+
+/***************************************************************************************************
+ * backgroundImage - adds a different background image
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+function backgroundImage() {
+    this.backgroundImageArray = [
+        'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
+        'images/Dahara_City.png',
+        'images/Gaur Plains.png',
+        'images/Michina_Town_2.jpg',
+        'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
+        'images/pokemon_nature_in_kalos_region__from_s19_e4__by_theeaglefox-dax05hn.png',
+        'images/Prof_Juniper_Lab_anime-696x392.jpg'
+    ];
+    this.randomIndex = function() {
+        return Math.floor(Math.random()*this.backgroundImageArray.length)
+    };
+    this.imageToAddToBackground = function(){
+        return this.backgroundImageArray[this.randomIndex()]
+    };
+    return this.imageToAddToBackground()
+}
+
+$('body').css('background-image', backgroundImage());
