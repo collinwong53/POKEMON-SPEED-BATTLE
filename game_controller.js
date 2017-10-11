@@ -16,7 +16,7 @@ function Game_controller(){
     };
     this.endGame = function(winnerPlayerModel){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
-        displayWinVideo(winnerPlayerModel);
+        // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         backgroundImage();
     };
     this.startRound = function(){
@@ -37,10 +37,12 @@ function Game_controller(){
         }
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
+        view.displayCountdownNumber(game_model.timerValue/1000);
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
             console.log(game_model.timerValue);
+            view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
                 game_controller.startRound();
                 this.clearInterval(game_model.timerInterval)

@@ -28,15 +28,29 @@
  * @calls {undefined} none
  */
 
-function displayWinVideo(playerModel){
+function displayWinVideo(winnerPlayerModel){
 
-    this.displayVideo = function (winnerPlayerModel) {
-        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1));
+    this.displayVideo = function () {
+        console.log(winnerPlayerModel.index);
+        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1)); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
     this.displayVideo();
-}
+};
+
+// function play_video (data) {
+//     video_list = data;
+//     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
+//     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+//
+//     console.log('it worked!', data);
+// };
+//
+// function no_video (message) {
+//     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+//     console.log(message);
+// };
 
     function get_youtube_data (pokemon_name) {
         var promise = { //create an object that will handle the promise itself
@@ -69,7 +83,9 @@ function displayWinVideo(playerModel){
     function winner_video (data) {
         video_list = data;
         var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-        $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
+        winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+
+        displayWinVideo(winnerPlayerModel);
 
         console.log('it worked!', data);
     };
@@ -113,6 +129,12 @@ function View(){
         console.log("url(" + image + ")");
         $(divID).css('"background-image", "url(" + image + ")"')
         $(divID).css("background-image", "url(" + image + ")");
+    }
+    this.displayCountdownNumber = function(number){
+        $("#countDown").text(number).show();
+        setTimeout(function(){
+            $("#countDown").text(number).hide();
+        }, 500)
     }
 }
 
