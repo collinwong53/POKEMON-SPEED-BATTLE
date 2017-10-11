@@ -114,6 +114,9 @@ function View(){
         $(divID).css('"background-image", "url(" + image + ")"')
         $(divID).css("background-image", "url(" + image + ")");
     }
+    this.displayCountdownNumber0 = function(number){
+
+    }
 }
 
 /***************************************************************************************************
@@ -147,26 +150,26 @@ function backgroundImage() {
  * @calls {undefined} none
  */
 
-function displayPlayerIcon() {
-    this.playerIconArray = [
-        "images/trainer_1.jpg",
-        "images/trainer_2.jpg",
-        "images/trainer_3.jpg",
-        "images/trainer_4.jpg",
-        "images/trainer_5.jpg",
-        "images/trainer_6.jpg"
-    ];
-
-    this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
-
-    this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
-
-    $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-
-    this.removeImageFromArray();
-
-    $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-
-    this.removeImageFromArray()
-
-}
+// function displayPlayerIcon() {
+//     this.playerIconArray = [
+//         "images/trainer_1.jpg",
+//         "images/trainer_2.jpg",
+//         "images/trainer_3.jpg",
+//         "images/trainer_4.jpg",
+//         "images/trainer_5.jpg",
+//         "images/trainer_6.jpg"
+//     ];
+//
+//     this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
+//
+//     this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
+//
+//     $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray();
+//
+//     $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray()
+//
+// }
