@@ -89,6 +89,7 @@
 
 
 $(document).ready(initializeApp);
+var get_yt_api_data = null;
 var additional_pokemon_info = null
 var available_cards = null;
 var get_card_api_data = null;

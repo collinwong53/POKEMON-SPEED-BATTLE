@@ -14,8 +14,8 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
-    this.endGame = function(winnerIndex){
-        get_youtube_data(winnerIndex).then(winner,failed_video);
+    this.endGame = function(winnerPlayerModel){
+        get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
     };
     this.startRound = function(){
         game_model.roundStarted = true;
