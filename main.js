@@ -106,6 +106,7 @@ function initializeApp(){
     game_controller = new Game_controller();
     player_controller = new Player_controller();
     game_controller.startGame();
+    backgroundImage();
 }
 
 
