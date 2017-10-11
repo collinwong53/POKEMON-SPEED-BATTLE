@@ -40,15 +40,20 @@ body {
 }
 
 #player_1_name {
-
+    left: 30%;
 }
 
 #player_2_name {
-
+    left: 70%;
 }
 
 .player_name {
-    top:
+    top: 20%;
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    border: 2px solid orange;
+    transform: translate(-50%, -50%)
 }
 
 #player_1_key_display {
