@@ -130,8 +130,11 @@ function View(){
         $(divID).css('"background-image", "url(" + image + ")"')
         $(divID).css("background-image", "url(" + image + ")");
     }
-    this.displayCountdownNumber0 = function(number){
-
+    this.displayCountdownNumber = function(number){
+        $("#countDown").text(number).show();
+        setTimeout(function(){
+            $("#countDown").text(number).hide();
+        }, 500)
     }
 }
 
