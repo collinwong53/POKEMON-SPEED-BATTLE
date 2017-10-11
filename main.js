@@ -103,6 +103,7 @@ function initializeApp(){
     game_controller.startGame();
     view = new View();
     backgroundImage();
+    displayPlayerIcon();
 }
 
 

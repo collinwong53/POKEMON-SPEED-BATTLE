@@ -67,28 +67,49 @@ body {
     top: 85%;
     position: absolute;
     height: 15%;
-    width: 15%;
+    width: 25%;
     transform: translate(-50%, -50%)
 }
 
 #player_0_stats {
-    left: 8%
+    left: 3%
 }
 
 #player_1_stats {
-    left: 92%
+    left: 97%
 }
 
 .player_stats {
     top: 40%;
     position: absolute;
-    height: 60%;
-    width: 15%;
+    height: 72%;
+    width: 25%;
     transform: translate(-50%, -50%);
 }
 
 .player_stats img {
-    width: 100%;
+    width: 75%;
+    margin-left: 10%;
+}
+
+#player_0_icon {
+    left: 3%;
+}
+
+#player_1_icon {
+    left: 97%
+}
+
+.player_icon {
+    top: 98%;
+    position: absolute;
+    height: 40%;
+    width: 10%;
+    transform: translate(-50%, -50%)
+}
+
+.player_icon img {
+    height: 100%;
 }
 
 .container {
