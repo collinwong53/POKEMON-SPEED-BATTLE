@@ -38,6 +38,18 @@ function displayWinVideo(){
     this.displayVideo();
 }
 
+
+function View(){
+    this.displayCards = function(){
+        var player0BackgroundImage = game_model.players[0].pokemon.image;
+        console.log(player0BackgroundImage);
+        $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
+        var player1BackgroundImage = game_model.players[1].pokemon.image;
+        $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
+    }
+
+}
+
 /***************************************************************************************************
  * backgroundImage - adds a different background image
  * @param  {undefined} none
@@ -49,18 +61,15 @@ function backgroundImage() {
     this.backgroundImageArray = [
         'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
         'images/Dahara_City.png',
-        'images/Gaur Plains.png',
+        // 'images/Gaur Plains.png',
         'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
         'images/Prof_Juniper_Lab_anime-696x392.jpg'
     ];
-    this.randomIndex = function() {
-        return Math.floor(Math.random()*this.backgroundImageArray.length)
-    };
     this.imageToAddToBackground = function(){
-        console.log(this.randomIndex());
-        return this.backgroundImageArray[this.randomIndex()]
+        var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
+        console.log(randomIndex);
+        return this.backgroundImageArray[randomIndex]
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
 }
-
 

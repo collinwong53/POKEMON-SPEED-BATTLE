@@ -19,45 +19,32 @@ body {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid black;
 }
 
-#player_1 {
+#player_0 {
     left: 30%;
 }
 
-#player_2 {
+#player_1 {
     left: 70%;
 }
 
 .player_box {
     top: 40%;
     position: absolute;
-    height: 60%;
-    width: 20%;
+    height: 28vw;
+    width: 20vw;
+    border: 2px solid blue;
     transform: translate(-50%, -50%);
+    background-size: contain;
 }
 
-#player_1_name {
-    left: 30%;
-}
-
-#player_2_name {
-    left: 70%;
-}
-
-.player_name {
-    top: 5%;
-    position: absolute;
-    height: 10%;
-    width: 20%;
-    transform: translate(-50%, -50%)
-}
-
-#player_1_key_display {
+#player_0_key_display {
     left: 30%
 }
 
-#player_2_key_display {
+#player_1_key_display {
     left: 70%
 }
 
@@ -66,14 +53,15 @@ body {
     position: absolute;
     height: 15%;
     width: 15%;
+    border: 2px solid green;
     transform: translate(-50%, -50%)
 }
 
-#player_1_stats {
+#player_0_stats {
     left: 10%
 }
 
-#player_2_stats {
+#player_1_stats {
     left: 90%
 }
 
@@ -82,9 +70,6 @@ body {
     position: absolute;
     height: 50%;
     width: 10%;
+    border: 2px solid red;
     transform: translate(-50%, -50%);
-}
-
-.display {
-    background-color: rgba(0, 0, 0, 0.4);
 }
