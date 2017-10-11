@@ -28,7 +28,7 @@ function get_youtube_data(pokemon_name) {
 
 function winner (data){
     video_list = data;
-    var random_vid = data.video[Math.floor(Math.random(video_list.video.length))].id;
+    var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
 
     console.log('it worked!',data);
