@@ -103,6 +103,7 @@ function initializeApp(){
     game_controller.startGame();
     view = new View();
     backgroundImage();
+    displayPlayerIcon();
     handle_audio = new audio_handler;
 }
 

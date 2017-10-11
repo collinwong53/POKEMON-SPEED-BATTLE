@@ -31,7 +31,7 @@
 function displayWinVideo(playerModel){
 
     this.displayVideo = function (winnerPlayerModel) {
-        $(".modal-title").text("Winner Player " + (winnerPlayerModel.index +1));
+        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1));
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
@@ -137,4 +137,36 @@ function backgroundImage() {
         return this.backgroundImageArray[randomIndex]
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
+}
+
+
+/***************************************************************************************************
+ * playerIcon - adds and displays player icons
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+function displayPlayerIcon() {
+    this.playerIconArray = [
+        "images/trainer_1.jpg",
+        "images/trainer_2.jpg",
+        "images/trainer_3.jpg",
+        "images/trainer_4.jpg",
+        "images/trainer_5.jpg",
+        "images/trainer_6.jpg"
+    ];
+
+    this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
+
+    this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
+
+    $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+
+    this.removeImageFromArray();
+
+    $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+
+    this.removeImageFromArray()
+
 }
