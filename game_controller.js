@@ -18,6 +18,7 @@ function Game_controller(){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
         // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         backgroundImage();
+        $("#start_button").show();
     };
     this.startRound = function(){
         get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name,'#player_0_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);

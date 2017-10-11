@@ -26,15 +26,6 @@ body {
     transform: translate(-50%, -50%)
 }
 
-#counter {
-    position: absolute;
-    height: 15%;
-    width: 10%;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #player_0 {
     left: 30%;
 }
@@ -187,6 +178,37 @@ body {
 
 }
 
+#start_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 12%;
+    height: 8%;
+    top: 36%;
+    left: 43%;
+    font-size: 4em;
+    line-height: 20%;
+    color: #345da4;
+    border: 6px solid #345da4;
+    box-sizing: content-box;
+    background-color: #fcc31d;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#start_button:hover {
+background-color: whitesmoke;
+}
+
+#start_button:active {
+    transform: translateY(10px);
+}
+
+#start_button:focus{
+    outline: none
+}
+
 #countDown{
     display:flex;
     color:white;
@@ -199,6 +221,8 @@ body {
     justify-content: center;
     z-index: 500;
 }
+
 .player_stats ul{
     list-style: none;
 }
+
