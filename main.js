@@ -84,6 +84,8 @@
  * @calls {undefined} none
  */
 $(document).ready(initializeApp);
+
+var winnerPlayerModel = null;
 var handle_audio = null;
 var winner_video_link = null;
 var available_cards = null;
@@ -103,7 +105,9 @@ function initializeApp(){
     game_controller.startGame();
     view = new View();
     backgroundImage();
+    // displayPlayerIcon();
     handle_audio = new audio_handler;
+    $("#countDown").css("display", "none")
 }
 
 

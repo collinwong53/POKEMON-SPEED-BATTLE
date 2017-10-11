@@ -28,15 +28,29 @@
  * @calls {undefined} none
  */
 
-function displayWinVideo(playerModel){
+function displayWinVideo(winnerPlayerModel){
 
-    this.displayVideo = function (winnerPlayerModel) {
-        $(".modal-title").text("Winner Player " + (winnerPlayerModel.index +1));
+    this.displayVideo = function () {
+        console.log(winnerPlayerModel.index);
+        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1)); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
     this.displayVideo();
-}
+};
+
+// function play_video (data) {
+//     video_list = data;
+//     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
+//     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+//
+//     console.log('it worked!', data);
+// };
+//
+// function no_video (message) {
+//     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+//     console.log(message);
+// };
 
     function get_youtube_data (pokemon_name) {
         var promise = { //create an object that will handle the promise itself
@@ -69,7 +83,9 @@ function displayWinVideo(playerModel){
     function winner_video (data) {
         video_list = data;
         var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-        $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
+        winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+
+        displayWinVideo(winnerPlayerModel);
 
         console.log('it worked!', data);
     };
@@ -86,33 +102,59 @@ function View(){
         var player1BackgroundImage = game_model.players[1].pokemon.image;
         console.log(player0BackgroundImage);
         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
-    }
+    };
     this.displayArrow = function(keyInput, playerModel){
-        var divID = "#player_" + playerModel.index + "_key_display";
-        var image = null;
-        switch(keyInput) {
-            case "w":
-            case "ArrowUp":
-                image = "'images/arrow_up.png'";
-                break;
-            case "a":
-            case "ArrowLeft":
-                image = "'images/arrow_left.png'";
-                break;
-            case "s":
-            case "ArrowDown":
-                image = "'images/arrow_down.png'";
-                break;
-            case "d":
-            case "ArrowRight":
-                image = "'images/arrow_right.png'";
-                break;
-        }
-        console.log("divID", divID);
-        console.log("image", image);
-        console.log("url(" + image + ")");
-        $(divID).css('"background-image", "url(" + image + ")"')
-        $(divID).css("background-image", "url(" + image + ")");
+        setTimeout(function(){
+            var divID = "#player_" + playerModel.index + "_key_display";
+            var image = null;
+            switch(keyInput) {
+                case "w":
+                case "ArrowUp":
+                    image = "'images/arrow_up.png'";
+                    break;
+                case "a":
+                case "ArrowLeft":
+                    image = "'images/arrow_left.png'";
+                    break;
+                case "s":
+                case "ArrowDown":
+                    image = "'images/arrow_down.png'";
+                    break;
+                case "d":
+                case "ArrowRight":
+                    image = "'images/arrow_right.png'";
+                    break;
+            }
+            $(divID).css('"background-image", "url(" + image + ")"')
+            $(divID).css("background-image", "url(" + image + ")");
+        }, 500)
+    };
+    this.hideArrowForMoment = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("background-image", "none");
+        setTimeout(function(){
+            $(divID).show()
+        }, 500)
+    };
+    this.arrowBoxMadeMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove green");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 500)
+    };
+    this.arrowBoxMissMove = function(player_model){
+        var divID = "#player_" + player_model.index + "_key_display";
+        $(divID).css("border", "5px groove red");
+        setTimeout(function(){
+            $(divID).css("border", "none");
+        }, 500)
+    };
+    this.displayCountdownNumber = function(number){
+        $("#countDown").text(number).show();
+        setTimeout(function(){
+            $("#countDown").text(number).hide();
+        }, 500)
     }
 }
 
@@ -138,3 +180,35 @@ function backgroundImage() {
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
 }
+
+
+/***************************************************************************************************
+ * playerIcon - adds and displays player icons
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+// function displayPlayerIcon() {
+//     this.playerIconArray = [
+//         "images/trainer_1.jpg",
+//         "images/trainer_2.jpg",
+//         "images/trainer_3.jpg",
+//         "images/trainer_4.jpg",
+//         "images/trainer_5.jpg",
+//         "images/trainer_6.jpg"
+//     ];
+//
+//     this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
+//
+//     this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
+//
+//     $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray();
+//
+//     $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+//
+//     this.removeImageFromArray()
+//
+// }
