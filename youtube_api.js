@@ -1,4 +1,4 @@
-function get_youtube_data(pokemon_name) {
+function get_youtube_data() {
 
     var promise = { //create an object that will handle the promise itself
         then: function(resolve, reject){
@@ -12,7 +12,7 @@ function get_youtube_data(pokemon_name) {
         dataType: 'json',
         method: 'post',
         data: {
-            q: pokemon_name,
+            q: 'charizard',
             maxResults: 10,
             type: "video"
     },
@@ -29,9 +29,11 @@ function get_youtube_data(pokemon_name) {
 function winner (data){
     video_list = data;
     var random_vid = data.video[Math.floor(Math.random(video_list.video.length))].id;
-    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
+    var winner_video_link = "https://www.youtube.com/embed/' + random_vid + '";
+    // $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/' + random_vid + '" frameborder="0" allowfullscreen"></iframe>');
 
     console.log('it worked!',data);
+    return winner_video_link
 }
 function failed_video(message){
     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
