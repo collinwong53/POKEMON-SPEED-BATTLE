@@ -30,6 +30,7 @@ function Player_controller(){
         var randomIndex = Math.floor(Math.random()*availableKeys.length);
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
+        view.displayArrow(player_model.requiredMove, player_model)
     };
     this.resetCompletedMoves = function(player_model){
         player_model.completedMoves = 0;

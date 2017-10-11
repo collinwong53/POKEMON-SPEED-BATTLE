@@ -86,6 +86,7 @@
 $(document).ready(initializeApp);
 
 var winnerPlayerModel = null;
+var handle_audio = null;
 var winner_video_link = null;
 var available_cards = null;
 var get_card_api_data = null;
@@ -104,6 +105,7 @@ function initializeApp(){
     game_controller.startGame();
     view = new View();
     backgroundImage();
+    handle_audio = new audio_handler;
 }
 
 

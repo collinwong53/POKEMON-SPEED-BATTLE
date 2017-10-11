@@ -54,7 +54,11 @@ body {
     height: 15%;
     width: 15%;
     border: 2px solid green;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    z-index : 5;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #player_0_stats {
@@ -68,8 +72,13 @@ body {
 .player_stats {
     top: 40%;
     position: absolute;
-    height: 50%;
-    width: 10%;
+    height: 75vh;
+    width: 10vw;
     border: 2px solid red;
     transform: translate(-50%, -50%);
+    overflow: auto;
+    color:white;
+    /*-webkit-text-stroke-width: 1px;*/
+    /*-webkit-text-stroke-color: black;*/
+    /*font-size:1.5em;*/
 }

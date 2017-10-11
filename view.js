@@ -98,12 +98,38 @@ function displayWinVideo(winnerPlayerModel){
 function View(){
     this.displayCards = function(){
         var player0BackgroundImage = game_model.players[0].pokemon.image;
-        console.log(player0BackgroundImage);
         $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
         var player1BackgroundImage = game_model.players[1].pokemon.image;
+        console.log(player0BackgroundImage);
         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
     }
-
+    this.displayArrow = function(keyInput, playerModel){
+        var divID = "#player_" + playerModel.index + "_key_display";
+        var image = null;
+        switch(keyInput) {
+            case "w":
+            case "ArrowUp":
+                image = "'images/arrow_up.png'";
+                break;
+            case "a":
+            case "ArrowLeft":
+                image = "'images/arrow_left.png'";
+                break;
+            case "s":
+            case "ArrowDown":
+                image = "'images/arrow_down.png'";
+                break;
+            case "d":
+            case "ArrowRight":
+                image = "'images/arrow_right.png'";
+                break;
+        }
+        console.log("divID", divID);
+        console.log("image", image);
+        console.log("url(" + image + ")");
+        $(divID).css('"background-image", "url(" + image + ")"')
+        $(divID).css("background-image", "url(" + image + ")");
+    }
 }
 
 /***************************************************************************************************
@@ -128,4 +154,3 @@ function backgroundImage() {
     };
     $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
 }
-
