@@ -30,14 +30,9 @@
 
 function displayWinVideo(winnerPlayerModel){
 
-<<<<<<< HEAD
     this.displayVideo = function () {
         console.log(winnerPlayerModel.index);
         $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1)); // The text will be the name of the pokemon
-=======
-    this.displayVideo = function (winnerPlayerModel) {
-        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1));
->>>>>>> 5122c618d1290db44b9396740bd9b4f657eefdc9
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
