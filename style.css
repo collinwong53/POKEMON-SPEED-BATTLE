@@ -54,7 +54,11 @@ body {
     height: 15%;
     width: 15%;
     border: 2px solid green;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    z-index : 5;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #player_0_stats {
