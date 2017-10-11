@@ -20,9 +20,9 @@ function Game_controller(){
         backgroundImage();
     };
     this.startRound = function(){
+        get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name,'#player_0_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
+        get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name,'#player_1_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
         handle_audio.sound_object['main'].play();
-        $('#player_0_stats').html(get_card_api_data.get_wiki(game_model.players[0].pokemon.name));
-        $('#player_1_stats').html(get_card_api_data.get_wiki(game_model.players[1].pokemon.name));
         game_model.roundStarted = true;
         view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);

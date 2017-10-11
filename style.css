@@ -82,3 +82,6 @@ body {
     /*-webkit-text-stroke-color: black;*/
     /*font-size:1.5em;*/
 }
+.player_stats ul{
+    list-style: none;
+}
