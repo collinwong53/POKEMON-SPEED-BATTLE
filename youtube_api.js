@@ -1,6 +1,4 @@
-
 function get_youtube_data() {
-
     var promise = { //create an object that will handle the promise itself
         then: function(resolve, reject){
             this.reject = reject;

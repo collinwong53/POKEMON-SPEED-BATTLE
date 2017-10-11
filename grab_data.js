@@ -41,7 +41,7 @@ function Grab_data(){
                 section:0,
             },
             dataType: 'jsonp',
-            success: function (data) {
+            success: function (data){
                 console.log(data)
                 var markup = data.parse.text["*"];
                 var i = $('<div></div>').html(markup);
@@ -50,7 +50,8 @@ function Grab_data(){
                 // i.find('sup').remove();
                 // // i.find('.mw-ext-cite-error').remove();
                 // $('.player_stats').html($(i).find('p'));
-                $('.player_stats').html(i[0].children[0].children[1].innerText);
+                // $('.player_stats').html(i[0].children[0].children[1].innerText);
+                return i[0].children[0].children[1].innerText;
             },
             error: function(data){
                 console.log('error')

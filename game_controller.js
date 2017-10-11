@@ -21,6 +21,8 @@ function Game_controller(){
     };
     this.startRound = function(){
         handle_audio.sound_object['main'].play();
+        $('#player_0_stats').html(get_card_api_data.get_wiki(game_model.players[0].pokemon.name));
+        $('#player_1_stats').html(get_card_api_data.get_wiki(game_model.players[1].pokemon.name));
         game_model.roundStarted = true;
         view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
