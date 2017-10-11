@@ -12,15 +12,6 @@ body {
     transform: translate(-50%, -50%)
 }
 
-#counter {
-    position: absolute;
-    height: 15%;
-    width: 10%;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 #player_0 {
     left: 30%;
 }
@@ -73,7 +64,6 @@ body {
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
->>>>>>> df4fec542e08a8f07097d5255dc08a6b623994bb
 }
 
 #player_0_stats {
@@ -129,4 +119,13 @@ body {
     /*!*-webkit-text-stroke-color: black;*!*/
     /*!*font-size:1.5em;*!*/
 
+}
+
+#start_button {
+    position: absolute;
+    width: 12%;
+    height: 8%;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
 }
