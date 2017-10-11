@@ -19,7 +19,6 @@ body {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid black;
 }
 
 #player_1 {
@@ -35,7 +34,6 @@ body {
     position: absolute;
     height: 60%;
     width: 20%;
-    border: 2px solid blue;
     transform: translate(-50%, -50%);
 }
 
@@ -48,11 +46,10 @@ body {
 }
 
 .player_name {
-    top: 20%;
+    top: 5%;
     position: absolute;
     height: 10%;
-    width: 10%;
-    border: 2px solid orange;
+    width: 20%;
     transform: translate(-50%, -50%)
 }
 
@@ -69,7 +66,6 @@ body {
     position: absolute;
     height: 15%;
     width: 15%;
-    border: 2px solid green;
     transform: translate(-50%, -50%)
 }
 
@@ -86,6 +82,9 @@ body {
     position: absolute;
     height: 50%;
     width: 10%;
-    border: 2px solid red;
     transform: translate(-50%, -50%);
+}
+
+.display {
+    background-color: rgba(0, 0, 0, 0.4);
 }
