@@ -150,9 +150,8 @@ body {
     position: absolute;
     width: 12%;
     height: 8%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 36%;
+    left: 43%;
     font-size: 4em;
     line-height: 20%;
     color: #345da4;
@@ -168,8 +167,11 @@ background-color: whitesmoke;
 }
 
 #start_button:active {
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    transform: translateY(10px);
+}
+
+#start_button:focus{
+    outline: none
 }
 
 #countDown{
@@ -185,3 +187,4 @@ background-color: whitesmoke;
     justify-content: center;
     z-index: 500;
 }
+
