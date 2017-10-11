@@ -20,9 +20,11 @@ function Game_controller(){
         backgroundImage();
         $("#start_button").show();
     };
-    this.startRound = function(){
-        get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name,'#player_0_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
-        get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name,'#player_1_stats').then(get_card_api_data.resolve_pokeDB,get_card_api_data.reject_pokeDB);
+    this.startRound = function(startOfGame){
+        if(startOfGame) {
+            get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
+            get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
+        }
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         view.displayCards();
@@ -47,10 +49,10 @@ function Game_controller(){
             console.log(game_model.timerValue);
             view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
-                game_controller.startRound();
+                game_controller.startRound(startOfGame);
                 this.clearInterval(game_model.timerInterval)
             }
-        }, timeBetweenUpdates)
+        }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue/1000);
     };
     // this.stopTimer = function(){
