@@ -1,6 +1,11 @@
 function Player_controller(){
     this.getPokemon = function(player_model){
-
+        player_model.pokemon = get_card_api_data.make_pokemon();
+        player_model.hp = player_model.pokemon.hp;
+        player_model.attack = player_model.pokemon.attack;
+        player_model.completedMovesGoal = Math.floor((parseInt(player_model.hp) + parseInt(player_model.attack)) / 20);
+        console.log(player_model.index + " will be ", player_model.pokemon);
+        console.log(" and need to get " + player_model.completedMovesGoal)
     };
     this.takeDamage = function(player_model, damageAmount) {
         player_model.hp -= damageAmount;
@@ -26,8 +31,20 @@ function Player_controller(){
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
     };
-    this.checkIfWinRound = function(){
-
-        //IF win, run game_model.roundStarted = false;
+    this.checkIfWinRound = function(player_model){
+        if(player_model.completedMoves >= player_model.completedMovesGoal){
+            game_model.roundStarted = false;
+            console.log(player_model.index + " WINS THE ROUND!")
+            var otherPlayerIndex = 1 - player_model.index;
+            this.takeDamage(game_model.players[otherPlayerIndex], player_model.attack);
+            game_controller.endRound();
+            if(game_model.players[0].hp > 0 && game_model.players[1].hp > 0){
+                game_controller.startTimer(3000);
+            }
+            else{
+                player_model.wins += 1;
+                game_controller.endGame();
+            }
+        }
     }
 }
