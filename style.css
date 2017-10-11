@@ -1,3 +1,8 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #game_container {
     position: relative;
     height: 80vh;

@@ -15,8 +15,8 @@ function Game_controller(){
         game_model.players = [playerOne, playerTwo]
     };
     this.endGame = function(winnerPlayerModel){
-
-
+        displayWinVideo();
+        backgroundImage();
     };
     this.startRound = function(){
         game_model.roundStarted = true;

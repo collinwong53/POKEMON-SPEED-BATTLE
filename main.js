@@ -89,7 +89,7 @@
 
 
 $(document).ready(initializeApp);
-var additional_pokemon_info = null
+var winner_video_link = null;
 var available_cards = null;
 var get_card_api_data = null;
 var video_list = null;
@@ -98,7 +98,7 @@ var game_controller = null;
 var player_controller = null;
 var view = null;
 function initializeApp(){
-    get_youtube_data().then(winner,failed_video);
+    // get_youtube_data().then(winner,failed_video);
     console.log('im here');
     get_card_api_data = new Grab_data();
     get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
@@ -107,6 +107,7 @@ function initializeApp(){
     player_controller = new Player_controller();
     game_controller.startGame();
     view = new View();
+    backgroundImage();
 }
 
 
