@@ -15,9 +15,10 @@ function Player_controller(){
         view.hideArrowForMoment(player_model);
         player_model.completedMoves +=1;
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
-        this.getRequiredMove(player_model);
         this.checkIfWinRound(player_model);
-
+        // if(game_model.roundStarted === false) {
+            this.getRequiredMove(player_model);
+        // }
     };
     this.missMove = function(player_model){
         view.arrowBoxMissMove(player_model);

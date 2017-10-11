@@ -127,31 +127,30 @@ function View(){
             }
             $(divID).css('"background-image", "url(" + image + ")"')
             $(divID).css("background-image", "url(" + image + ")");
-        }, 500)
+        }, 150)
     };
     this.hideArrowForMoment = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("background-image", "none");
-        setTimeout(function(){
-            $(divID).show()
-        }, 500)
     };
     this.arrowBoxMadeMove = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("border", "5px groove green");
         setTimeout(function(){
             $(divID).css("border", "none");
-        }, 500)
+        }, 150)
     };
     this.arrowBoxMissMove = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("border", "5px groove red");
         setTimeout(function(){
             $(divID).css("border", "none");
-        }, 500)
+        }, 150)
     };
     this.displayCountdownNumber = function(number){
         $("#countDown").text(number).show();
+        $("#player_0_key_display").css("background-image", "none");
+        $("#player_1_key_display").css("background-image", "none");
         setTimeout(function(){
             $("#countDown").text(number).hide();
         }, 500)
