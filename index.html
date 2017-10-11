@@ -17,44 +17,40 @@
     <script src="youtube_api.js"></script>
 </head>
 <body>
-    <div id="game_container">
-        <div id="counter">
-        </div>
-        <div class="player_name" id="player_1_name">
-        </div>
-        <div class="player_box" id="player_1">
-        </div>
-        <div class="player_name" id="player_2_name">
-        </div>
-        <div class="player_box" id="player_2">
-        </div>
-        <div class="player_stats" id="player_0_stats">
-        </div>
-        <div  class="player_key_display" id="player_0_key_display">
-        </div>
-        <div class="player_stats" id="player_1_stats">
-        </div>
-        <div class="player_key_display" id="player_1_key_display">
-        </div>
+<div id="game_container">
+    <div id="counter">
     </div>
+    <div class="player_box" id="player_0">
+    </div>
+    <div class="player_box" id="player_1">
+    </div>
+    <div class="player_stats" id="player_0_stats">
+    </div>
+    <div  class="player_key_display" id="player_0_key_display">
+    </div>
+    <div class="player_stats" id="player_1_stats">
+    </div>
+    <div class="player_key_display" id="player_1_key_display">
+    </div>
+</div>
 
-    <div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="winning_modal">Modal title</h4>
+<div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="winning_modal">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id= "video_display" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id= "video_display" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

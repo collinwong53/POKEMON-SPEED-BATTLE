@@ -85,6 +85,7 @@
  */
 $(document).ready(initializeApp);
 
+var winnerPlayerModel = null;
 var winner_video_link = null;
 var available_cards = null;
 var get_card_api_data = null;

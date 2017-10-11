@@ -16,7 +16,7 @@ function Game_controller(){
     };
     this.endGame = function(winnerPlayerModel){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
-        displayWinVideo(winnerPlayerModel);
+        // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         backgroundImage();
     };
     this.startRound = function(){
