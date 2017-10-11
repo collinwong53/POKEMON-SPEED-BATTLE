@@ -11,10 +11,10 @@
     position: absolute;
     height: 15%;
     width: 10%;
-    border: 2px solid black;
-    top: 40%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border: 2px solid black;
 }
 
 #player_1 {
