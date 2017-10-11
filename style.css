@@ -135,6 +135,7 @@ body {
     height: 72%;
     width: 25%;
     transform: translate(-50%, -50%);
+    overflow:auto;
 }
 
 .player_stats img {
@@ -233,5 +234,12 @@ background-color: whitesmoke;
     color: whitesmoke;
 }
 
-.hpAndPowerBar
+.hpAndPowerBar{
+
+}
+
+
+.player_stats ul{
+    list-style: none;
+}
 
