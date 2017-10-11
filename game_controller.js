@@ -14,7 +14,7 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
-    this.endGame = function(){
+    this.endGame = function(winnerIndex){
 
 
     };
@@ -27,9 +27,11 @@ function Game_controller(){
         game_model.roundStarted = false;
     };
 
-    this.startTimer = function(time){       //Countdown that starts the round - triggered by button press
-        player_controller.getPokemon(game_model.players[0]);
-        player_controller.getPokemon(game_model.players[1]);
+    this.startTimer = function(time, startOfRound){       //Countdown that starts the round - triggered by button press
+        if(startOfRound) {
+            player_controller.getPokemon(game_model.players[0]);
+            player_controller.getPokemon(game_model.players[1]);
+        }
         game_model.timerValue = time;
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
