@@ -20,6 +20,7 @@ function Game_controller(){
         backgroundImage();
     };
     this.startRound = function(){
+        handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
@@ -34,6 +35,7 @@ function Game_controller(){
             player_controller.getPokemon(game_model.players[0]);
             player_controller.getPokemon(game_model.players[1]);
         }
+        handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
