@@ -66,15 +66,20 @@ function Grab_data(){
         var pokeData = {};
         var pokemon_card = available_cards[random_pick];
         pokeData.name = pokemon_card.name;
-        pokeData.hp = pokemon_card.hp || 50;
+        pokeData.hp = pokemon_card.hp || false;
         pokeData.image = pokemon_card.imageUrl;
         pokeData.type = pokemon_card.types;
         pokeData.attack = this.pick_attack(pokemon_card.attacks);
-        return  pokeData;
+        if(pokeData.hp === false || pokeData.attack === false){
+            return this.make_pokemon();
+        }
+        else{
+            return  pokeData;
+        }
     }
     this.pick_attack = function(card_attack){
         if(card_attack===undefined){
-            return 50;
+            return false;
         }
         for(var i = 0; i<card_attack.length; i++){
             if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
