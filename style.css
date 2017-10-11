@@ -1,0 +1,81 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#game_container {
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    top: 42vh;
+    left: 50vw;
+    transform: translate(-50%, -50%)
+}
+
+#counter {
+    position: absolute;
+    height: 15%;
+    width: 10%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+}
+
+#player_0 {
+    left: 30%;
+}
+
+#player_1 {
+    left: 70%;
+}
+
+.player_box {
+    top: 40%;
+    position: absolute;
+    height: 28vw;
+    width: 20vw;
+    border: 2px solid blue;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+}
+
+#player_0_key_display {
+    left: 30%
+}
+
+#player_1_key_display {
+    left: 70%
+}
+
+.player_key_display {
+    top: 85%;
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    border: 2px solid green;
+    transform: translate(-50%, -50%);
+    z-index : 5;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#player_0_stats {
+    left: 10%
+}
+
+#player_1_stats {
+    left: 90%
+}
+
+.player_stats {
+    top: 40%;
+    position: absolute;
+    height: 50%;
+    width: 10%;
+    border: 2px solid red;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+    color:red;
+}
