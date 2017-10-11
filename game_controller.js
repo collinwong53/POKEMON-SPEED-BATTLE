@@ -14,22 +14,31 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
+    this.endGame = function(winnerIndex){
+
+
+    };
     this.startRound = function(){
+        game_model.roundStarted = true;
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };
-    this.changePlayerTurn = function(){
-        game_model.playerTurn = game_model.playerTurn - 1;
+    this.endRound = function(){
+        game_model.roundStarted = false;
     };
-    this.startTimer = function(time){       //Countdown that starts the round - triggered by button press
+
+    this.startTimer = function(time, startOfRound){       //Countdown that starts the round - triggered by button press
+        if(startOfRound) {
+            player_controller.getPokemon(game_model.players[0]);
+            player_controller.getPokemon(game_model.players[1]);
+        }
         game_model.timerValue = time;
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function(){
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
-            console.log(game_model.timerValue)
+            console.log(game_model.timerValue);
             if(game_model.timerValue <= 0) {
                 game_controller.startRound();
-                game_model.roundStarted = true;
                 this.clearInterval(game_model.timerInterval)
             }
         }, timeBetweenUpdates)

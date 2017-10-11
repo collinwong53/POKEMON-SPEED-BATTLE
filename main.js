@@ -100,7 +100,6 @@ var player_controller = null;
 function initializeApp(){
     // get_youtube_data().then(winner,failed_video);
     console.log('im here');
-    game_model = new Game_model()
     get_card_api_data = new Grab_data();
     get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
     game_model = new Game_model();

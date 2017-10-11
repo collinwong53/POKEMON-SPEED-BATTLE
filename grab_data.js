@@ -96,6 +96,6 @@ function Grab_data(){
                 return 50;
             }
         }
-    }
+    }//end pick attack
 }
 
