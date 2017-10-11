@@ -57,6 +57,34 @@ function Grab_data(){
             }
         });
     }
+    this.random_number_gen = function(end_num){
+        var number = Math.floor(Math.random()*end_num+1)
+        return number;
+    }
+    this.make_pokemon = function(){
+        var random_pick = this.random_number_gen(1000);
+        var pokeData = {};
+        var pokemon_card = available_cards[random_pick];
+        pokeData.name = pokemon_card.name;
+        pokeData.hp = pokemon_card.hp || 50;
+        pokeData.image = pokemon_card.imageUrl;
+        pokeData.type = pokemon_card.types;
+        pokeData.attack = this.pick_attack(pokemon_card.attacks);
+        return  pokeData;
+    }
+    this.pick_attack = function(card_attack){
+        if(card_attack===undefined){
+            return 50;
+        }
+        for(var i = 0; i<card_attack.length; i++){
+            if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
+                return card_attack[i].damage;
+            }
+            else{
+                return 50;
+            }
+        }
+    }//end pick attack
     // this.get_poke_data = function(name){
     //     var promise = {
     //         then:function(resolve,reject){
@@ -96,33 +124,5 @@ function Grab_data(){
     // this.get_additional_data_reject = function(data){
     //     console.log('failed');
     // }
-    this.random_number_gen = function(end_num){
-        var number = Math.floor(Math.random()*end_num+1)
-        return number;
-    }
-    this.make_pokemon = function(){
-        var random_pick = this.random_number_gen(1000);
-        var pokeData = {};
-        var pokemon_card = available_cards[random_pick];
-        pokeData.name = pokemon_card.name;
-        pokeData.hp = pokemon_card.hp || 50;
-        pokeData.image = pokemon_card.imageUrl;
-        pokeData.type = pokemon_card.types;
-        pokeData.attack = this.pick_attack(pokemon_card.attacks);
-        return  pokeData;
-    }
-    this.pick_attack = function(card_attack){
-        if(card_attack===undefined){
-            return 50;
-        }
-        for(var i = 0; i<card_attack.length; i++){
-            if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
-                return card_attack[i].damage;
-            }
-            else{
-                return 50;
-            }
-        }
-    }//end pick attack
 }
 
