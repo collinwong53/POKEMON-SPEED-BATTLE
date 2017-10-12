@@ -46,6 +46,7 @@ function Game_controller(){
             game_model.players[0].completedMoves = 0;
             game_model.players[1].completedMoves = 0;
         }
+        handle_audio.sound_object['countdown'].currentTime = 0;
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
 
