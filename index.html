@@ -19,7 +19,8 @@
 </head>
 <body>
 <div id="game_container">
-    <div id="countDown">
+    <div id="countDown">this.resetCompletedMoves(player_model);
+        this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
     </div>
     <div class="player_box container" id="player_0">
     </div>
@@ -53,7 +54,7 @@
 
                 </div>
             </div>
-            <div class="hpDetails">
+            <div class="hpDetails" id="hp_0">
                 0 / 0
             </div>
         </div>
@@ -64,7 +65,7 @@
 
                 </div>
             </div>
-            <div class="powerDetails">
+            <div class="powerDetails" id="power_0">
                 0 / 0
             </div>
         </div>
@@ -77,7 +78,7 @@
 
                     </div>
                 </div>
-            <div class="hpDetails">
+            <div class="hpDetails" id="hp_1">
                 0 / 0
 
             </div>
@@ -89,7 +90,7 @@
 
                     </div>
                 </div>
-            <div class="powerDetails">
+            <div class="powerDetails" id="power_1">
                 0 / 0
 
             </div>

@@ -1,7 +1,5 @@
 function Grab_data(){
     var self = this;
-    // this.poke_stats = {};
-    // this.pokemon_card = null;
     this.make_pokemon_object = function(data){
         available_cards = data.cards;
     }
