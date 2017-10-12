@@ -44,6 +44,11 @@ function Game_controller(){
         if(startOfGame) {
             player_controller.getPokemon(game_model.players[0]);
             player_controller.getPokemon(game_model.players[1]);
+            $(".player_stats").html("");
+            game_model.players[0].completedMoves = 0;
+            game_model.players[1].completedMoves = 0;
+            game_model.players[0].completedMovesGoal = 0;
+            game_model.players[1].completedMovesGoal = 0;
         }
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
@@ -54,6 +59,7 @@ function Game_controller(){
             console.log(game_model.timerValue);
             view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
+                view.updateBars();
                 game_controller.startRound(startOfGame);
                 this.clearInterval(game_model.timerInterval);
                 view.updateBarCounter()

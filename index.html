@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Pokemon Revolution</title>
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -18,8 +18,7 @@
 </head>
 <body>
 <div id="game_container">
-    <div id="countDown">this.resetCompletedMoves(player_model);
-        this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
+    <div id="countDown">
     </div>
     <div class="player_box container" id="player_0">
     </div>
@@ -111,6 +110,22 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <h1>Instructions</h1>
+            <br>
+            <ul>
+                <li>Player one uses WASD</li>
+                <li>Player two uses arrow keys</li>
+                <li>Follow given moves to build up your power bar</li>
+                <li>Fill up your power bar to attack your opponent</li>
+                <li>Strong Pokemon require more moves to attack</li>
+                <li>Bring your opponent's HP to zero win!</li>
+            </ul>
         </div>
     </div>
 </div>
