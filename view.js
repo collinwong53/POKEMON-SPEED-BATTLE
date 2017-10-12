@@ -31,8 +31,7 @@
 function displayWinVideo(winnerPlayerModel){
 
     this.displayVideo = function () {
-        console.log(winnerPlayerModel.index);
-        $(".modal-title").text("Winner Player " + parseInt(winnerPlayerModel.index +1)); // The text will be the name of the pokemon
+        $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index +1) + " Wins!"); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
     };
@@ -44,12 +43,10 @@ function displayWinVideo(winnerPlayerModel){
 //     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
 //     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 //
-//     console.log('it worked!', data);
 // };
 //
 // function no_video (message) {
 //     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-//     console.log(message);
 // };
 
 function get_youtube_data (pokemon_name) {
@@ -86,13 +83,10 @@ function winner_video (data) {
     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 
     displayWinVideo(winnerPlayerModel);
-
-    console.log('it worked!', data);
 };
 
 function failed_video (message) {
     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-    console.log(message);
 };
 
 
@@ -102,13 +96,10 @@ function winner_video (data) {
     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 
     displayWinVideo(winnerPlayerModel);
-
-    console.log('it worked!', data);
 };
 
 function failed_video (message) {
     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-    console.log(message);
 };
 
 function View(){
@@ -122,11 +113,9 @@ function View(){
         var player_0_card = $('<div>').addClass('card').append(player_0_front,back_image1);
         var player_1_card = $('<div>').addClass('card').append(player_1_front,back_image2);
         $("#player_0").html(player_0_card);
-        console.log(player0BackgroundImage);
         $("#player_1").html(player_1_card);
     };
     this.displayArrow = function(keyInput, playerModel){
-        console.log("DISPLAY ARROW, playerModel is", playerModel);
         setTimeout(function(){
             var divID = "#player_" + playerModel.index + "_key_display";
             var image = null;
@@ -153,7 +142,6 @@ function View(){
         }, 150)
     };
     this.hideArrowForMoment = function(player_model){
-        console.log("hide arrow")
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("background-image", "none");
     };
@@ -198,7 +186,6 @@ function View(){
 
 
     this.displayPlayerName = function(player_model) {
-        debugger;
         var playerNumber = player_model.index + 1;
         var pokemonName = player_model.pokemon.name;
         if(player_model.index === 0){
@@ -207,7 +194,6 @@ function View(){
         else{
             $("#player_1_name").text("Player " + playerNumber + ": " + pokemonName);
         }
-
     };
 
     this.backgroundImage = function() {
@@ -220,7 +206,6 @@ function View(){
         ];
         this.addImageToBackground = function(){
             var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
-            console.log(randomIndex);
             return this.backgroundImageArray[randomIndex]
         };
         $('body').css('background-image', 'url(' + this.addImageToBackground() +')');
@@ -244,9 +229,6 @@ function View(){
         ];
 
         this.randomIndex = Math.floor(Math.random()* this.playerIconArray.length);
-
-        console.log("random", this.randomIndex);
-
         this.removeImageFromArray = function() {
             this.playerIconArray.splice(this.randomIndex,1);
         };
