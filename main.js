@@ -1,4 +1,4 @@
-//****************************************Model****************************************//
+
 
 /***************************************************************************************************
  * grab pokemon api - gets the information from the pokemon api
@@ -28,16 +28,6 @@
  * @calls {undefined} none
  */
 
-/***************************************************************************************************
- * attack with hp - attacks with hp
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-
-
-//****************************************Controller****************************************//
 
 /***************************************************************************************************
  * initialize - starts loading everything needed (tells model to load apis)
@@ -47,21 +37,6 @@
  */
 
 
-
-
-
-// var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
-// console.log(card_list);
-/***************************************************************************************************
- * start game - starts function in model to make text appear for player (called by start button)
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-
-
-//****************************************View****************************************//
 
 /***************************************************************************************************
  * card animation - card slides in and flips after start

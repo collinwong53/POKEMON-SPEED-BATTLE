@@ -257,11 +257,11 @@ body {
 }
 
 #pokeBall{
-    width: 230px;
-    height: 230px;
+    width: 240px;
+    height: 240px;
     position: absolute;
     left: 50%;
-    bottom: 55%;
+    bottom: 58%;
     z-index: 500;
     transform: translateX(-50%);
     background-image: url(images/pokeball.png);
