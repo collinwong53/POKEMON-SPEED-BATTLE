@@ -120,6 +120,7 @@ function View(){
         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
     };
     this.displayArrow = function(keyInput, playerModel){
+        console.log("DISPLAY ARROW, playerModel is", playerModel);
         setTimeout(function(){
             var divID = "#player_" + playerModel.index + "_key_display";
             var image = null;
@@ -146,6 +147,7 @@ function View(){
         }, 150)
     };
     this.hideArrowForMoment = function(player_model){
+        console.log("hide arrow")
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("background-image", "none");
     };
@@ -172,20 +174,15 @@ function View(){
         }, 500)
     };
     this.updateBars = function(){
-        var player0HPpercentage = game_model.players[0].pokemon.hp/game_model.players[0].hp;
-        var player1HPpercentage = game_model.players[1].pokemon.hp/game_model.players[1].hp;
-        var player0Powerpercentage = game_model.players[0].pokemon.attack/game_model.players[0].attack;
-        var player1Powerpercentage = game_model.players[1].pokemon.attack/game_model.players[1].attack;
+        var player0HPpercentage = game_model.players[0].hp/game_model.players[0].pokemon.hp;
+        var player1HPpercentage = game_model.players[1].hp/game_model.players[1].pokemon.hp;
+        var player0Powerpercentage = game_model.players[0].completedMoves/game_model.players[0].completedMovesGoal;
+        var player1Powerpercentage = game_model.players[1].completedMoves/game_model.players[1].completedMovesGoal;
 
-        console.log("player0HPpercentage",player0HPpercentage);
-        console.log("player1HPpercentage",player1HPpercentage);
-        console.log("player1HPpercentage",player0Powerpercentage);
-        console.log("player1HPpercentage",player1Powerpercentage);
-
-        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"))
-        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"))
-        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"))
-        $("player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
+        $("#player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"));
+        $("#player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"));
+        $("#player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
+        $("#player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     }
 }
 

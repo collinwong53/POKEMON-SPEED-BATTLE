@@ -30,56 +30,6 @@ function Grab_data(){
         })//end call
         return promise;
     }//get get data
-    this.resolve_wiki = function(data,player){
-        var markup = data.parse.text["*"];
-        var i = $('<div></div>').html(markup);
-        // i[0].children[0].children[1].innerText;
-        // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
-        // i.find('sup').remove();
-        // i.find('.mw-ext-cite-error').remove();
-        // $(player).html($(i).find('p'));
-        $(player).html(i[0].children[0].children[1].innerText);
-    }
-    this.reject_wiki = function(data){
-        console.log('error');
-    }
-    this.get_wiki = function(name,player){
-        // var promise ={
-        //     then:function(resolve,reject){
-        //         this.resolve = resolve;
-        //         this.reject = reject;
-        //     }
-        // }
-        $.ajax({
-            url: "https://en.wikipedia.org/w/api.php",
-            data: {
-                format: "json",
-                action: "parse",
-                page: name,
-                prop:"text",
-                section:0,
-                origin:'*'
-            },
-            dataType: 'jsonp',
-            success: function (data) {
-                var markup = data.parse.text["*"];
-                var i = $('<div></div>').html(markup);
-                // i[0].children[0].children[1].innerText;
-                // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
-                // i.find('sup').remove();
-                // i.find('.mw-ext-cite-error').remove();
-                // $(player).html($(i).find('p'));
-                $(player).html(i[0].children[0].children[1].innerText);
-                // console.log(data)
-                // promise.resolve(data,player);
-            },
-            error: function(data){
-                // promise.reject(data)
-                console.log('error')
-            }
-        });
-        // return promise;
-    }
     this.random_number_gen = function(end_num){
         var number = Math.floor(Math.random()*end_num+1)
         return number;
@@ -113,45 +63,6 @@ function Grab_data(){
             }
         }
     }//end pick attack
-    // this.get_poke_data = function(name){
-    //     var promise = {
-    //         then:function(resolve,reject){
-    //             this.resolve = resolve;
-    //             this.reject = reject;
-    //         }
-    //     }
-    //     $.ajax({
-    //         dataType:'json',
-    //         //url:'http://pokeapi.co/api/v2/pokemon/'+name,
-    //         url: 'http://danielpaschal.com/pokeyproxy.php?name='+name,
-    //         method: 'get',
-    //         success:function(data){
-    //             if(data !== undefined){
-    //                 promise.resolve(data);
-    //             }
-    //         },
-    //         error:function(data){
-    //             promise.reject(data);
-    //         }
-    //     })//end call
-    //     return promise;
-    // }//get get data
-    // this.get_additional_data_resolve = function(data){
-    //     additional_pokemon_info = data;
-    //     // self.poke_stats.name = self.pokemon_card.name;
-    //     // self.poke_stats.hp = self.pokemon_card.hp;
-    //     // self.poke_stats.image = self.pokemon_card.imageUrl;
-    //     // self.poke_stats.type = self.pokemon_card.types;
-    //     // self.poke_stats.attack = self.pick_attack(this.pokemon_card.attacks);
-    //     // self.poke_stats.weight = additional_pokemon_info.weight;
-    //     // self.poke_stats.height = additional_pokemon_info.height;
-    //     // self.poke_stats.front_image = additional_pokemon_info.sprites.front_default;
-    //     // self.poke_stats.back_image = additional_pokemon_info.sprites.back_default;
-    //     // return self.poke_stats;
-    // }
-    // this.get_additional_data_reject = function(data){
-    //     console.log('failed');
-    // }
     this.random_number_gen = function(end_num){
         var number = Math.floor(Math.random()*end_num+1)
         return number;
@@ -184,15 +95,6 @@ function Grab_data(){
         }
     }//end pick attack
     this.resolve_pokeDB = function(data,player){
-        // var page = new DOMParser().parseFromString(data,'text/html');
-        // console.log('test text: ',page);
-        // var pokemonObj = {name: pokemon};
-        // var pokedataRows = $(page).find('.vitals-table tr');
-        // pokedataRows.each(function(){
-        //     var header = $(this).find('th').text();
-        //     var data = $(this).find('td').text();
-        //     pokemonObj[header] = data;
-        // });
         $(player).append('<ul>');
         for(var item in data){
             var thing_to_add = $('<li>').append(item + " : " + data[item]);
@@ -231,4 +133,46 @@ function Grab_data(){
         return promise;
     }
 }
-
+// this.resolve_wiki = function(data,player){
+//     var markup = data.parse.text["*"];
+//     var i = $('<div></div>').html(markup);
+//     // i[0].children[0].children[1].innerText;
+//     // i.find('a').each(function(){ $(this).replaceWith($(this).html()); });
+//     // i.find('sup').remove();
+//     // i.find('.mw-ext-cite-error').remove();
+//     // $(player).html($(i).find('p'));
+//     $(player).html(i[0].children[0].children[1].innerText);
+// }
+// this.reject_wiki = function(data){
+//     console.log('error');
+// }
+// this.get_wiki = function(name,player){
+//     // var promise ={
+//     //     then:function(resolve,reject){
+//     //         this.resolve = resolve;
+//     //         this.reject = reject;
+//     //     }
+//     // }
+//     $.ajax({
+//         url: "https://en.wikipedia.org/w/api.php",
+//         data: {
+//             format: "json",
+//             action: "parse",
+//             page: name,
+//             prop:"text",
+//             section:0,
+//             origin:'*'
+//         },
+//         dataType: 'jsonp',
+//         success: function (data) {
+//             var markup = data.parse.text["*"];
+//             var i = $('<div></div>').html(markup);
+//             $(player).html(i[0].children[0].children[1].innerText);
+//         },
+//         error: function(data){
+//             // promise.reject(data)
+//             console.log('error')
+//         }
+//     });
+//     // return promise;
+// }
