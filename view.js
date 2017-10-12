@@ -205,52 +205,59 @@ function View(){
     };
 
     this.backgroundImage = function() {
-        var backgroundImageArray = [
+        this.backgroundImageArray = [
             'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
             'images/Dahara_City.png',
             // 'images/Gaur Plains.png',
             'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
             'images/Prof_Juniper_Lab_anime-696x392.jpg'
         ];
-        var addImageToBackground = function(){
-            var randomIndex = Math.floor(Math.random()*backgroundImageArray.length);
+        this.addImageToBackground = function(){
+            var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
             console.log(randomIndex);
-            return backgroundImageArray[randomIndex]
+            return this.backgroundImageArray[randomIndex]
         };
-        $('body').css('background-image', 'url(' + addImageToBackground() +')');
+        $('body').css('background-image', 'url(' + this.addImageToBackground() +')');
     };
 
+    /***************************************************************************************************
+     * playerIcon - adds and displays player icons
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
+
+    this.displayPlayerIcon = function() {
+        this.playerIconArray = [
+            "images/trainer_1_transparent.png",
+            "images/trainer_2_transparent.png",
+            "images/trainer_3_transparent.png",
+            "images/trainer_4_transparent.png",
+            "images/trainer_5_transparent.png",
+            "images/trainer_6_transparent.png"
+        ];
+
+        this.randomIndex = Math.floor(Math.random()* this.playerIconArray.length);
+
+        console.log("random", this.randomIndex);
+
+        this.removeImageFromArray = function() {
+            this.playerIconArray.splice(this.randomIndex,1);
+        };
+
+        $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+
+        this.removeImageFromArray();
+
+        if(this.randomIndex === 5){
+            --this.randomIndex;
+            $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+        }
+        else{
+            $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+        }
+    }
 }
 
 
 
-/***************************************************************************************************
- * playerIcon - adds and displays player icons
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-// function displayPlayerIcon() {
-//     this.playerIconArray = [
-//         "images/trainer_1.jpg",
-//         "images/trainer_2.jpg",
-//         "images/trainer_3.jpg",
-//         "images/trainer_4.jpg",
-//         "images/trainer_5.jpg",
-//         "images/trainer_6.jpg"
-//     ];
-//
-//     this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
-//
-//     this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
-//
-//     $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-//
-//     this.removeImageFromArray();
-//
-//     $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-//
-//     this.removeImageFromArray()
-//
-// }

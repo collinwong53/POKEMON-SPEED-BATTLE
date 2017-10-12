@@ -105,7 +105,7 @@ function initializeApp(){
     game_controller.startGame();
     view = new View();
     view.backgroundImage();
-    // displayPlayerIcon();
+    view.displayPlayerIcon();
     handle_audio = new audio_handler;
     $("#start_button").on('click', function(){
         if(available_cards === null){
