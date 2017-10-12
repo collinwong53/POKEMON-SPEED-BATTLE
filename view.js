@@ -96,43 +96,29 @@ function failed_video (message) {
 };
 
 
-    function winner_video (data) {
-        video_list = data;
-        var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-        winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+function winner_video (data) {
+    video_list = data;
+    var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
+    winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 
-        displayWinVideo(winnerPlayerModel);
+    displayWinVideo(winnerPlayerModel);
 
-        console.log('it worked!', data);
-    };
+    console.log('it worked!', data);
+};
 
-    function failed_video (message) {
-        $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-        console.log(message);
-    };
+function failed_video (message) {
+    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+    console.log(message);
+};
 
 function View(){
     this.displayCards = function(){
-        $("#player_0").remove();
-        var player0cardback = $("<div>").addClass("player_box container animated fadeInLeft").css("background-image", "url(images/cardback.png)").attr("id", "player_0");
-        $(player0cardback).insertAfter("#counter");
         var player0BackgroundImage = game_model.players[0].pokemon.image;
-        var player_0_cardimg = $("<img>").addClass("animated flip").attr("src", player0BackgroundImage);
-        this.cardflip0 = function() {
-            setTimeout(function(){ $("#player_0").append(player_0_cardimg); }, 2000);
-        };
-
-        $("#player_1").remove();
-        var player1cardback = $("<div>").addClass("player_box container animated fadeInRight").css("background-image", "url(images/cardback.png)").attr("id", "player_1");
-        $(player1cardback).insertAfter("#player_0_name");
+        $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
         var player1BackgroundImage = game_model.players[1].pokemon.image;
-
-        var player_1_cardimg = $("<img>").addClass("animated flip").attr("src", player1BackgroundImage);
-        this.cardflip1 = function() {
-            setTimeout(function(){ $("#player_1").append(player_1_cardimg); }, 2000);
-        };
-    }
-
+        console.log(player0BackgroundImage);
+        $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
+    };
     this.displayArrow = function(keyInput, playerModel){
         setTimeout(function(){
             var divID = "#player_" + playerModel.index + "_key_display";
@@ -196,21 +182,23 @@ function View(){
         console.log("player1HPpercentage",player0Powerpercentage);
         console.log("player1HPpercentage",player1Powerpercentage);
 
-        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"));
-        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"));
-        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
+        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"))
+        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"))
+        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"))
         $("player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     };
 
     this.displayPlayerName = function(player_model) {
+        debugger;
         var playerNumber = player_model.index + 1;
         var pokemonName = player_model.pokemon.name;
         if(player_model.index === 0){
             $("#player_0_name").text("Player " + playerNumber + ": " + pokemonName);
         }
-        else {
+        else{
             $("#player_1_name").text("Player " + playerNumber + ": " + pokemonName);
         }
+
     };
     this.backgroundImage = function() {
         var backgroundImageArray = [
@@ -261,5 +249,3 @@ function View(){
 //     this.removeImageFromArray()
 //
 // }
-
-
