@@ -9,6 +9,18 @@ function Player_controller(){
     };
     this.takeDamage = function(player_model, damageAmount) {
         player_model.hp -= damageAmount;
+       if(player_model.index===0){
+           $('#player_0').addClass('got_hit');
+           setTimeout(function(){
+               $('#player_0').removeClass('got_hit');
+           },2000)
+       }
+       else{
+           $('#player_1').addClass('got_hit')
+           setTimeout(function(){
+               $('#player_1').removeClass('got_hit');
+           },2000)
+       }
     };
     this.completeMove = function(player_model){
         view.arrowBoxMadeMove(player_model);
