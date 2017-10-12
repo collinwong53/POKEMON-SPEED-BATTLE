@@ -22,7 +22,8 @@ function Player_controller(){
                $('#player_1').removeClass('got_hit');
            },2000)
        }
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.completeMove = function(player_model){
         view.arrowBoxMadeMove(player_model);
@@ -31,7 +32,8 @@ function Player_controller(){
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
         this.checkIfWinRound(player_model);
         this.getRequiredMove(player_model);
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.missMove = function(player_model){
         view.arrowBoxMissMove(player_model);
@@ -42,14 +44,15 @@ function Player_controller(){
         }
         console.log(player_model.index + " MISSED!  Now has " + player_model.completedMoves);
         this.getRequiredMove(player_model);
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.getRequiredMove = function(player_model){
         var availableKeys = player_model.availableKeys;
         var randomIndex = Math.floor(Math.random()*availableKeys.length);
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
-        view.displayArrow(player_model.requiredMove, player_model)
+        view.displayArrow(player_model.requiredMove, player_model);
 
     };
     this.resetCompletedMoves = function(player_model){

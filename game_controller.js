@@ -52,7 +52,8 @@ function Game_controller(){
             view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
                 game_controller.startRound(startOfGame);
-                this.clearInterval(game_model.timerInterval)
+                this.clearInterval(game_model.timerInterval);
+                view.updateBarCounter()
                 $(".player_key_display").show();
             }
         }, timeBetweenUpdates);
