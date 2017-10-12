@@ -1,3 +1,16 @@
+/***************************************************************************************************
+ * grab pokemon api - gets the information from the pokemon api
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+/***************************************************************************************************
+ * grab card api - gets the information from the card api
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
 function Grab_data(){
     var self = this;
     this.make_pokemon_object = function(data){
@@ -83,7 +96,7 @@ function Grab_data(){
         if(card_attack===undefined){
             return false;
         }
-        for(var i = 0; i<card_attack.length; i++){
+        for(var i = card_attack.length-1; i>=0; i--){
             if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
                 return card_attack[i].damage
             }
