@@ -173,12 +173,17 @@ function View(){
             $("#countDown").text(number).hide();
         }, 500)
     };
+    this.updateBarCounter = function(){
+        $('#hp_0').text(game_model.players[0].hp + "/" + game_model.players[0].pokemon.hp);
+        $('#hp_1').text(game_model.players[1].hp + "/" + game_model.players[1].pokemon.hp);
+        $('#power_0').text(game_model.players[0].completedMoves + "/" + game_model.players[0].completedMovesGoal);
+        $('#power_1').text(game_model.players[1].completedMoves + "/" + game_model.players[1].completedMovesGoal);
+    }
     this.updateBars = function(){
         var player0HPpercentage = game_model.players[0].hp/game_model.players[0].pokemon.hp;
         var player1HPpercentage = game_model.players[1].hp/game_model.players[1].pokemon.hp;
         var player0Powerpercentage = game_model.players[0].completedMoves/game_model.players[0].completedMovesGoal;
         var player1Powerpercentage = game_model.players[1].completedMoves/game_model.players[1].completedMovesGoal;
-
         $("#player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"));
         $("#player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"));
         $("#player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));

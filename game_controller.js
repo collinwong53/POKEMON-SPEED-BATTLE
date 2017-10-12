@@ -25,6 +25,7 @@ function Game_controller(){
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
         }
+        handle_audio.sound_object['victory'].pause();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         view.displayCards();
@@ -51,16 +52,13 @@ function Game_controller(){
             view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
                 game_controller.startRound(startOfGame);
-                this.clearInterval(game_model.timerInterval)
+                this.clearInterval(game_model.timerInterval);
+                view.updateBarCounter()
                 $(".player_key_display").show();
             }
         }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue/1000);
     };
-    // this.stopTimer = function(){
-    //     clearInterval(game_model.timerInterval)
-    // };
-
     this.handleKeyPress = function(keyPress){
         if(game_model.roundStarted) {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) {    //player 1 keys
