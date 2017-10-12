@@ -105,23 +105,25 @@ body {
 }
 
 .hpAndPowerBar{
-    width:79%
+    width:65%
 }
 
-
-.hp{
+.hp, .power{
     height: 49%;
     width: 100%;
     display:flex;
     justify-content: center;
     justify-items: center;
 }
-.power{
-    height: 49%;
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    justify-items: center;
+
+.hpDetails, .powerDetails{
+    width:20%;
+    margin-top: 15px;
+    margin-left:15px;
+    width:15%;
+    color:white;
+    font-size: 20px;
+    font-family: manaspc, Arial;
 }
 
 
@@ -254,8 +256,8 @@ body {
 }
 
 #player_0_power_bar{
-    width: 100%;
-    background-color: red;
+   width: 0%;
+    background-color: #fcc31d;
 }
 
 #player_1_health_bar {
@@ -264,11 +266,36 @@ body {
 }
 
 #player_1_power_bar {
-    width: 100%;
-    background-color: red;
+    width: 0%;
+    background-color: #fcc31d;
 }
 
 
 .player_stats ul{
     list-style: none;
+}
+
+.got_hit {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(-50%, -50%, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-48%, -50%, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(-52%, -50%, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-46%, -50%, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(-54%, -50%, 0);
+    }
 }

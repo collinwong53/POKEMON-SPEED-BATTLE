@@ -2,7 +2,7 @@ function Player_model(){
     this.index = null;
     this.wins = 0;
     this.pokemon = {};
-    this.pokemonName = "";
+    // this.pokemonName = "";
     this.hp = 0;
     this.attack = 0;
     this.availableKeys = [];

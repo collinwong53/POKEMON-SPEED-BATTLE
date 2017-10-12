@@ -14,7 +14,6 @@
     <script src="player_model.js"></script>
     <script src="player_controller.js"></script>
     <script src="view.js"></script>
-    <script src="youtube_api.js"></script>
     <script src="sound.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet">
 </head>
@@ -48,37 +47,51 @@
     </div>
     <div class="player_hpAndPower container" id="player_0_hpAndPower">
         <div class="hp" id="player_0_hp">
-            <div class="hpAndPowerTextDiv">Health</div>
+            <div class="hpAndPowerTextDiv">HP</div>
             <div class="hpAndPowerBar progress">
-                <div class="progress-bar active" id="player_0_health_bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
-                    100%
+                <div class="progress-bar active" id="player_0_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
+
                 </div>
+            </div>
+            <div class="hpDetails">
+                0 / 0
             </div>
         </div>
         <div class="power" id="player_0_power">
             <div class="hpAndPowerTextDiv">Power</div>
             <div class="hpAndPowerBar progress">
-                <div class="progress-bar active" id="player_0_power_bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
-                    100%
+                <div class="progress-bar active" id="player_0_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
+
                 </div>
+            </div>
+            <div class="powerDetails">
+                0 / 0
             </div>
         </div>
     </div>
     <div class="player_hpAndPower container" id="player_1_hpAndPower">
         <div class="hp" id="player_1_hp">
-            <div class="hpAndPowerTextDiv">Health</div>
-            <div class="hpAndPowerBar progress">
-                <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
-                    100%
+            <div class="hpAndPowerTextDiv">HP</div>
+                <div class="hpAndPowerBar progress">
+                    <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
+
+                    </div>
                 </div>
+            <div class="hpDetails">
+                0 / 0
+
             </div>
         </div>
         <div class="power" id="player_1_power">
             <div class="hpAndPowerTextDiv">Power</div>
-            <div class="hpAndPowerBar progress">
-                <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" >
-                    100%
+                <div class="hpAndPowerBar progress">
+                    <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
+
+                    </div>
                 </div>
+            <div class="powerDetails">
+                0 / 0
+
             </div>
         </div>
     </div>
