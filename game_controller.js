@@ -36,6 +36,7 @@ function Game_controller(){
     // };
 
     this.startTimer = function(time, startOfGame){       //Countdown that starts the round - triggered by button press
+        view.updateBars();
         if(startOfGame) {
             player_controller.getPokemon(game_model.players[0]);
             player_controller.getPokemon(game_model.players[1]);
@@ -51,6 +52,7 @@ function Game_controller(){
             if(game_model.timerValue <= 0) {
                 game_controller.startRound(startOfGame);
                 this.clearInterval(game_model.timerInterval)
+                $(".player_key_display").show();
             }
         }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue/1000);

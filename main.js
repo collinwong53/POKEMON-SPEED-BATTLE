@@ -114,7 +114,8 @@ function initializeApp(){
         game_controller.startTimer(3000, true);
         $("#start_button").hide();
     });
-    $("#countDown").css("display", "none")
+    $("#countDown").css("display", "none");
+    $(".player_key_display").hide();
 
 }
 
