@@ -96,20 +96,20 @@ function failed_video (message) {
 };
 
 
-    function winner_video (data) {
-        video_list = data;
-        var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-        winner_video_link = "https://www.youtube.com/embed/" + random_vid;
+function winner_video (data) {
+    video_list = data;
+    var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
+    winner_video_link = "https://www.youtube.com/embed/" + random_vid;
 
-        displayWinVideo(winnerPlayerModel);
+    displayWinVideo(winnerPlayerModel);
 
-        console.log('it worked!', data);
-    };
+    console.log('it worked!', data);
+};
 
-    function failed_video (message) {
-        $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-        console.log(message);
-    };
+function failed_video (message) {
+    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+    console.log(message);
+};
 
 function View(){
     this.displayCards = function(){
@@ -195,59 +195,75 @@ function View(){
         $("#player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
         $("#player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     }
-}
 
-/***************************************************************************************************
- * backgroundImage - adds a different background image
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
 
-function backgroundImage() {
-    this.backgroundImageArray = [
-        'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
-        'images/Dahara_City.png',
-        // 'images/Gaur Plains.png',
-        'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
-        'images/Prof_Juniper_Lab_anime-696x392.jpg'
-    ];
-    this.imageToAddToBackground = function(){
-        var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
-        console.log(randomIndex);
-        return this.backgroundImageArray[randomIndex]
+    this.displayPlayerName = function(player_model) {
+        debugger;
+        var playerNumber = player_model.index + 1;
+        var pokemonName = player_model.pokemon.name;
+        if(player_model.index === 0){
+            $("#player_0_name").text("Player " + playerNumber + ": " + pokemonName);
+        }
+        else{
+            $("#player_1_name").text("Player " + playerNumber + ": " + pokemonName);
+        }
+
     };
-    $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
+
+    this.backgroundImage = function() {
+        this.backgroundImageArray = [
+            'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
+            'images/Dahara_City.png',
+            // 'images/Gaur Plains.png',
+            'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
+            'images/Prof_Juniper_Lab_anime-696x392.jpg'
+        ];
+        this.addImageToBackground = function(){
+            var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
+            console.log(randomIndex);
+            return this.backgroundImageArray[randomIndex]
+        };
+        $('body').css('background-image', 'url(' + this.addImageToBackground() +')');
+    };
+
+    /***************************************************************************************************
+     * playerIcon - adds and displays player icons
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
+
+    this.displayPlayerIcon = function() {
+        this.playerIconArray = [
+            "images/trainer_1_transparent.png",
+            "images/trainer_2_transparent.png",
+            "images/trainer_3_transparent.png",
+            "images/trainer_4_transparent.png",
+            "images/trainer_5_transparent.png",
+            "images/trainer_6_transparent.png"
+        ];
+
+        this.randomIndex = Math.floor(Math.random()* this.playerIconArray.length);
+
+        console.log("random", this.randomIndex);
+
+        this.removeImageFromArray = function() {
+            this.playerIconArray.splice(this.randomIndex,1);
+        };
+
+        $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+
+        this.removeImageFromArray();
+
+        if(this.randomIndex === 5){
+            --this.randomIndex;
+            $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+        }
+        else{
+            $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
+        }
+    }
 }
 
 
-/***************************************************************************************************
- * playerIcon - adds and displays player icons
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
 
-// function displayPlayerIcon() {
-//     this.playerIconArray = [
-//         "images/trainer_1.jpg",
-//         "images/trainer_2.jpg",
-//         "images/trainer_3.jpg",
-//         "images/trainer_4.jpg",
-//         "images/trainer_5.jpg",
-//         "images/trainer_6.jpg"
-//     ];
-//
-//     this.randomIndex = Math.floor(Math.random()*this.playerIconArray.length);
-//
-//     this.removeImageFromArray = this.playerIconArray.splice(this.randomIndex,1);
-//
-//     $("#player_0_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-//
-//     this.removeImageFromArray();
-//
-//     $("#player_1_icon_image").attr("src", this.playerIconArray[this.randomIndex]);
-//
-//     this.removeImageFromArray()
-//
-// }
