@@ -96,7 +96,6 @@ var game_controller = null;
 var player_controller = null;
 var view = null;
 function initializeApp(){
-    console.log('im here');
     get_card_api_data = new Grab_data();
     get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
     game_model = new Game_model();
@@ -117,6 +116,5 @@ function initializeApp(){
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
     $("#instructions").modal('show');
-
 }
 
