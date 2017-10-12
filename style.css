@@ -61,7 +61,9 @@ body {
     background-size: contain;
     border-radius: 25px;
 }
-
+.player_box{
+    padding:0px;
+}
 #player_0_key_display, #player_0_hpAndPower {
     left: 30%
 }
@@ -115,7 +117,7 @@ body {
     margin-left:15px;
     width:15%;
     color:white;
-    font-size: 20px;
+    font-size: 18px;
     font-family: manaspc, Arial;
 }
 
@@ -237,6 +239,19 @@ background-color: whitesmoke;
     color: whitesmoke;
 }
 
+#instructions{
+    color:white;
+}
+
+#instructions h1{
+    text-align: center;
+}
+
+#instructions li{
+    font-size: 20px;
+    font-family: manaspc, Arial;
+}
+
 .hpAndPowerBar {
     margin-top: 3%;
 }
@@ -289,3 +304,64 @@ background-color: whitesmoke;
         transform: translate3d(-54%, -50%, 0);
     }
 }
+
+.front{
+    transform: rotateY(180deg);
+}
+.card{
+    height:100%;
+    width:100%;
+    border-radius:11px;
+    position:relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    border-radius:11px;
+    height:100%;
+    width:100%;
+    position:absolute;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.flipped{
+    transform: rotateY(180deg);
+}
+
+
+.scrollbar {
+    background-color: dimgrey;
+    float: left;
+    height: 300px;
+    margin-bottom: 25px;
+    margin-left: 22px;
+    margin-top: 40px;
+    width: 65px;
+    overflow-y: scroll;
+}
+
+.force-overflow {
+    min-height: 450px;
+}
+
+.style_scrollbar::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: dimgrey;
+}
+
+.style_scrollbar::-webkit-scrollbar
+{
+    width: 12px;
+    background-color: dimgrey;
+}
+
+.style_scrollbar::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #fcc31d;
+}
+

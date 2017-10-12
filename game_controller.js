@@ -22,12 +22,16 @@ function Game_controller(){
     };
     this.startRound = function(startOfGame){
         if(startOfGame) {
+            view.displayCards();
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
+            setTimeout(function(){
+                $('.card').addClass('flipped')
+            ,2000})
         }
+        handle_audio.sound_object['victory'].pause();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
-        view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };
@@ -40,6 +44,11 @@ function Game_controller(){
         if(startOfGame) {
             player_controller.getPokemon(game_model.players[0]);
             player_controller.getPokemon(game_model.players[1]);
+            $(".player_stats").html("");
+            game_model.players[0].completedMoves = 0;
+            game_model.players[1].completedMoves = 0;
+            game_model.players[0].completedMovesGoal = 0;
+            game_model.players[1].completedMovesGoal = 0;
         }
         handle_audio.sound_object['countdown'].play();
         game_model.timerValue = time;
@@ -50,17 +59,15 @@ function Game_controller(){
             console.log(game_model.timerValue);
             view.displayCountdownNumber(game_model.timerValue/1000);
             if(game_model.timerValue <= 0) {
+                view.updateBars();
                 game_controller.startRound(startOfGame);
-                this.clearInterval(game_model.timerInterval)
+                this.clearInterval(game_model.timerInterval);
+                view.updateBarCounter()
                 $(".player_key_display").show();
             }
         }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue/1000);
     };
-    // this.stopTimer = function(){
-    //     clearInterval(game_model.timerInterval)
-    // };
-
     this.handleKeyPress = function(keyPress){
         if(game_model.roundStarted) {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) {    //player 1 keys

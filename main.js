@@ -116,6 +116,7 @@ function initializeApp(){
     });
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
+    $("#instructions").modal('show');
 
 }
 

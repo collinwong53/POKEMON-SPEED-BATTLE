@@ -9,6 +9,7 @@ function Player_controller(){
     };
     this.takeDamage = function(player_model, damageAmount) {
         player_model.hp -= damageAmount;
+        handle_audio.sound_object['attack01'].play();
        if(player_model.index===0){
            $('#player_0').addClass('got_hit');
            setTimeout(function(){
@@ -21,7 +22,8 @@ function Player_controller(){
                $('#player_1').removeClass('got_hit');
            },2000)
        }
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.completeMove = function(player_model){
         view.arrowBoxMadeMove(player_model);
@@ -30,7 +32,8 @@ function Player_controller(){
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
         this.checkIfWinRound(player_model);
         this.getRequiredMove(player_model);
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.missMove = function(player_model){
         view.arrowBoxMissMove(player_model);
@@ -41,14 +44,15 @@ function Player_controller(){
         }
         console.log(player_model.index + " MISSED!  Now has " + player_model.completedMoves);
         this.getRequiredMove(player_model);
-        view.updateBars()
+        view.updateBars();
+        view.updateBarCounter();
     };
     this.getRequiredMove = function(player_model){
         var availableKeys = player_model.availableKeys;
         var randomIndex = Math.floor(Math.random()*availableKeys.length);
         console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
-        view.displayArrow(player_model.requiredMove, player_model)
+        view.displayArrow(player_model.requiredMove, player_model);
 
     };
     this.resetCompletedMoves = function(player_model){
@@ -62,13 +66,16 @@ function Player_controller(){
             game_model.roundStarted = false;
             console.log(player_model.index + " WINS THE ROUND!")
             var otherPlayerIndex = 1 - player_model.index;
+            this.resetCompletedMoves(player_model);
+            // this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
             this.takeDamage(game_model.players[otherPlayerIndex], player_model.attack);
-            console.log("player " + otherPlayerIndex + " takes " + player_model.attack + " damage and is now at " + game_model.players[otherPlayerIndex].hp + " hp")
             // game_controller.endRound();
             if(game_model.players[0].hp > 0 && game_model.players[1].hp > 0){
                 game_controller.startTimer(3000, false);
             }
             else{
+                handle_audio.sound_object['main'].pause();
+                handle_audio.sound_object['victory'].play();
                 console.log("player " + player_model.index + " won the game!");
                 player_model.wins += 1;
                 winnerPlayerModel = player_model;
