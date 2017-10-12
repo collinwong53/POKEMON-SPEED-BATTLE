@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'manaspc';
-    src:  url('font/manaspc.ttf') format('woff2')
+    src:  url('font/Pokemon GB.ttf') format('woff2')
 }
 
 body {
@@ -29,8 +29,11 @@ body {
 .player_name {
     font-family: manaspc, Arial;
     color: whitesmoke;
-    font-size: 1.6em;
+    font-size: 1.25em;
     text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #player_0 {
@@ -41,6 +44,7 @@ body {
     left: 70%;
 }
 
+
 .player_box {
     top: 40%;
     position: absolute;
@@ -49,6 +53,22 @@ body {
     transform: translate(-50%, -50%);
     background-size: contain;
     border-radius: 25px;
+}
+
+.attackText{
+    position:absolute;
+    color:red;
+    font-size: 85px;
+    font-family: manaspc, arial;
+    z-index: 5000;
+    bottom:21%;
+}
+
+.attackText#attackText0{
+    left: 27%;
+}
+.attackText#attackText1{
+    left: 58%;
 }
 
 #player_0_name {
@@ -79,6 +99,7 @@ body {
     left: 70%
 }
 
+
 .player_key_display, .player_hpAndPower {
     top: 85%;
     position: absolute;
@@ -95,19 +116,18 @@ body {
 .player_hpAndPower{
     top:105%;
     width:35%;
-
-
 }
 .hpAndPowerTextDiv{
     margin-top: 15px;
-    width:15%;
+    margin-left: 15px;
+    width:25%;
     color:white;
     font-size: 20px;
     font-family: manaspc, Arial;
 }
 
 .hpAndPowerBar{
-    width:65%
+    width:60%
 }
 
 .hp, .power{
@@ -119,10 +139,9 @@ body {
 }
 
 .hpDetails, .powerDetails{
-    width:20%;
     margin-top: 15px;
     margin-left:15px;
-    width:15%;
+    width:25%;
     color:white;
     font-size: 18px;
     font-family: manaspc, Arial;
@@ -225,7 +244,7 @@ body {
 
 #countDown {
     display:flex;
-    color:white;
+    color:#ef4036;
     text-shadow: 10px 10px black;
     position:absolute;
     width: 100%;
@@ -234,6 +253,19 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 500;
+}
+
+#pokeBall{
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    left: 50%;
+    bottom: 58%;
+    z-index: 500;
+    transform: translateX(-50%);
+    background-image: url(images/pokeball.png);
+    background-size: 100%, 100%;
+    display:none;
 }
 
 .modal-content {
@@ -246,7 +278,9 @@ body {
     text-align: center;
     font-size: 300%;
     color: whitesmoke;
+    text-shadow: 3px 3px black;
 }
+
 
 #instructions{
     color:white;
@@ -254,6 +288,7 @@ body {
 
 #instructions h1{
     text-align: center;
+    text-shadow: 3px 3px black;
 }
 
 #instructions li{

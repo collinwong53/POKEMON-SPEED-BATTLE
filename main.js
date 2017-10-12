@@ -1,4 +1,4 @@
-//****************************************Model****************************************//
+
 /***************************************************************************************************
  * grab youtube api - gets the information from the youtube api
  * @param  {undefined} none
@@ -13,16 +13,6 @@
  * @calls {undefined} none
  */
 
-/***************************************************************************************************
- * attack with hp - attacks with hp
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-
-
-//****************************************Controller****************************************//
 
 /***************************************************************************************************
  * initialize - starts loading everything needed (tells model to load apis)
@@ -30,10 +20,6 @@
  * @returns {undefined} none
  * @calls {undefined} none
  */
-
-
-
-
 
 
 /***************************************************************************************************
@@ -44,8 +30,6 @@
  */
 
 
-
-//****************************************View****************************************//
 
 /***************************************************************************************************
  * card animation - card slides in and flips after start
@@ -80,7 +64,6 @@ var game_controller = null;
 var player_controller = null;
 var view = null;
 function initializeApp(){
-    console.log('im here');
     get_card_api_data = new Grab_data();
     get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
     game_model = new Game_model();
@@ -101,6 +84,5 @@ function initializeApp(){
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
     $("#instructions").modal('show');
-
 }
 

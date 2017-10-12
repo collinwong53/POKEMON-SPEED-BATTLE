@@ -1,8 +1,16 @@
+//Key Handler
 $(window).keydown(function(event){
     game_controller.handleKeyPress(event.key);
 });
 
+//Game Controller Constructor
 function Game_controller(){
+    /***************************************************************************************************
+     * startGame - occurs in initializeApp() on document load.  Creates players and adds them to game_model
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.startGame = function(){
         var playerOne = new Player_model();
         var playerTwo = new Player_model();
@@ -14,12 +22,62 @@ function Game_controller(){
         playerTwo.index = 1;
         game_model.players = [playerOne, playerTwo]
     };
+    /***************************************************************************************************
+     * end game - finds youtube video, changes background image, and shows start button
+     * @param  (winnerPlayerModel) - player model of the winner
+     */
     this.endGame = function(winnerPlayerModel){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
         // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
         view.backgroundImage();
         $("#start_button").show();
     };
+
+    /***************************************************************************************************
+     * startTimer - initiates countdown, and triggers the start of the round after the countdown
+     * @param  (time, startOfGame) - length of countdown, and a bool to check if this is the first round of the game
+     */
+    this.startTimer = function(time, startOfGame){       //Countdown that starts the round - triggered by button press
+        view.updateBars();
+        if(startOfGame) {
+            player_controller.getPokemon(game_model.players[0]);
+            player_controller.getPokemon(game_model.players[1]);
+            $(".player_stats").find('ul').remove();
+            game_model.players[0].completedMoves = 0;
+            game_model.players[1].completedMoves = 0;
+        }
+        handle_audio.sound_object['countdown'].play();
+        game_model.timerValue = time;
+
+        var timeBetweenUpdates = 1000;
+        game_model.timerInterval = setInterval(function(){
+            game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
+            console.log(game_model.timerValue);
+            if(game_model.timerValue/1000 !== 0){
+                view.displayCountdownNumber(game_model.timerValue/1000);
+            }
+            else{
+                $("#pokeBall").show();
+                setTimeout(function(){
+                    $("#pokeBall").hide();
+                }, 750)
+            }
+
+            if(game_model.timerValue <= 0) {
+                view.updateBars();
+                game_controller.startRound(startOfGame);
+                this.clearInterval(game_model.timerInterval);
+                view.updateBarCounter()
+                $(".player_key_display").show();
+            }
+        }, timeBetweenUpdates);
+        view.displayCountdownNumber(game_model.timerValue/1000);
+    };
+
+    /***************************************************************************************************
+     * startRound - round begins, player commands are given and received
+     * @param  (startOfGame) -  a bool to check if this is the first round of the game
+     */
     this.startRound = function(startOfGame){
         if(startOfGame) {
             view.displayCards();
@@ -38,39 +96,11 @@ function Game_controller(){
         view.displayPlayerName(game_model.players[0]);
         view.displayPlayerName(game_model.players[1])
     };
-    // this.endRound = function(){
-    //     game_model.roundStarted = false;
-    // };
 
-    this.startTimer = function(time, startOfGame){       //Countdown that starts the round - triggered by button press
-        view.updateBars();
-        if(startOfGame) {
-            player_controller.getPokemon(game_model.players[0]);
-            player_controller.getPokemon(game_model.players[1]);
-            $(".player_stats").find('ul').remove();
-            // game_model.players[0].completedMoves = 0;
-            // game_model.players[1].completedMoves = 0;
-            // game_model.players[0].completedMovesGoal = 0;
-            // game_model.players[1].completedMovesGoal = 0;
-        }
-        handle_audio.sound_object['countdown'].play();
-        game_model.timerValue = time;
-
-        var timeBetweenUpdates = 1000;
-        game_model.timerInterval = setInterval(function(){
-            game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
-            console.log(game_model.timerValue);
-            view.displayCountdownNumber(game_model.timerValue/1000);
-            if(game_model.timerValue <= 0) {
-                view.updateBars();
-                game_controller.startRound(startOfGame);
-                this.clearInterval(game_model.timerInterval);
-                view.updateBarCounter()
-                $(".player_key_display").show();
-            }
-        }, timeBetweenUpdates);
-        view.displayCountdownNumber(game_model.timerValue/1000);
-    };
+    /***************************************************************************************************
+     * handleKeyPress - deals with player input and compares it with game commands.  Triggered by key handler
+     * @param  (keyPress)
+     */
     this.handleKeyPress = function(keyPress){
         if(game_model.roundStarted) {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) {    //player 1 keys

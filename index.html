@@ -21,15 +21,13 @@
 <div id="game_container">
     <div id="countDown">
     </div>
-    <div class="player_box container" id="player_0">
-    </div>
+    <div class="player_box container" id="player_0"></div>
     <div class="player_icon" id="player_0_icon">
         <img id="player_0_icon_image" src="">
     </div>
     <div id="player_0_name" class="player_name container">
     </div>
-    <div class="player_box container" id="player_1">
-    </div>
+    <div class="player_box container" id="player_1"></div>
     <div class="player_icon" id="player_1_icon">
         <img id="player_1_icon_image" src="">
     </div>
@@ -58,7 +56,7 @@
             </div>
         </div>
         <div class="power" id="player_0_power">
-            <div class="hpAndPowerTextDiv">Power</div>
+            <div class="hpAndPowerTextDiv" id="powerLabel0">Power</div>
             <div class="hpAndPowerBar progress">
                 <div class="progress-bar active" id="player_0_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
 
@@ -82,8 +80,8 @@
 
             </div>
         </div>
-        <div class="power" id="player_1_power">
-            <div class="hpAndPowerTextDiv">Power</div>
+        <div class="power">
+            <div class="hpAndPowerTextDiv" id="powerText">Power</div>
                 <div class="hpAndPowerBar progress">
                     <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" >
 
@@ -119,18 +117,30 @@
 <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <h1>Instructions</h1>
-            <br>
-            <ul>
-                <li>Player one uses WASD</li>
-                <li>Player two uses arrow keys</li>
-                <li>Follow given moves to build up your power bar</li>
-                <li>Fill up your power bar to attack your opponent</li>
-                <li>Strong Pokemon require more moves to attack</li>
-                <li>Bring your opponent's HP to zero win!</li>
-            </ul>
+            <div class="modal-header">
+                <h1>Instructions</h1>
+            </div>
+            <div class="modal-body">
+                <br>
+                <ul>
+                    <li>Player one uses WASD</li>
+                    <li>Player two uses arrow keys</li>
+                    <li>Follow given moves to build up your power bar</li>
+                    <li>Fill up your power bar to attack your opponent</li>
+                    <li>Strong Pokemon require more moves to attack</li>
+                    <li>Bring your opponent's HP to zero to win!</li>
+                </ul>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
         </div>
+
     </div>
 </div>
+<p class ="attackText" id="attackText0"></p>
+<p class ="attackText" id="attackText1"></p>
+<div id="pokeBall"></div>
 </body>
 </html>
