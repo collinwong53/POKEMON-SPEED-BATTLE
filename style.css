@@ -5,7 +5,7 @@
 
 @font-face {
     font-family: 'manaspc';
-    src:  url('font/manaspc.ttf') format('woff2')
+    src:  url('font/Pokemon GB.ttf') format('woff2')
 }
 
 body {
@@ -26,6 +26,16 @@ body {
     transform: translate(-50%, -50%)
 }
 
+.player_name {
+    font-family: manaspc, Arial;
+    color: whitesmoke;
+    font-size: 1.25em;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #player_0 {
     left: 30%;
 }
@@ -33,6 +43,7 @@ body {
 #player_1 {
     left: 70%;
 }
+
 
 .player_box {
     top: 40%;
@@ -42,6 +53,22 @@ body {
     transform: translate(-50%, -50%);
     background-size: contain;
     border-radius: 25px;
+}
+
+.attackText{
+    position:absolute;
+    color:red;
+    font-size: 85px;
+    font-family: manaspc, arial;
+    z-index: 5000;
+    bottom:21%;
+}
+
+.attackText#attackText0{
+    left: 27%;
+}
+.attackText#attackText1{
+    left: 58%;
 }
 
 #player_0_name {
@@ -61,7 +88,9 @@ body {
     background-size: contain;
     border-radius: 25px;
 }
-
+.player_box{
+    padding:0px;
+}
 #player_0_key_display, #player_0_hpAndPower {
     left: 30%
 }
@@ -69,6 +98,7 @@ body {
 #player_1_key_display, #player_1_hpAndPower {
     left: 70%
 }
+
 
 .player_key_display, .player_hpAndPower {
     top: 85%;
@@ -86,19 +116,18 @@ body {
 .player_hpAndPower{
     top:105%;
     width:35%;
-
-
 }
 .hpAndPowerTextDiv{
     margin-top: 15px;
-    width:15%;
+    margin-left: 15px;
+    width:25%;
     color:white;
     font-size: 20px;
     font-family: manaspc, Arial;
 }
 
 .hpAndPowerBar{
-    width:65%
+    width:60%
 }
 
 .hp, .power{
@@ -110,10 +139,9 @@ body {
 }
 
 .hpDetails, .powerDetails{
-    width:20%;
     margin-top: 15px;
     margin-left:15px;
-    width:15%;
+    width:25%;
     color:white;
     font-size: 18px;
     font-family: manaspc, Arial;
@@ -139,6 +167,8 @@ body {
     transform: translate(-50%, -50%);
     overflow:auto;
     color:white;
+    line-height: 2em;
+    font-size: 1.2em;
 }
 
 .player_stats img {
@@ -201,7 +231,7 @@ body {
 }
 
 #start_button:hover {
-background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 #start_button:active {
@@ -214,7 +244,7 @@ background-color: whitesmoke;
 
 #countDown {
     display:flex;
-    color:white;
+    color:#ef4036;
     text-shadow: 10px 10px black;
     position:absolute;
     width: 100%;
@@ -223,6 +253,19 @@ background-color: whitesmoke;
     align-items: center;
     justify-content: center;
     z-index: 500;
+}
+
+#pokeBall{
+    width: 240px;
+    height: 240px;
+    position: absolute;
+    left: 50%;
+    bottom: 58%;
+    z-index: 500;
+    transform: translateX(-50%);
+    background-image: url(images/pokeball.png);
+    background-size: 100%, 100%;
+    display:none;
 }
 
 .modal-content {
@@ -235,6 +278,22 @@ background-color: whitesmoke;
     text-align: center;
     font-size: 300%;
     color: whitesmoke;
+    text-shadow: 3px 3px black;
+}
+
+
+#instructions{
+    color:white;
+}
+
+#instructions h1{
+    text-align: center;
+    text-shadow: 3px 3px black;
+}
+
+#instructions li{
+    font-size: 20px;
+    font-family: manaspc, Arial;
 }
 
 .hpAndPowerBar {
@@ -265,6 +324,7 @@ background-color: whitesmoke;
 .player_stats ul{
     list-style: none;
 }
+
 .got_hit {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(-50%, -50%, 0);
@@ -289,6 +349,31 @@ background-color: whitesmoke;
         transform: translate3d(-54%, -50%, 0);
     }
 }
+
+.front{
+    transform: rotateY(180deg);
+}
+.card{
+    height:100%;
+    width:100%;
+    border-radius:11px;
+    position:relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    border-radius:11px;
+    height:100%;
+    width:100%;
+    position:absolute;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.flipped{
+    transform: rotateY(180deg);
+}
+
 
 .scrollbar {
     background-color: dimgrey;
@@ -324,3 +409,4 @@ background-color: whitesmoke;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #fcc31d;
 }
+

@@ -74,7 +74,7 @@ function Grab_data(){
         pokeData.image = pokemon_card.imageUrl;
         pokeData.type = pokemon_card.types;
         pokeData.attack = this.pick_attack(pokemon_card.attacks);
-        if(pokeData.hp === false || pokeData.attack===false){
+        if(pokeData.hp === false || pokeData.attack===false || pokeData.name.indexOf("-EX") !==  -1 || pokeData.name.indexOf("-GX") !==  -1){
             return this.make_pokemon();
         }
         return  pokeData;
@@ -114,7 +114,7 @@ function Grab_data(){
             dataType: 'text',
             success: function(data){
                 var page = new DOMParser().parseFromString(data,'text/html');
-                console.log('test text: ',page);
+                // console.log('test text: ',page);
                 var pokemonObj = {name: pokemon};
                 var pokedataRows = $(page).find('.vitals-table tr');
                 pokedataRows.each(function(){
