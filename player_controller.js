@@ -9,6 +9,7 @@ function Player_controller(){
     };
     this.takeDamage = function(player_model, damageAmount) {
         player_model.hp -= damageAmount;
+        view.updateBars()
     };
     this.completeMove = function(player_model){
         view.arrowBoxMadeMove(player_model);
@@ -17,6 +18,7 @@ function Player_controller(){
         console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
         this.checkIfWinRound(player_model);
         this.getRequiredMove(player_model);
+        view.updateBars()
     };
     this.missMove = function(player_model){
         view.arrowBoxMissMove(player_model);
@@ -27,6 +29,7 @@ function Player_controller(){
         }
         console.log(player_model.index + " MISSED!  Now has " + player_model.completedMoves);
         this.getRequiredMove(player_model);
+        view.updateBars()
     };
     this.getRequiredMove = function(player_model){
         var availableKeys = player_model.availableKeys;
@@ -58,6 +61,7 @@ function Player_controller(){
                 winnerPlayerModel = player_model;
                 game_controller.endGame(winnerPlayerModel);
             }
+            $(".player_key_display").hide();
         }
     }
 }
