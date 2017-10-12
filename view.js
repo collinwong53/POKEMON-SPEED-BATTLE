@@ -8,6 +8,12 @@
  */
 
 function View(){
+    /***************************************************************************************************
+     * displayCards - adds the cards to the dom, both the back and the front
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.displayCards = function(){
         var back_image1 = $('<div>').addClass('back').css('background-image',"url('images/card_back.png')");
         var back_image2 = $('<div>').addClass('back').css('background-image',"url('images/card_back.png')");
@@ -20,6 +26,13 @@ function View(){
         $("#player_0").html(player_0_card);
         $("#player_1").html(player_1_card);
     };
+
+    /***************************************************************************************************
+     * displayArrow - controls which arrow image needs to be displayed on the DOM
+     * @param  keyInput, playerModel
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.displayArrow = function(keyInput, playerModel){
         setTimeout(function(){
             var divID = "#player_" + playerModel.index + "_key_display";
@@ -42,14 +55,28 @@ function View(){
                     image = "'images/arrow_right.png'";
                     break;
             }
-            $(divID).css('"background-image", "url(" + image + ")"')
+            $(divID).css('"background-image", "url(" + image + ")"');
             $(divID).css("background-image", "url(" + image + ")");
         }, 150)
     };
+
+    /***************************************************************************************************
+     * hideArrowForMoment - hide the arrow
+     * @param  player_model
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.hideArrowForMoment = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("background-image", "none");
     };
+
+    /***************************************************************************************************
+     * arrowBoxMadeMove - highlights box green if the play was correct
+     * @param  player_model
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.arrowBoxMadeMove = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("border", "5px groove green");
@@ -57,6 +84,13 @@ function View(){
             $(divID).css("border", "none");
         }, 150)
     };
+
+    /***************************************************************************************************
+     * arrowBoxMissMove - highlights box red if the player misses the play
+     * @param  player_model
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.arrowBoxMissMove = function(player_model){
         var divID = "#player_" + player_model.index + "_key_display";
         $(divID).css("border", "5px groove red");
@@ -64,6 +98,13 @@ function View(){
             $(divID).css("border", "none");
         }, 150)
     };
+
+    /***************************************************************************************************
+     * displayCountdownNumber - shows the countdown on the DOM
+     * @param  number
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.displayCountdownNumber = function(number){
         $("#countDown").text(number).show();
         $("#player_0_key_display").css("background-image", "none");
@@ -72,12 +113,26 @@ function View(){
             $("#countDown").text(number).hide();
         }, 500)
     };
+
+    /***************************************************************************************************
+     * updateBarCounter - updates the numbers on the health and power bars
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.updateBarCounter = function(){
         $('#hp_0').text(game_model.players[0].hp + "/" + game_model.players[0].pokemon.hp);
         $('#hp_1').text(game_model.players[1].hp + "/" + game_model.players[1].pokemon.hp);
         $('#power_0').text(game_model.players[0].completedMoves + "/" + game_model.players[0].completedMovesGoal);
         $('#power_1').text(game_model.players[1].completedMoves + "/" + game_model.players[1].completedMovesGoal);
     };
+
+    /***************************************************************************************************
+     * updateBars - updates the health and power bars
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.updateBars = function(){
         var player0HPpercentage = game_model.players[0].hp/game_model.players[0].pokemon.hp;
         var player1HPpercentage = game_model.players[1].hp/game_model.players[1].pokemon.hp;
@@ -88,6 +143,13 @@ function View(){
         $("#player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
         $("#player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     };
+
+    /***************************************************************************************************
+     * displayPlayerName - shows the player name and the pokemon name
+     * @param  player_model
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.displayPlayerName = function(player_model) {
         var playerNumber = player_model.index + 1;
         var pokemonName = player_model.pokemon.name;
@@ -98,11 +160,17 @@ function View(){
             $("#player_1_name").text("Player " + playerNumber + ": " + pokemonName);
         }
     };
+
+    /***************************************************************************************************
+     * backgroundImage - creates and adds background images
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.backgroundImage = function() {
         this.backgroundImageArray = [
             'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
             'images/Dahara_City.png',
-            // 'images/Gaur Plains.png',
             'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
             'images/Prof_Juniper_Lab_anime-696x392.jpg'
         ];
@@ -166,6 +234,7 @@ function displayWinVideo(winnerPlayerModel){
     this.displayVideo();
 };
 
+
 function close_youtube () {
     $("#video_display").removeAttr('src');
 }
@@ -176,6 +245,7 @@ function close_youtube () {
  * @calls winner_video();
  *        failed_video();
  */
+
 
 function get_youtube_data (pokemon_name) {
     var promise = { //create an object that will handle the promise itself
