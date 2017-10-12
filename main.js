@@ -1,19 +1,4 @@
 //****************************************Model****************************************//
-
-/***************************************************************************************************
- * grab pokemon api - gets the information from the pokemon api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * grab card api - gets the information from the card api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
 /***************************************************************************************************
  * grab youtube api - gets the information from the youtube api
  * @param  {undefined} none
@@ -50,8 +35,7 @@
 
 
 
-// var card_list = get_card_data().then(make_pokemon_object,failed_to_get_data);
-// console.log(card_list);
+
 /***************************************************************************************************
  * start game - starts function in model to make text appear for player (called by start button)
  * @param  {undefined} none

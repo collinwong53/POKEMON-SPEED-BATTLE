@@ -1,3 +1,16 @@
+/***************************************************************************************************
+ * grab pokemon api - gets the information from the pokemon api
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+/***************************************************************************************************
+ * grab card api - gets the information from the card api
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
 function Grab_data(){
     var self = this;
     this.make_pokemon_object = function(data){
