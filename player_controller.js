@@ -61,7 +61,7 @@ function Player_controller(){
             console.log(player_model.index + " WINS THE ROUND!")
             var otherPlayerIndex = 1 - player_model.index;
             this.resetCompletedMoves(player_model);
-            this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
+            // this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
             this.takeDamage(game_model.players[otherPlayerIndex], player_model.attack);
             console.log("player " + otherPlayerIndex + " takes " + player_model.attack + " damage and is now at " + game_model.players[otherPlayerIndex].hp + " hp")
             // game_controller.endRound();
