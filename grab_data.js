@@ -1,24 +1,24 @@
-/***************************************************************************************************
- * grab pokemon api - gets the information from the pokemon api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
 
-/***************************************************************************************************
- * grab card api - gets the information from the card api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
 function Grab_data(){
     var self = this;
+    /***************************************************************************************************
+     * grab card api - gets the information from the card api
+     * @param  {data}
+     * @returns {data.cards}
+     * @calls {undefined}
+     */
     this.make_pokemon_object = function(data){
-        available_cards = data.cards;
+        available_cards = data.cards;//store cards in global for future use
     }
     this.failed_to_get_data = function(data){
         console.log('failed',data);
     }
+    /***************************************************************************************************
+     * grab card api - gets the information from the card api
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.get_card_data = function(){
         var promise = {
             then:function(resolve,reject){
@@ -115,6 +115,12 @@ function Grab_data(){
     this.reject_pokeDB = function(data){
         console.log('error');
     }
+    /***************************************************************************************************
+     * grab pokemon api - gets the information from the pokemon api
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
     this.get_pokemonDB = function(pokemon,player){
         var promise = {
             then:function(resolve,reject){
