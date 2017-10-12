@@ -1,5 +1,12 @@
 //****************************************View****************************************//
 //View Constructor
+/***************************************************************************************************
+ * card animation - card slides in and flips after start
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
 function View(){
     /***************************************************************************************************
      * displayCards - adds the cards to the dom, both the back and the front
@@ -208,8 +215,14 @@ function View(){
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
-}
+};
 
+/***************************************************************************************************
+ * displayWinVideo - shows a video of the winning pokemon
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
 
 function displayWinVideo(winnerPlayerModel){
 
@@ -220,6 +233,19 @@ function displayWinVideo(winnerPlayerModel){
     };
     this.displayVideo();
 };
+
+
+function close_youtube () {
+    $("#video_display").removeAttr('src');
+}
+
+/***************************************************************************************************
+ * grab youtube api - gets the information from the youtube api
+ * @param  {pokemon_name} name of winner player model's pokemon
+ * @calls winner_video();
+ *        failed_video();
+ */
+
 
 function get_youtube_data (pokemon_name) {
     var promise = { //create an object that will handle the promise itself
@@ -247,7 +273,11 @@ function get_youtube_data (pokemon_name) {
     });
     return promise;
 };
-
+/***************************************************************************************************
+ * winner pokemon video
+ * @param  {data} pokemon youtube video list from api
+ * @calls displayWinVideo(winnerPlayerModel);
+ */
 
 function winner_video (data) {
     video_list = data;
@@ -256,11 +286,16 @@ function winner_video (data) {
 
     displayWinVideo(winnerPlayerModel);
 };
+/***************************************************************************************************
+ * failed to grab youtube video list from api
+ * @param  {message} "oops"
+ */
 
 function failed_video (message) {
-    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+    $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index +1) + " Wins!"); // The text will be the name of the pokemon
+    $("#video_display").text(message);
+    $("#winner_modal").modal('show');
 };
-
 
 
 

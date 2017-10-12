@@ -85,5 +85,7 @@ function initializeApp(){
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
     $("#instructions").modal('show');
+    $('.close_modal_butt').click(close_youtube);
 }
+
 
