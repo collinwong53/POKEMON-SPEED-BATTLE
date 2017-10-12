@@ -96,7 +96,7 @@ function Grab_data(){
         if(card_attack===undefined){
             return false;
         }
-        for(var i = 0; i<card_attack.length; i++){
+        for(var i = card_attack.length-1; i>=0; i--){
             if(card_attack[i].damage !== "" && Number(card_attack[i].damage)){
                 return card_attack[i].damage
             }
