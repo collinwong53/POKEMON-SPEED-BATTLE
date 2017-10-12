@@ -10,7 +10,7 @@ function audio_handler(){
     this.toggle_victory_music = function(){
         if(self.victory_playing){
             self.sound_object['victory'].pause();
-            self.sound_object['victory'].currentTime = 0;
+            // self.sound_object['victory'].currentTime = 0;
             self.victory_playing = false;
         }
         else{

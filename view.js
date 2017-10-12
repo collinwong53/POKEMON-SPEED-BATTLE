@@ -1,5 +1,12 @@
 //****************************************View****************************************//
 //View Constructor
+/***************************************************************************************************
+ * card animation - card slides in and flips after start
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
 function View(){
     this.displayCards = function(){
         var back_image1 = $('<div>').addClass('back').css('background-image',"url('images/card_back.png')");
@@ -142,29 +149,6 @@ function View(){
     }
 };
 
-
-
-/***************************************************************************************************
- * card animation - card slides in and flips after start
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * button light - lights up buttonsgit
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * start button - starts game, calls start game function in controller
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
 /***************************************************************************************************
  * displayWinVideo - shows a video of the winning pokemon
  * @param  {undefined} none
@@ -181,6 +165,17 @@ function displayWinVideo(winnerPlayerModel){
     };
     this.displayVideo();
 };
+
+function close_youtube () {
+    $("#video_display").removeAttr('src');
+}
+
+/***************************************************************************************************
+ * grab youtube api - gets the information from the youtube api
+ * @param  {pokemon_name} name of winner player model's pokemon
+ * @calls winner_video();
+ *        failed_video();
+ */
 
 function get_youtube_data (pokemon_name) {
     var promise = { //create an object that will handle the promise itself
@@ -208,7 +203,11 @@ function get_youtube_data (pokemon_name) {
     });
     return promise;
 };
-
+/***************************************************************************************************
+ * winner pokemon video
+ * @param  {data} pokemon youtube video list from api
+ * @calls displayWinVideo(winnerPlayerModel);
+ */
 
 function winner_video (data) {
     video_list = data;
@@ -217,92 +216,16 @@ function winner_video (data) {
 
     displayWinVideo(winnerPlayerModel);
 };
+/***************************************************************************************************
+ * failed to grab youtube video list from api
+ * @param  {message} "oops"
+ */
 
 function failed_video (message) {
     $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index +1) + " Wins!"); // The text will be the name of the pokemon
     $("#video_display").text(message);
     $("#winner_modal").modal('show');
 };
-//
-// function View(){
-//     this.displayCards = function(){
-//         var player0BackgroundImage = game_model.players[0].pokemon.image;
-//         $("#player_0").css("background-image", "url(" + player0BackgroundImage + ")");
-//         var player1BackgroundImage = game_model.players[1].pokemon.image;
-//         console.log(player0BackgroundImage);
-//         $("#player_1").css("background-image", "url(" + player1BackgroundImage + ")");
-//     };
-//     this.displayArrow = function(keyInput, playerModel){
-//         console.log("DISPLAY ARROW, playerModel is", playerModel);
-//         setTimeout(function(){
-//             var divID = "#player_" + playerModel.index + "_key_display";
-//             var image = null;
-//             switch(keyInput) {
-//                 case "w":
-//                 case "ArrowUp":
-//                     image = "'images/arrow_up.png'";
-//                     break;
-//                 case "a":
-//                 case "ArrowLeft":
-//                     image = "'images/arrow_left.png'";
-//                     break;
-//                 case "s":
-//                 case "ArrowDown":
-//                     image = "'images/arrow_down.png'";
-//                     break;
-//                 case "d":
-//                 case "ArrowRight":
-//                     image = "'images/arrow_right.png'";
-//                     break;
-//             }
-//             $(divID).css('"background-image", "url(" + image + ")"')
-//             $(divID).css("background-image", "url(" + image + ")");
-//         }, 150)
-//     };
-//     this.hideArrowForMoment = function(player_model){
-//         console.log("hide arrow")
-//         var divID = "#player_" + player_model.index + "_key_display";
-//         $(divID).css("background-image", "none");
-//     };
-//     this.arrowBoxMadeMove = function(player_model){
-//         var divID = "#player_" + player_model.index + "_key_display";
-//         $(divID).css("border", "5px groove green");
-//         setTimeout(function(){
-//             $(divID).css("border", "none");
-//         }, 150)
-//     };
-//     this.arrowBoxMissMove = function(player_model){
-//         var divID = "#player_" + player_model.index + "_key_display";
-//         $(divID).css("border", "5px groove red");
-//         setTimeout(function(){
-//             $(divID).css("border", "none");
-//         }, 150)
-//     };
-//     this.displayCountdownNumber = function(number){
-//         $("#countDown").text(number).show();
-//         $("#player_0_key_display").css("background-image", "none");
-//         $("#player_1_key_display").css("background-image", "none");
-//         setTimeout(function(){
-//             $("#countDown").text(number).hide();
-//         }, 500)
-//     };
-//     this.updateBarCounter = function(){
-//         $('#hp_0').text(game_model.players[0].hp + "/" + game_model.players[0].pokemon.hp);
-//         $('#hp_1').text(game_model.players[1].hp + "/" + game_model.players[1].pokemon.hp);
-//         $('#power_0').text(game_model.players[0].completedMoves + "/" + game_model.players[0].completedMovesGoal);
-//         $('#power_1').text(game_model.players[1].completedMoves + "/" + game_model.players[1].completedMovesGoal);
-//     }
-//     this.updateBars = function(){
-//         var player0HPpercentage = game_model.players[0].hp/game_model.players[0].pokemon.hp;
-//         var player1HPpercentage = game_model.players[1].hp/game_model.players[1].pokemon.hp;
-//         var player0Powerpercentage = game_model.players[0].completedMoves/game_model.players[0].completedMovesGoal;
-//         var player1Powerpercentage = game_model.players[1].completedMoves/game_model.players[1].completedMovesGoal;
-//         $("#player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"));
-//         $("#player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"));
-//         $("#player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
-//         $("#player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
-//     }
-// }
 
 
 
