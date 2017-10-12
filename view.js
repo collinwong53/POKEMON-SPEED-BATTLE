@@ -1,5 +1,12 @@
 //****************************************View****************************************//
 //View Constructor
+/***************************************************************************************************
+ * card animation - card slides in and flips after start
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
 function View(){
     this.displayCards = function(){
         var back_image1 = $('<div>').addClass('back').css('background-image',"url('images/card_back.png')");
@@ -140,30 +147,7 @@ function View(){
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
-}
-
-
-
-/***************************************************************************************************
- * card animation - card slides in and flips after start
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * button light - lights up buttonsgit
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * start button - starts game, calls start game function in controller
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
+};
 
 /***************************************************************************************************
  * displayWinVideo - shows a video of the winning pokemon
@@ -182,16 +166,16 @@ function displayWinVideo(winnerPlayerModel){
     this.displayVideo();
 };
 
-// function play_video (data) {
-//     video_list = data;
-//     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-//     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
-//
-// };
-//
-// function no_video (message) {
-//     $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-// };
+function close_youtube () {
+    $("#video_display").removeAttr('src');
+}
+
+/***************************************************************************************************
+ * grab youtube api - gets the information from the youtube api
+ * @param  {pokemon_name} name of winner player model's pokemon
+ * @calls winner_video();
+ *        failed_video();
+ */
 
 function get_youtube_data (pokemon_name) {
     var promise = { //create an object that will handle the promise itself
@@ -219,20 +203,11 @@ function get_youtube_data (pokemon_name) {
     });
     return promise;
 };
-
-
-function winner_video (data) {
-    video_list = data;
-    var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-    winner_video_link = "https://www.youtube.com/embed/" + random_vid;
-
-    displayWinVideo(winnerPlayerModel);
-};
-
-function failed_video (message) {
-    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-};
-
+/***************************************************************************************************
+ * winner pokemon video
+ * @param  {data} pokemon youtube video list from api
+ * @calls displayWinVideo(winnerPlayerModel);
+ */
 
 function winner_video (data) {
     video_list = data;
@@ -241,9 +216,15 @@ function winner_video (data) {
 
     displayWinVideo(winnerPlayerModel);
 };
+/***************************************************************************************************
+ * failed to grab youtube video list from api
+ * @param  {message} "oops"
+ */
 
 function failed_video (message) {
-    $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
+    $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index +1) + " Wins!"); // The text will be the name of the pokemon
+    $("#video_display").text(message);
+    $("#winner_modal").modal('show');
 };
 
 

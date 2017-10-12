@@ -1,19 +1,4 @@
 
-
-/***************************************************************************************************
- * grab pokemon api - gets the information from the pokemon api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-/***************************************************************************************************
- * grab card api - gets the information from the card api
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
 /***************************************************************************************************
  * grab youtube api - gets the information from the youtube api
  * @param  {undefined} none
@@ -31,6 +16,14 @@
 
 /***************************************************************************************************
  * initialize - starts loading everything needed (tells model to load apis)
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
+
+/***************************************************************************************************
+ * start game - starts function in model to make text appear for player (called by start button)
  * @param  {undefined} none
  * @returns {undefined} none
  * @calls {undefined} none
@@ -88,8 +81,11 @@ function initializeApp(){
         game_controller.startTimer(3000, true);
         $("#start_button").hide();
     });
+    $("#pause_music").click(handle_audio.toggle_victory_music);
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
     $("#instructions").modal('show');
+    $('.close_modal_butt').click(close_youtube);
 }
+
 
