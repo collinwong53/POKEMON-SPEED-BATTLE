@@ -17,7 +17,7 @@ function Game_controller(){
     this.endGame = function(winnerPlayerModel){
         get_youtube_data(winnerPlayerModel.pokemon.name).then(winner_video, failed_video);
         // displayWinVideo(winnerPlayerModel).then(play_video, no_video); // make this into a promise
-        backgroundImage();
+        view.backgroundImage();
         $("#start_button").show();
     };
     this.startRound = function(startOfGame){
@@ -30,6 +30,8 @@ function Game_controller(){
         view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
+        view.displayPlayerName(game_model.players[0]);
+        view.displayPlayerName(game_model.players[1])
     };
     // this.endRound = function(){
     //     game_model.roundStarted = false;

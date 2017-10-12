@@ -104,7 +104,7 @@ function initializeApp(){
     player_controller = new Player_controller();
     game_controller.startGame();
     view = new View();
-    backgroundImage();
+    view.backgroundImage();
     // displayPlayerIcon();
     handle_audio = new audio_handler;
     $("#start_button").on('click', function(){

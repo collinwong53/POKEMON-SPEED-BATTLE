@@ -186,31 +186,30 @@ function View(){
         $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"))
         $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"))
         $("player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
+    };
+
+    this.displayPlayerName = function(player_model) {
+        debugger;
+        var playerName = player_model.pokemon.name;
+        $("#player_name").text(playerName);
+    };
+    this.backgroundImage = function() {
+        var backgroundImageArray = [
+            'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
+            'images/Dahara_City.png',
+            // 'images/Gaur Plains.png',
+            'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
+            'images/Prof_Juniper_Lab_anime-696x392.jpg'
+        ];
+        this.addImageToBackground = function(){
+            var randomIndex = Math.floor(Math.random()*backgroundImageArray.length);
+            console.log(randomIndex);
+            return backgroundImageArray[randomIndex]
+        };
+        $('body').css('background-image', 'url(' + this.addImageToBackground() +')');
     }
 }
 
-/***************************************************************************************************
- * backgroundImage - adds a different background image
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
-function backgroundImage() {
-    this.backgroundImageArray = [
-        'images/639ff710788da2f05b1879a6cc5e1f2d.jpg',
-        'images/Dahara_City.png',
-        // 'images/Gaur Plains.png',
-        'images/Pokemon-Sun-and-Moon-ALola-Map-Island-One.jpg',
-        'images/Prof_Juniper_Lab_anime-696x392.jpg'
-    ];
-    this.imageToAddToBackground = function(){
-        var randomIndex = Math.floor(Math.random()*this.backgroundImageArray.length);
-        console.log(randomIndex);
-        return this.backgroundImageArray[randomIndex]
-    };
-    $('body').css('background-image', 'url(' + this.imageToAddToBackground() +')');
-}
 
 
 /***************************************************************************************************
@@ -243,3 +242,5 @@ function backgroundImage() {
 //     this.removeImageFromArray()
 //
 // }
+
+
