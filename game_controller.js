@@ -24,6 +24,9 @@ function Game_controller(){
         if(startOfGame) {
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
+            setTimeout(function(){
+                $('.card').addClass('flipped')
+            ,2000})
         }
         handle_audio.sound_object['victory'].pause();
         handle_audio.sound_object['main'].play();
