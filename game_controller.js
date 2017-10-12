@@ -27,11 +27,11 @@ function Game_controller(){
             setTimeout(function(){
                 $('.card').addClass('flipped')
             ,2000})
+            view.displayCards();
         }
         handle_audio.sound_object['victory'].pause();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
-        view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
     };
