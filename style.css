@@ -26,6 +26,13 @@ body {
     transform: translate(-50%, -50%)
 }
 
+.player_name {
+    font-family: manaspc, Arial;
+    color: whitesmoke;
+    font-size: 1.6em;
+    text-align: center;
+}
+
 #player_0 {
     left: 30%;
 }
@@ -141,6 +148,8 @@ body {
     transform: translate(-50%, -50%);
     overflow:auto;
     color:white;
+    line-height: 2em;
+    font-size: 1.2em;
 }
 
 .player_stats img {
@@ -203,7 +212,7 @@ body {
 }
 
 #start_button:hover {
-background-color: whitesmoke;
+    background-color: whitesmoke;
 }
 
 #start_button:active {
@@ -280,6 +289,7 @@ background-color: whitesmoke;
 .player_stats ul{
     list-style: none;
 }
+
 .got_hit {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(-50%, -50%, 0);
