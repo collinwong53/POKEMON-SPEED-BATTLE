@@ -61,7 +61,9 @@ body {
     background-size: contain;
     border-radius: 25px;
 }
-
+.player_box{
+    padding:0px;
+}
 #player_0_key_display, #player_0_hpAndPower {
     left: 30%
 }
@@ -288,4 +290,27 @@ background-color: whitesmoke;
     40%, 60% {
         transform: translate3d(-54%, -50%, 0);
     }
+}
+.front{
+    transform: rotateY(180deg);
+}
+.card{
+    height:100%;
+    width:100%;
+    border-radius:11px;
+    position:relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+.front, .back{
+    border-radius:11px;
+    height:100%;
+    width:100%;
+    position:absolute;
+    backface-visibility: hidden;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.flipped{
+    transform: rotateY(180deg);
 }
