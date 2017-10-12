@@ -104,8 +104,8 @@ function initializeApp(){
     player_controller = new Player_controller();
     game_controller.startGame();
     view = new View();
-    backgroundImage();
-    // displayPlayerIcon();
+    view.backgroundImage();
+    view.displayPlayerIcon();
     handle_audio = new audio_handler;
     $("#start_button").on('click', function(){
         if(available_cards === null){
@@ -119,5 +119,4 @@ function initializeApp(){
     $("#instructions").modal('show');
 
 }
-
 
