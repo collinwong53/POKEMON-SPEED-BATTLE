@@ -22,6 +22,7 @@ function Game_controller(){
     };
     this.startRound = function(startOfGame){
         if(startOfGame) {
+            view.displayCards();
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function(){
@@ -31,7 +32,6 @@ function Game_controller(){
         handle_audio.sound_object['victory'].pause();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
-        view.displayCards();
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
         view.displayPlayerName(game_model.players[0]);
