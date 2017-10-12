@@ -1,3 +1,10 @@
+/***************************************************************************************************
+ * audio_handler - calls and organizes the audio files
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls {undefined} none
+ */
+
 function audio_handler(){
     var self = this;
     this.victory_playing = true;
