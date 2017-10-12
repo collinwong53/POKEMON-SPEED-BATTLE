@@ -9,6 +9,7 @@ function Player_controller(){
     };
     this.takeDamage = function(player_model, damageAmount) {
         player_model.hp -= damageAmount;
+        handle_audio.sound_object['attack01'].play();
        if(player_model.index===0){
            $('#player_0').addClass('got_hit');
            setTimeout(function(){
@@ -68,6 +69,8 @@ function Player_controller(){
                 game_controller.startTimer(3000, false);
             }
             else{
+                handle_audio.sound_object['main'].pause();
+                handle_audio.sound_object['victory'].play();
                 console.log("player " + player_model.index + " won the game!");
                 player_model.wins += 1;
                 winnerPlayerModel = player_model;
