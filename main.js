@@ -81,6 +81,7 @@ function initializeApp(){
         game_controller.startTimer(3000, true);
         $("#start_button").hide();
     });
+    $("#pause_music").click(handle_audio.toggle_victory_music);
     $("#countDown").css("display", "none");
     $(".player_key_display").hide();
     $("#instructions").modal('show');
