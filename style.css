@@ -237,6 +237,19 @@ background-color: whitesmoke;
     color: whitesmoke;
 }
 
+#instructions{
+    color:white;
+}
+
+#instructions h1{
+    text-align: center;
+}
+
+#instructions li{
+    font-size: 20px;
+    font-family: manaspc, Arial;
+}
+
 .hpAndPowerBar {
     margin-top: 3%;
 }
