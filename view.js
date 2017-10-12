@@ -96,21 +96,6 @@ function failed_video (message) {
 };
 
 
-    function winner_video (data) {
-        video_list = data;
-        var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
-        winner_video_link = "https://www.youtube.com/embed/" + random_vid;
-
-        displayWinVideo(winnerPlayerModel);
-
-        console.log('it worked!', data);
-    };
-
-    function failed_video (message) {
-        $('#counter').addClass("player").append('<iframe width="560" height="315" src="https://www.youtube.com/embed/BMqOLULKonM' + '" frameborder="0" allowfullscreen"></iframe>');
-        console.log(message);
-    };
-
 function View(){
     this.displayCards = function(){
         var player0BackgroundImage = game_model.players[0].pokemon.image;
