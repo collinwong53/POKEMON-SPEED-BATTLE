@@ -59,10 +59,6 @@ function Game_controller(){
         }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue/1000);
     };
-    // this.stopTimer = function(){
-    //     clearInterval(game_model.timerInterval)
-    // };
-
     this.handleKeyPress = function(keyPress){
         if(game_model.roundStarted) {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) {    //player 1 keys
