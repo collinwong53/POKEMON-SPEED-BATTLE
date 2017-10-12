@@ -26,6 +26,13 @@ body {
     transform: translate(-50%, -50%)
 }
 
+.player_name {
+    color: whitesmoke;
+    font-size: 200%;
+    font-family: manaspc, Arial;
+    text-align: center;
+}
+
 #player_0 {
     left: 30%;
 }

@@ -182,16 +182,21 @@ function View(){
         console.log("player1HPpercentage",player0Powerpercentage);
         console.log("player1HPpercentage",player1Powerpercentage);
 
-        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"))
-        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"))
-        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"))
+        $("player_0_health_bar").css("width", (player0HPpercentage * 100 + "%"));
+        $("player_1_health_bar").css("width", (player1HPpercentage * 100 + "%"));
+        $("player_0_power_bar").css("width", (player0Powerpercentage * 100 + "%"));
         $("player_1_power_bar").css("width", (player1Powerpercentage * 100 + "%"))
     };
 
     this.displayPlayerName = function(player_model) {
-        debugger;
-        var playerName = player_model.pokemon.name;
-        $("#player_name").text(playerName);
+        var playerNumber = player_model.index + 1;
+        var pokemonName = player_model.pokemon.name;
+        if(player_model.index === 0){
+            $("#player_0_name").text("Player " + playerNumber + ": " + pokemonName);
+        }
+        else {
+            $("#player_1_name").text("Player " + playerNumber + ": " + pokemonName);
+        }
     };
     this.backgroundImage = function() {
         var backgroundImageArray = [

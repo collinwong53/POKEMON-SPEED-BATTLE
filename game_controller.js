@@ -31,7 +31,7 @@ function Game_controller(){
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
         view.displayPlayerName(game_model.players[0]);
-        view.displayPlayerName(game_model.players[1])
+        view.displayPlayerName(game_model.players[1]);
     };
     // this.endRound = function(){
     //     game_model.roundStarted = false;
