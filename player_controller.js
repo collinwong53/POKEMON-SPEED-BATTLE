@@ -53,10 +53,13 @@ function Player_controller(){
 
     };
     this.resetCompletedMoves = function(player_model){
+        console.log("RESET COMPLETE MOVES HP ",player_model.hp)
+
         player_model.completedMoves = 0;
     };
     this.checkIfWinRound = function(player_model){
         if(player_model.completedMoves >= player_model.completedMovesGoal){
+            this.resetCompletedMoves(player_model);
             game_model.roundStarted = false;
             console.log(player_model.index + " WINS THE ROUND!")
             var otherPlayerIndex = 1 - player_model.index;

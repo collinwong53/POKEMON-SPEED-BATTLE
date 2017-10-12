@@ -101,20 +101,22 @@ body {
     width:65%
 }
 
-
-.hp{
+.hp, .power{
     height: 49%;
     width: 100%;
     display:flex;
     justify-content: center;
     justify-items: center;
 }
-.power{
-    height: 49%;
-    width: 100%;
-    display:flex;
-    justify-content: center;
-    justify-items: center;
+
+.hpDetails, .powerDetails{
+    width:20%;
+    margin-top: 15px;
+    margin-left:15px;
+    width:15%;
+    color:white;
+    font-size: 20px;
+    font-family: manaspc, Arial;
 }
 
 
