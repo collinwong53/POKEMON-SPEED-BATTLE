@@ -118,8 +118,7 @@ function Player_controller(){
                 game_controller.startTimer(3000, false);
             }
             else{
-                handle_audio.sound_object['main'].pause();
-                handle_audio.sound_object['victory'].play();
+                handle_audio.player_wins();
                 console.log("player " + player_model.index + " won the game!");
                 player_model.wins += 1;
                 winnerPlayerModel = player_model;
