@@ -235,7 +235,7 @@ function displayWinVideo(winnerPlayerModel){
 
 
 function close_youtube () {
-    handle_audio.stop_victory_music();
+    // handle_audio.stop_victory_music();
     $("#video_display").removeAttr('src');
 }
 
