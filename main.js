@@ -86,9 +86,7 @@ function initializeApp(){
     $(".player_key_display").hide();
     $("#instructions").modal('show');
     $('.close_modal_butt').click(close_youtube)
-    $('#winner_modal').on('hidden.bs.modal',function(){
-        close_youtube();
-    })
+    $('#winner_modal').on('hidden.bs.modal',close_youtube);
 }
 
 

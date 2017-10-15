@@ -89,7 +89,7 @@ function Game_controller(){
             ,1000})
             view.displayCards();
         }
-        handle_audio.sound_object['victory'].pause();
+        handle_audio.stop_victory_music();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         player_controller.getRequiredMove(game_model.players[0]);
