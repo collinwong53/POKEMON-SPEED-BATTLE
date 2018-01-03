@@ -73,7 +73,8 @@ function initializeApp(){
     view = new View();
     view.backgroundImage();
     view.displayPlayerIcon();
-    handle_audio = new audio_handler;
+    handle_audio = new Audio_handler;
+    handle_audio.apply_click_handlers();
     $("#start_button").on('click', function(){
         if(available_cards === null){
             return

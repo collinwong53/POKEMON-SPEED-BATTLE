@@ -409,4 +409,13 @@ body {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #fcc31d;
 }
-
+#mute
+{
+    font-size: 30px;
+    color: aliceblue;
+    bottom: 5%;
+    position: relative;
+}
+.hidden{
+    display:none;
+}

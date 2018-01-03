@@ -46,8 +46,7 @@ function Game_controller(){
             game_model.players[0].completedMoves = 0;
             game_model.players[1].completedMoves = 0;
         }
-        handle_audio.sound_object['countdown'].currentTime = 0;
-        handle_audio.sound_object['countdown'].play();
+        handle_audio.play_sound('countdown');
         game_model.timerValue = time;
 
         var timeBetweenUpdates = 1000;
@@ -88,9 +87,11 @@ function Game_controller(){
                 $('.card').addClass('flipped')
             ,1000})
             view.displayCards();
+            handle_audio.play_main();
+            handle_audio.stop_victory_music();
+            handle_audio.victory_phase = false;
+            handle_audio.battle_phase = true;
         }
-        handle_audio.stop_victory_music();
-        handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
