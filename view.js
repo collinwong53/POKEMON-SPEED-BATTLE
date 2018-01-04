@@ -55,7 +55,6 @@ function View(){
                     image = "'images/arrow_right.png'";
                     break;
             }
-            $(divID).css('"background-image", "url(" + image + ")"');
             $(divID).css("background-image", "url(" + image + ")");
         }, 150)
     };
@@ -236,6 +235,7 @@ function displayWinVideo(winnerPlayerModel){
 
 
 function close_youtube () {
+    // handle_audio.stop_victory_music();
     $("#video_display").removeAttr('src');
 }
 
@@ -283,7 +283,6 @@ function winner_video (data) {
     video_list = data;
     var random_vid = video_list.video[Math.floor(Math.random() * video_list.video.length)].id;
     winner_video_link = "https://www.youtube.com/embed/" + random_vid;
-
     displayWinVideo(winnerPlayerModel);
 };
 /***************************************************************************************************

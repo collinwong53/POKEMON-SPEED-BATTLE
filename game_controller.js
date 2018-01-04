@@ -86,10 +86,10 @@ function Game_controller(){
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function(){
                 $('.card').addClass('flipped')
-            ,2000})
+            ,1000})
             view.displayCards();
         }
-        handle_audio.sound_object['victory'].pause();
+        handle_audio.stop_victory_music();
         handle_audio.sound_object['main'].play();
         game_model.roundStarted = true;
         player_controller.getRequiredMove(game_model.players[0]);
