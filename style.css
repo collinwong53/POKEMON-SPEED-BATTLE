@@ -17,6 +17,10 @@ body {
     -ms-user-select: none;
 }
 
+ul{
+    padding:0px;
+}
+
 #game_container {
     position: relative;
     height: 80vh;
