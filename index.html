@@ -23,37 +23,52 @@
 <body>
     <div id="top_container">
 
-        <!-- ******************* 
-**** player one *******
-******************** -->
+        <!-- ******************************* 
+**** player one (name,card,stats,key)*******
+**************************************** -->
+
 
         <div class="player_stats container style_scrollbar force-overflow" id="player_0_stats">
             <img src="images/International_Pokémon_logo.svg.png">
         </div>
-        <div id="player_0_name" class="player_name container"></div>
-        <div class="player_box container" id="player_0"></div>
-        <div class="player_key_display container" id="player_0_key_display"></div>
 
+        <div class="top_player_container">
+
+            <div id="player_0_name" class="player_name container"></div>
+
+            <div class="player_box container" id="player_0"></div>
+
+            <div class="player_key_display container" id="player_0_key_display"></div>
+
+        </div>
         <!-- ******************* 
-**** player two ****************
+**** player two (name,stats,card)****************
 ******************** -->
 
-        <div id="player_1_name" class="player_name container"></div>
-        <div class="player_box container" id="player_1"></div>
-        <div class="player_key_display container" id="player_1_key_display"></div>
+        <div class="top_player_container">
+
+            <div id="player_1_name" class="player_name container"></div>
+
+            <div class="player_box container" id="player_1"></div>
+
+            <div class="player_key_display container" id="player_1_key_display"></div>
+
+        </div>
+
         <div class="player_stats container style_scrollbar force-overflow" id="player_1_stats">
             <img src="images/International_Pokémon_logo.svg.png">
         </div>
+
+
     </div>
+    <!-- end of top container -->
 
     <!-- ******************* 
-**** bottom container*******
+**** bottom container****************
 ******************** -->
-
-    <div id="bottom_container">
-
+    <div class="bottom_container">
         <!-- ******************* 
-**** player one*************
+**** player one (icon, health, and power)*************
 ******************** -->
         <div class="player_icon" id="player_0_icon">
             <img id="player_0_icon_image" src="">
@@ -67,7 +82,7 @@
                 <div class="hpDetails" id="hp_0"></div>
             </div>
             <div class="power" id="player_0_power">
-                <div class="hpAndPowerTextDiv" id="powerLabel0">Power</div>
+                <div class="hpAndPowerTextDiv" id="powerLabel0">PP</div>
                 <div class="hpAndPowerBar progress">
                     <div class="progress-bar active" id="player_0_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
@@ -76,35 +91,33 @@
         </div>
 
         <!-- ******************* 
-**** player two*************
+**** player two (icon, health, and power)*************
 ******************** -->
         <div class="player_hpAndPower container" id="player_1_hpAndPower">
             <div class="hp" id="player_1_hp">
                 <div class="hpAndPowerTextDiv">HP</div>
                 <div class="hpAndPowerBar progress">
-                    <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">/div>
-                    </div>
-                    <div class="hpDetails" id="hp_1">
-
+                    <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
                     </div>
                 </div>
-                <div class="power">
-                    <div class="hpAndPowerTextDiv" id="powerText">Power</div>
-                    <div class="hpAndPowerBar progress">
-                        <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <div class="powerDetails" id="power_1"></div>
+                <div class="hpDetails" id="hp_1"></div>
+            </div>
+            <div class="power" id="player_1_power">
+                <div class="hpAndPowerTextDiv" id="powerText">PP</div>
+                <div class="hpAndPowerBar progress">
+                    <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
+                <div class="powerDetails" id="power_1"></div>
             </div>
         </div>
         <div class="player_icon" id="player_1_icon">
             <img id="player_1_icon_image" src="">
         </div>
     </div>
-    
-    <!-- ******************* 
-**** mute *************
-******************** -->
+
+    <!-- ************************************** 
+**** mute, countdown, dmg, pokemon*************
+******************************************* -->
 
     <button id="start_button" class="btn btn-default">Start</button>
     <div id="countDown"></div>
@@ -113,7 +126,8 @@
         <i class="sound_off hidden fa fa-volume-off"></i>
     </div>
     <div id="pokeBall"></div>
-
+    <p class="attackText" id="attackText0"></p>
+    <p class="attackText" id="attackText1"></p>
     <!-- ******************* 
 **** winning modal *******
 ******************** -->
