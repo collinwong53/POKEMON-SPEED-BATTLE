@@ -81,8 +81,8 @@ function Grab_data(){
     this.resolve_pokeDB = function(data,player){//if get pokemonDB succeeds append the text to the player stats display
         $(player).append('<ul>');
         for(var item in data){
-            var thing_to_add = $('<li>').append(item + " : " + data[item]);
-            $(player +' ul').append(thing_to_add);
+            var poke_info = $('<li>').append(item + " : " + data[item]);
+            $(player +' ul').append(poke_info);
         }
     }
     this.reject_pokeDB = function(data){
