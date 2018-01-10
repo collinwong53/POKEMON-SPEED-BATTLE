@@ -10,7 +10,8 @@ var game_model = null;
 var game_controller = null;
 var player_controller = null;
 var view = null;
-function initializeApp(){
+
+function initializeApp() {
     get_card_api_data = new Grab_data();
     get_card_api_data.get_card_data().then(get_card_api_data.make_pokemon_object, get_card_api_data.failed_to_get_data);
     game_model = new Game_model();
@@ -20,9 +21,10 @@ function initializeApp(){
     view = new View();
     view.backgroundImage();
     view.displayPlayerIcon();
-    handle_audio = new audio_handler;
-    $("#start_button").on('click', function(){
-        if(available_cards === null){
+    handle_audio = new Audio_handler;
+    handle_audio.apply_click_handlers();
+    $("#start_button").on('click', function () {
+        if (available_cards === null) {
             return
         }
         game_controller.startTimer(3000, true);
@@ -33,7 +35,5 @@ function initializeApp(){
     $(".player_key_display").hide();
     $("#instructions").modal('show');
     $('.close_modal_butt').click(close_youtube)
-    $('#winner_modal').on('hidden.bs.modal',close_youtube);
+    $('#winner_modal').on('hidden.bs.modal', close_youtube);
 }
-
-

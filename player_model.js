@@ -5,7 +5,7 @@
  * @calls {undefined} none
  */
 
-function Player_model(){
+function Player_model() {
     this.index = null;
     this.wins = 0;
     this.pokemon = {};
@@ -17,11 +17,10 @@ function Player_model(){
     this.completedMoves = 0;
     this.completedMovesGoal = 0;
 
-    this.initializeAvailableKeys = function(playerNumber){
-        if(playerNumber === 1){
+    this.initializeAvailableKeys = function (playerNumber) {
+        if (playerNumber === 1) {
             this.availableKeys = ["w", "a", "s", "d"];
-        }
-        else{
+        } else {
             this.availableKeys = ["ArrowUp", "ArrowLeft", "ArrowDown", "ArrowRight"];
         }
     }
