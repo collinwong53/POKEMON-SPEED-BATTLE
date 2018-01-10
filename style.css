@@ -15,8 +15,11 @@ body {
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none;
+    position:relative;
 }
-
+ul{
+    padding:0;
+}
 #game_container {
     position: relative;
     height: 80vh;
@@ -253,6 +256,9 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 500;
+    top:0;
+    bottom:0;
+    transform:translate(-50% -50%);
 }
 
 #pokeBall{
@@ -411,10 +417,12 @@ body {
 }
 #mute
 {
-    font-size: 30px;
+    font-size: 70px;
     color: aliceblue;
-    bottom: 5%;
-    position: relative;
+    position:absolute;
+    left: 50%;
+    top: 75%;
+    transform:translate(-50%, -50%);
 }
 .hidden{
     display:none;
