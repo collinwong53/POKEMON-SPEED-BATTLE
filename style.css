@@ -403,10 +403,12 @@ ul{
 }
 #mute
 {
-    font-size: 30px;
+    font-size: 70px;
     color: aliceblue;
-    bottom: 5%;
-    position: relative;
+    position:absolute;
+    left: 50%;
+    top: 75%;
+    transform:translate(-50%, -50%);
 }
 .hidden{
     display:none;
