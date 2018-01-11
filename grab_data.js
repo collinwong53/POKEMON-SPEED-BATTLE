@@ -8,10 +8,10 @@ function Grab_data() {
      */
     this.make_pokemon_object = function (data) {
         available_cards = data.cards; //store cards in global for future use
-    }
+    };
     this.failed_to_get_data = function (data) {
         console.log('failed', data);
-    }
+    };
     /***************************************************************************************************
      * grab card api - gets the information from the card api
      * @param  {undefined} none
@@ -24,7 +24,7 @@ function Grab_data() {
                 this.resolve = resolve;
                 this.reject = reject;
             }
-        }
+        };
         $.ajax({
             dataType: 'json',
             url: 'https://api.pokemontcg.io/v1/cards?page=5&pageSize=1000',
@@ -37,13 +37,13 @@ function Grab_data() {
             error: function (data) {
                 promise.reject(data);
             }
-        }) //end call
+        });
         return promise;
-    } //get get data
+    };
     this.random_number_gen = function (end_num) {
         var number = Math.floor(Math.random() * end_num + 1) //random number generator to select random cards
         return number;
-    }
+    };
     /***************************************************************************************************
      * make pokemon - creates pokemon object with stats for use in game
      * @param  {undefined}
@@ -82,10 +82,10 @@ function Grab_data() {
             var poke_info = $('<li>').append(item + " : " + data[item]);
             $(player + ' ul').append(poke_info);
         }
-    }
+    };
     this.reject_pokeDB = function (data) {
         console.log('error');
-    }
+    };
     /***************************************************************************************************
      * grab pokemon api - gets the information from the pokemon api
      * @param  {pokemon name and the player} none
@@ -98,13 +98,12 @@ function Grab_data() {
                 this.resolve = resolve;
                 this.reject = reject;
             }
-        }
+        };
         $.ajax({
             url: 'http://danielpaschal.com/pokeyproxy.php?name=' + pokemon,
             dataType: 'text',
             success: function (data) {
                 var page = new DOMParser().parseFromString(data, 'text/html'); //grabs the table information from site
-                // console.log('test text: ',page);
                 var pokemonObj = {
                     name: pokemon
                 }; //grabs the text in the table to pass on in an object
@@ -119,7 +118,7 @@ function Grab_data() {
             error: function (data) {
                 promise.reject(data);
             }
-        })
+        });
         return promise;
     }
 }

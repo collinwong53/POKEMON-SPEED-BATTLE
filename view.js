@@ -1,12 +1,3 @@
-//****************************************View****************************************//
-//View Constructor
-/***************************************************************************************************
- * card animation - card slides in and flips after start
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-
 function View() {
     /***************************************************************************************************
      * displayCards - adds the cards to the dom, both the back and the front
@@ -285,7 +276,6 @@ function winner_video(data) {
 };
 /***************************************************************************************************
  * failed to grab youtube video list from api
- * @param  {message} "oops"
  */
 
 function failed_video(message) {
