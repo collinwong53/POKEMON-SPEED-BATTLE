@@ -10,8 +10,6 @@ function Player_controller() {
         player_model.hp = player_model.pokemon.hp;
         player_model.attack = player_model.pokemon.attack;
         player_model.completedMovesGoal = Math.floor((parseInt(player_model.hp) + parseInt(player_model.attack)) / 20);
-        console.log(player_model.index + " will be ", player_model.pokemon);
-        console.log(" and need to get " + player_model.completedMovesGoal)
     };
     /***************************************************************************************************
      * takeDamage - player model loses hp
@@ -22,7 +20,7 @@ function Player_controller() {
      */
     this.takeDamage = function (player_model, damageAmount) {
         player_model.hp -= damageAmount;
-        handle_audio.play_sound('attack01');
+        audio_handler.play_sound('attack01');
         if (player_model.index === 0) {
             $('#player_0').addClass('got_hit');
             setTimeout(function () {
@@ -33,7 +31,7 @@ function Player_controller() {
                 $("#attackText0").hide();
             }, 750)
         } else {
-            $('#player_1').addClass('got_hit')
+            $('#player_1').addClass('got_hit');
             setTimeout(function () {
                 $('#player_1').removeClass('got_hit');
             }, 2000)
@@ -54,7 +52,6 @@ function Player_controller() {
         view.arrowBoxMadeMove(player_model);
         view.hideArrowForMoment(player_model);
         player_model.completedMoves += 1;
-        console.log(player_model.index + " Completed Move!  Now has " + player_model.completedMoves);
         this.checkIfWinRound(player_model);
         this.getRequiredMove(player_model);
         view.updateBars();
@@ -72,7 +69,6 @@ function Player_controller() {
         if (player_model.completedMoves < 0) {
             player_model.completedMoves = 0;
         }
-        console.log(player_model.index + " MISSED!  Now has " + player_model.completedMoves);
         this.getRequiredMove(player_model);
         view.updateBars();
         view.updateBarCounter();
@@ -85,7 +81,6 @@ function Player_controller() {
     this.getRequiredMove = function (player_model) {
         var availableKeys = player_model.availableKeys;
         var randomIndex = Math.floor(Math.random() * availableKeys.length);
-        console.log(player_model.availableKeys[randomIndex]);
         player_model.requiredMove = player_model.availableKeys[randomIndex];
         view.displayArrow(player_model.requiredMove, player_model);
 
@@ -107,7 +102,6 @@ function Player_controller() {
         if (player_model.completedMoves >= player_model.completedMovesGoal) {
             this.resetCompletedMoves(player_model);
             game_model.roundStarted = false;
-            console.log(player_model.index + " WINS THE ROUND!")
             var otherPlayerIndex = 1 - player_model.index;
             this.resetCompletedMoves(player_model);
             // this.resetCompletedMoves(game_model.players[otherPlayerIndex]);
@@ -116,15 +110,13 @@ function Player_controller() {
             if (game_model.players[0].hp > 0 && game_model.players[1].hp > 0) {
                 game_controller.startTimer(3000, false);
             } else {
-                handle_audio.player_wins();
-                handle_audio.victory_phase = true;
-                handle_audio.battle_phase = false;
-                console.log("player " + player_model.index + " won the game!");
+                audio_handler.player_wins();
+                audio_handler.victory_phase = true;
+                audio_handler.battle_phase = false;
                 player_model.wins += 1;
                 winnerPlayerModel = player_model;
                 game_controller.endGame(winnerPlayerModel);
             }
-            $(".player_key_display").hide();
         }
     }
 }

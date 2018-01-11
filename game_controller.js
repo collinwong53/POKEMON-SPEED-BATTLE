@@ -11,7 +11,7 @@ function Game_controller() {
      * @returns {undefined} none
      * @calls {undefined} none
      */
-    this.startGame = function () {
+    this.initializePlayers = function () {
         var playerOne = new Player_model();
         var playerTwo = new Player_model();
 
@@ -46,13 +46,12 @@ function Game_controller() {
             game_model.players[0].completedMoves = 0;
             game_model.players[1].completedMoves = 0;
         }
-        handle_audio.play_sound('countdown');
+        audio_handler.play_sound('countdown');
         game_model.timerValue = time;
 
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function () {
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
-            console.log(game_model.timerValue);
             if (game_model.timerValue / 1000 !== 0) {
                 view.displayCountdownNumber(game_model.timerValue / 1000);
             } else {
@@ -67,7 +66,6 @@ function Game_controller() {
                 game_controller.startRound(startOfGame);
                 this.clearInterval(game_model.timerInterval);
                 view.updateBarCounter()
-                $(".player_key_display").show();
             }
         }, timeBetweenUpdates);
         view.displayCountdownNumber(game_model.timerValue / 1000);
@@ -86,10 +84,10 @@ function Game_controller() {
                 $('.card').addClass('flipped'), 1000
             })
             view.displayCards();
-            handle_audio.play_main();
-            handle_audio.stop_victory_music();
-            handle_audio.victory_phase = false;
-            handle_audio.battle_phase = true;
+            audio_handler.play_main();
+            audio_handler.stop_victory_music();
+            audio_handler.victory_phase = false;
+            audio_handler.battle_phase = true;
         }
         game_model.roundStarted = true;
         player_controller.getRequiredMove(game_model.players[0]);
