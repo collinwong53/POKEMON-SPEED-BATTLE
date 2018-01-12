@@ -20,10 +20,10 @@ body {
 }
 
 div#desktop {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-flow: row wrap;
-    width: 100vw;
+    width: 100%;
     min-width: 1000px;
     min-height: 700px;
     align-items: center;
@@ -118,11 +118,12 @@ div#desktop {
     height: 18%;
     width: 30%;
     z-index : 5;
-    background-size: auto;
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     box-sizing: content-box;
     border-radius: 25px;
+    box-sizing: border-box;
 }
 
 /**********************
