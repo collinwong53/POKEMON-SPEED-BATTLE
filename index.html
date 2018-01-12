@@ -130,60 +130,139 @@
         <p class="attackText" id="attackText0"></p>
         <p class="attackText" id="attackText1"></p>
     </div>
+
     <!-- ******************* 
+**** Tablet *******
+******************** -->
+    <div id="tablet">
+        <!-- ******************* 
+**** Player 0 *******
+******************** -->
+        <div id="player_0_arrows_tablet">
+            <div class="left_arrow" player0left>
+                <img src="images/arrow_left.png" alt="arrow left">
+            </div>
+            <div class="down_arrow" player0down>
+                <img src="images/arrow_down.png" alt="arrow down">
+            </div>
+            <div class="up_arrow" player0up>
+                <img src="images/arrow_up.png" alt="arrow up">
+            </div>
+            <div class="right_arrow" player0right>
+                <img src="images/arrow_right.png" alt="arrow right">
+            </div>
+        </div>
+
+        <div id=player_0_container_tablet>
+            <div id="player_0_stats_tablet"> </div>
+            <div id="player_0_card_tablet"></div>
+            <div id="player_0_hp_pp_name_tablet container">
+                <div id="player_0_name"></div>
+                <div class="hp_pp_tablet container" id="player_0_hp_pp_tablet">
+                    <div class="hp" id="player_1_hp">
+                        <div class="hpAndPowerTextDiv">HP</div>
+                        <div class="hpAndPowerBar progress">
+                            <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                            </div>
+                        </div>
+                        <div class="hpDetails" id="hp_1"></div>
+                    </div>
+                    <div class="power" id="player_1_power">
+                        <div class="hpAndPowerTextDiv" id="powerText">PP</div>
+                        <div class="hpAndPowerBar progress">
+                            <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="powerDetails" id="power_1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ******************* 
+**** Player 0 *******
+******************** -->
+
+        <div id=player_1_container>
+            <div id="player_1_stats_tablet">
+                <div id="player_1_hp_pp_name_container">
+                    <div id="player_1_name_tablet"></div>
+                    <div class="hp_pp_tablet container" id="player_1_hp_pp_tablet">
+                        <div class="hp" id="player_1_hp">
+                            <div class="hpAndPowerTextDiv">HP</div>
+                            <div class="hpAndPowerBar progress">
+                                <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                            <div class="hpDetails" id="hp_1"></div>
+                        </div>
+                        <div class="power" id="player_1_power">
+                            <div class="hpAndPowerTextDiv" id="powerText">PP</div>
+                            <div class="hpAndPowerBar progress">
+                                <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="powerDetails" id="power_1"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+        </div>
+
+        <!-- ******************* 
 **** winning modal *******
 ******************** -->
 
-    <div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close close_modal_butt" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="winning_modal">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id="video_display" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        <div class="modal fade" id="winner_modal" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close close_modal_butt" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title" id="winning_modal">Modal title</h4>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" id="pause_music">Toggle Music</button>
-                    <button type="button" class="btn btn-default close_modal_butt" data-dismiss="modal">Close</button>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe id="video_display" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" id="pause_music">Toggle Music</button>
+                        <button type="button" class="btn btn-default close_modal_butt" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- ********************** 
+        <!-- ********************** 
 **** instructions modal ***
 ********************** -->
 
-    <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1>Instructions</h1>
-                </div>
-                <div class="modal-body">
-                    <br>
-                    <ul>
-                        <li>Player one uses WASD</li>
-                        <li>Player two uses arrow keys</li>
-                        <li>Follow given moves to build up your power bar</li>
-                        <li>Fill up your power bar to attack your opponent</li>
-                        <li>Strong Pokemon require more moves to attack</li>
-                        <li>Bring your opponent's HP to zero to win!</li>
-                    </ul>
-                    <br>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal fade" id="instructions" tabindex="-1" role="dialog" aria-labelledby="winning_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1>Instructions</h1>
+                    </div>
+                    <div class="modal-body">
+                        <br>
+                        <ul>
+                            <li>Player one uses WASD</li>
+                            <li>Player two uses arrow keys</li>
+                            <li>Follow given moves to build up your power bar</li>
+                            <li>Fill up your power bar to attack your opponent</li>
+                            <li>Strong Pokemon require more moves to attack</li>
+                            <li>Bring your opponent's HP to zero to win!</li>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
