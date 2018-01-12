@@ -396,4 +396,39 @@ div#desktop {
 .hidden{
     display:none;
 }
+div#desktop{
+    display:none;
+}
+
+
+/********************
+*******tablet styling
+*********************/
+div#tablet {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.arrows_tablet_container{
+    width: 15%;
+    display: flex;
+    flex-direction:  column;
+    justify-content: space-around;
+    margin:0px;
+    height:100%;
+}
+.player_0_arrows .tablet_arrows{
+    transform:rotate(90deg)
+
+}
+.tablet_arrows img{
+    width:100%;
+}
+
+#player_0_container_tablet, #player_1_container_tablet{
+    width:35%;
+}
+
+
 
