@@ -419,6 +419,7 @@ body {
     justify-content: space-around;
     margin: 0px;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .tablet_arrows img {

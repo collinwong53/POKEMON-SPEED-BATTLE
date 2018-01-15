@@ -46,6 +46,7 @@ function View() {
                     image = "'images/arrow_right.png'";
                     break;
             }
+            $('#'+keyInput).css('border','5px green solid');
             $(divID).css("background-image", "url(" + image + ")");
         }, 150)
     };
