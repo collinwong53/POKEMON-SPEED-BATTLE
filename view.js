@@ -213,6 +213,9 @@ function View() {
         $('.top_container').attr('id', 'tablet_top_container');
         $('.bottom_container').attr('id', 'tablet_bottom_container')
     }
+    this.apply_click_handlers = function(){
+        
+    }
 };
 
 /***************************************************************************************************
