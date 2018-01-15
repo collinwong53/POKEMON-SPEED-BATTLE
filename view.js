@@ -205,56 +205,13 @@ function View() {
     }
     this.tablet_switch = function(){
         $('.arrows_tablet_container').css('display','flex'); 
-        
-
-        
-        .tablet_player_container {
-            display: flex;
-            width: 50%;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        div.tablet_bar {
-            height: 13%;
-            width: 85%;
-            display: flex;
-            flex-flow: row wrap;
-        }
-        
-        .player_stats {
-            display: none;
-        }
-        
-        .player_icon {
-            display: none;
-        }
-        
-        #tablet_main {
-            width: 70%;
-        }
-        
-        .player_key_display {
-            display: none;
-        }
-        
-        .tablet_player_hp_and_pp {
-            width: 48%;
-        }
-        
-        div.player_box.tablet_player_box {
-            width: 90%;
-            height: 72%;
-        }
-        
-        #tablet_top_container {
-            height: 80%;
-        }
-        
-        #tablet_bottom_container {
-            height: 20%;
-        }
+        $('.player_key_display, .player_stats, .player_icon').css('display','none');
+        $('.top_player_container').addClass('tablet_player_container');
+        $('.main').attr('id','tablet_main');
+        $('.player_hpAndPower').addClass('tablet_player_hp_and_pp');
+        $('.player_box').addClass('tablet_player_box');
+        $('.top_container').attr('id','tablet_top_container');
+        $('.bottom_container').attr('id','tablet_bottom_container')
     }
 };
 
