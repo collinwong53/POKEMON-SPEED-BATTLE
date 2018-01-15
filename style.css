@@ -23,7 +23,7 @@ body {
     flex-flow: row wrap;
 }
 
-div#desktop {
+.main {
     height: 100%;
     display: flex;
     flex-flow: row wrap;
@@ -402,9 +402,9 @@ div#desktop {
     display: none;
 }
 
-div#desktop {
+/* div#desktop {
     display: none;
-}
+} */
 
 .progress{
     margin:0px;
@@ -415,9 +415,8 @@ div#desktop {
 *********************/
 
 .arrows_tablet_container {
-    visibility: hidden;
     width: 15%;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     margin: 0px;
@@ -447,20 +446,8 @@ div.tablet_bar {
     flex-flow: row wrap;
 }
 
-.player_stats {
-    display: none;
-}
-
-.player_icon {
-    display: none;
-}
-
 #tablet_main {
     width: 70%;
-}
-
-.player_key_display {
-    display: none;
 }
 
 .tablet_player_hp_and_pp {
