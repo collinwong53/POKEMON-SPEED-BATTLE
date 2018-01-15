@@ -365,9 +365,6 @@ div#desktop {
     overflow-y: scroll;
 }
 
-.force-overflow {
-    /* min-height: 450px; */
-}
 
 .style_scrollbar::-webkit-scrollbar-track
 {
