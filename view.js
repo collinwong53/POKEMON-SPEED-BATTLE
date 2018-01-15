@@ -203,6 +203,32 @@ function View() {
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
+    this.tablet_switch = function () {
+        $('.arrows_tablet_container').css('display', 'flex');
+        $('.player_key_display, .player_stats, .player_icon').css('display', 'none');
+        $('.top_player_container').addClass('tablet_player_container');
+        $('.main').attr('id', 'tablet_main');
+        $('.player_hpAndPower').addClass('tablet_player_hp_and_pp');
+        $('.player_box').addClass('tablet_player_box');
+        $('.top_container').attr('id', 'tablet_top_container');
+        $('.bottom_container').attr('id', 'tablet_bottom_container')
+    }
+    this.apply_click_handlers = function(){
+        $("#start_button").on('click', function () {
+            if (available_cards === null) {
+                return
+            }
+            game_controller.startTimer(3000, true);
+            $("#start_button").hide();
+        });
+        $('#touch_switch').click(this.tablet_switch);
+        $('.close_modal_butt').click(this.close_youtube)
+        $('#winner_modal').on('hidden.bs.modal', this.close_youtube);
+        $('.tablet_arrows').click(game_controller.tablet_arrows);
+    }
+    this.close_youtube = function(){
+        $("#video_display").removeAttr('src');
+    }
 };
 
 /***************************************************************************************************
@@ -224,7 +250,6 @@ function displayWinVideo(winnerPlayerModel) {
 
 
 function close_youtube() {
-    // handle_audio.stop_victory_music();
     $("#video_display").removeAttr('src');
 }
 
