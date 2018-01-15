@@ -17,13 +17,9 @@ body {
     -ms-user-select: none;
     height:100vh;
     width:100vw;
-}
-
-div#desktop {
-    height: 100%;
+    position:relative;
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
     min-width: 1000px;
     min-height: 700px;
     align-items: center;
@@ -389,8 +385,12 @@ div#desktop {
 {
     font-size: 40px;
     color: aliceblue;
-    position:absolute;
-    left:5%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 .hidden{
     display:none;
@@ -402,13 +402,6 @@ div#desktop {
     body {
         overflow: hidden;
     }
-
-    #mute {
-        top: 64%;
-        left: 49%;
-        color: white;
-    }
-
     #start_button {
         top: 51%;
     }
@@ -457,10 +450,6 @@ div#desktop {
 
     #top_container {
         width: 80%;
-    }
-
-    #mute {
-        top: 62%;
     }
 
     .player_box {
