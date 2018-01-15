@@ -421,10 +421,6 @@ body {
     height: 100%;
 }
 
-.player_0_arrows .tablet_arrows {
-    transform: rotate(90deg)
-}
-
 .tablet_arrows img {
     width: 100%;
 }
