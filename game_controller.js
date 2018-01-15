@@ -81,8 +81,11 @@ function Game_controller() {
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function () {
-                $('.card').addClass('flipped'), 1000
-            })
+                $('.card').addClass('flipped');
+            }, 1000);
+            setTimeout(function () {
+                $('.player_box').css('background-color', 'transparent');
+            }, 1500);
             view.displayCards();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
@@ -93,7 +96,7 @@ function Game_controller() {
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
         view.displayPlayerName(game_model.players[0]);
-        view.displayPlayerName(game_model.players[1])
+        view.displayPlayerName(game_model.players[1]);
     };
 
     /***************************************************************************************************
@@ -116,5 +119,11 @@ function Game_controller() {
                 }
             }
         }
+    }
+    this.tablet_arrows = function(){
+        const arrow = $(this).attr('id');
+        console.log(arrow);
+        game_controller.handleKeyPress(arrow);
+        
     }
 }
