@@ -26,6 +26,13 @@ body {
     justify-content: space-evenly;
 }
 
+#portrait_orientation_cover {
+    /*position: relative;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    display: none;
+}
+
 .player_stats ul{
     padding:0;
 }
@@ -467,6 +474,29 @@ body {
     #start_button {
         left: 44%;
         width: 9%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #instructions {
+        z-index: -5;
+    }
+
+    #portrait_orientation_cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 6;
+        color: white;
+        font-size: 300%;
+    }
+
+    #portrait_orientation_cover p {
+        margin: 10%;
+        top: 30vh;
+        position: relative;
     }
 }
 

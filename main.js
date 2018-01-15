@@ -33,6 +33,6 @@ function initializeApp() {
     $("#pause_music").click(audio_handler.toggle_victory_music);
     $("#countDown").css("display", "none");
     $("#instructions").modal('show');
-    $('.close_modal_butt').click(close_youtube)
+    $('.close_modal_butt').click(close_youtube);
     $('#winner_modal').on('hidden.bs.modal', close_youtube);
 }
