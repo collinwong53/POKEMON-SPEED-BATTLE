@@ -203,7 +203,7 @@ function View() {
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
-    // this.tablet_switch = function(){
+    this.tablet_switch = function(){
     //     .arrows_tablet_container {
     //         visibility:visible;
     //     }
