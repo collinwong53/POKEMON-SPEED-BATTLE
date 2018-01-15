@@ -457,5 +457,12 @@ div.tablet_bar{
 }
 
 .tablet_player_box{
-    
+    width:90%;
+    height:60%;
+}
+#tablet_top_container{
+    height:80%;
+}
+#tablet_bottom_container{
+    height:20%;
 }
