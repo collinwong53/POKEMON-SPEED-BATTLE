@@ -118,6 +118,9 @@ function Game_controller() {
         }
     }
     this.tablet_arrows = function(){
+        const arrow_container = $(this).parent();
+        console.log(arrow_container[0]);
+        $(arrow_container[0]).find('.tablet_arrows').css('border','none');
         const arrow = $(this).attr('id');
         console.log(arrow);
         game_controller.handleKeyPress(arrow);
