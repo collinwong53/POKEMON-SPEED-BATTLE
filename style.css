@@ -36,7 +36,6 @@ body {
     justify-content: space-evenly;
 }
 
-<<<<<<< HEAD
 #portrait_orientation_cover {
     /*position: relative;*/
     /*height: 100%;*/
@@ -46,10 +45,6 @@ body {
 
 .player_stats ul{
     padding:0;
-=======
-.player_stats ul {
-    padding: 0;
->>>>>>> 9c9f0bc842b4cd2e7a20e0f4e9842106289535ad
 }
 
 
@@ -89,20 +84,12 @@ body {
 .player_box {
     display: flex;
     align-items: center;
-<<<<<<< HEAD
     height: 67%;
     width: 29vh;
     padding: 0px;
     border-radius: 25px;
     background-size: contain;
     margin-top: 1vh;
-=======
-    height: 40%;
-    width: 65%;
-    padding: 0px;
-    border-radius: 25px;
-    background-size: contain;
->>>>>>> 9c9f0bc842b4cd2e7a20e0f4e9842106289535ad
 }
 
 .player_stats {
