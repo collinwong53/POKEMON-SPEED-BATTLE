@@ -407,9 +407,9 @@ div#desktop {
     }
 
     #mute {
-        top: 69%;
+        top: 64%;
         left: 49%;
-        color: black;
+        color: white;
     }
 
     #start_button {
@@ -425,24 +425,55 @@ div#desktop {
     }
 
     .player_stats {
-        font-size: 0.8em;
+        font-size: 1vw;
         width: 19%;
     }
 
     #player_1_name {
-        font-size: 0.8em;
+        font-size: 1vw;
+    }
+
+    .hpDetails {
+        font-size: 1vw;
+    }
+
+    .powerDetails {
+        font-size: 1vw;
+    }
+
+    .player_box {
+        height: 57%;
     }
 }
 
 @media only screen and (min-width: 1440px) {
     .player_stats {
-        width: 17%;
+        width: 20%;
     }
 
     .player_key_display {
         position: relative;
-        top: 16%;
-        height: 33%
+        top: 10%;
+        height: 33%;
+        width: 35%;
+    }
+
+    #top_container {
+        width: 80%;
+    }
+
+    #mute {
+        top: 62%;
+    }
+
+    .player_box {
+        margin-top: 6%;
+        height: 86%;
+    }
+
+    #start_button {
+        left: 44%;
+        width: 9%;
     }
 }
 
