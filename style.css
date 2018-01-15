@@ -67,10 +67,11 @@ div#desktop {
     display:flex;
     align-items:center;
     height: 67%;
-    width: 70%;
+    width: 29vh;
     padding:0px;
     border-radius: 25px;
     background-size:contain;
+    margin-top: 1vh;
 }
 
 
@@ -122,9 +123,16 @@ div#desktop {
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
-    box-sizing: content-box;
+    /*box-sizing: content-box;*/
     border-radius: 25px;
     box-sizing: border-box;
+}
+
+.player_key_display > div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 6;
 }
 
 /**********************
@@ -342,7 +350,7 @@ div#desktop {
 }
 .front, .back{
     border-radius:11px;
-    height: 100%;
+    /*height: 100%;*/
     width:100%;
     position:absolute;
     backface-visibility: hidden;
@@ -409,7 +417,6 @@ div#desktop {
     #mute {
         top: 69%;
         left: 49%;
-        color: black;
     }
 
     #start_button {
