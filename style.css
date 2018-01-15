@@ -399,3 +399,50 @@ div#desktop {
     display:none;
 }
 
+/*Media queries and responsive design*/
+
+@media only screen and (min-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    #mute {
+        top: 69%;
+        left: 49%;
+        color: black;
+    }
+
+    #start_button {
+        top: 51%;
+    }
+
+    .bottom_container {
+        height: 30%;
+    }
+
+    #top_container {
+        height: 58%;
+    }
+
+    .player_stats {
+        font-size: 0.8em;
+        width: 19%;
+    }
+
+    #player_1_name {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .player_stats {
+        width: 17%;
+    }
+
+    .player_key_display {
+        position: relative;
+        top: 16%;
+        height: 33%
+    }
+}
+
