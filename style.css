@@ -17,13 +17,9 @@ body {
     -ms-user-select: none;
     height:100vh;
     width:100vw;
-}
-
-div#desktop {
-    height: 100%;
+    position:relative;
     display: flex;
     flex-flow: row wrap;
-    width: 100%;
     min-width: 1000px;
     min-height: 700px;
     align-items: center;
@@ -36,7 +32,7 @@ div#desktop {
 /********************
 *******top_container
 *********************/
-#top_container{
+.top_container{
     width: 100%;
     height:70%;
     display:flex;
@@ -64,13 +60,13 @@ div#desktop {
 }
 
 .player_box {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     height: 67%;
     width: 29vh;
-    padding:0px;
+    padding: 0px;
     border-radius: 25px;
-    background-size:contain;
+    background-size: contain;
     margin-top: 1vh;
 }
 
@@ -126,13 +122,6 @@ div#desktop {
     /*box-sizing: content-box;*/
     border-radius: 25px;
     box-sizing: border-box;
-}
-
-.player_key_display > div {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 6;
 }
 
 /**********************
@@ -310,26 +299,26 @@ div#desktop {
 
 .got_hit {
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(-50%, -50%, 0);
+    /* transform: translate3d(-50%, -50%, 0); */
     backface-visibility: hidden;
     perspective: 1000px;
 }
 
 @keyframes shake {
     10%, 90% {
-        transform: translate3d(-48%, -50%, 0);
+        transform: translate3d(-2%, 0%, 0);
     }
 
     20%, 80% {
-        transform: translate3d(-52%, -50%, 0);
+        transform: translate3d(2%, 0%, 0);
     }
 
     30%, 50%, 70% {
-        transform: translate3d(-46%, -50%, 0);
+        transform: translate3d(-4%, 0%, 0);
     }
 
     40%, 60% {
-        transform: translate3d(-54%, -50%, 0);
+        transform: translate3d(4%, 0%, 0);
     }
 }
 
@@ -373,9 +362,6 @@ div#desktop {
     overflow-y: scroll;
 }
 
-.force-overflow {
-    /* min-height: 450px; */
-}
 
 .style_scrollbar::-webkit-scrollbar-track
 {
@@ -400,8 +386,12 @@ div#desktop {
 {
     font-size: 40px;
     color: aliceblue;
-    position:absolute;
-    left:5%;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 .hidden{
     display:none;
@@ -427,29 +417,56 @@ div#desktop {
         height: 30%;
     }
 
-    #top_container {
+    .top_container {
         height: 58%;
     }
 
     .player_stats {
-        font-size: 0.8em;
+        font-size: 1vw;
         width: 19%;
     }
 
     #player_1_name {
-        font-size: 0.8em;
+        font-size: 1vw;
     }
+
+    .hpDetails {
+        font-size: 1vw;
+    }
+
+    .powerDetails {
+        font-size: 1vw;
+    }
+
+    /*.player_box {*/
+        /*height: 57%;*/
+    /*}*/
 }
 
 @media only screen and (min-width: 1440px) {
     .player_stats {
-        width: 17%;
+        width: 20%;
     }
 
     .player_key_display {
         position: relative;
-        top: 16%;
-        height: 33%
+        top: 10%;
+        height: 33%;
+        width: 35%;
+    }
+
+    .top_container {
+        width: 80%;
+    }
+
+    .player_box {
+        margin-top: 6%;
+        height: 86%;
+    }
+
+    #start_button {
+        left: 44%;
+        width: 9%;
     }
 }
 
