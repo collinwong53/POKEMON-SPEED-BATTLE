@@ -224,6 +224,7 @@ function View() {
         $('#touch_switch').click(this.tablet_switch);
         $('.close_modal_butt').click(this.close_youtube)
         $('#winner_modal').on('hidden.bs.modal', this.close_youtube);
+        $('.tablet_arrows').click(game_controller.tablet_arrows);
     }
     this.close_youtube = function(){
         $("#video_display").removeAttr('src');
