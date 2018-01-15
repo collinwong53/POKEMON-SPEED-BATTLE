@@ -245,6 +245,8 @@ function displayWinVideo(winnerPlayerModel) {
         $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index + 1) + " Wins!"); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
+        $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
+        $('.tablet_arrows').css('border','none');   
     };
     this.displayVideo();
 };
