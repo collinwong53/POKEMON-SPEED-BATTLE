@@ -30,6 +30,7 @@ function initializeApp() {
         game_controller.startTimer(3000, true);
         $("#start_button").hide();
     });
+    $('#touch_switch').click(view.tablet_switch);
     $("#pause_music").click(audio_handler.toggle_victory_music);
     $("#countDown").css("display", "none");
     $("#instructions").modal('show');

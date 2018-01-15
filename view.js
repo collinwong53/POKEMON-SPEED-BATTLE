@@ -203,15 +203,15 @@ function View() {
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
-    this.tablet_switch = function(){
-        $('.arrows_tablet_container').css('display','flex'); 
-        $('.player_key_display, .player_stats, .player_icon').css('display','none');
+    this.tablet_switch = function () {
+        $('.arrows_tablet_container').css('display', 'flex');
+        $('.player_key_display, .player_stats, .player_icon').css('display', 'none');
         $('.top_player_container').addClass('tablet_player_container');
-        $('.main').attr('id','tablet_main');
+        $('.main').attr('id', 'tablet_main');
         $('.player_hpAndPower').addClass('tablet_player_hp_and_pp');
         $('.player_box').addClass('tablet_player_box');
-        $('.top_container').attr('id','tablet_top_container');
-        $('.bottom_container').attr('id','tablet_bottom_container')
+        $('.top_container').attr('id', 'tablet_top_container');
+        $('.bottom_container').attr('id', 'tablet_bottom_container')
     }
 };
 
