@@ -214,7 +214,19 @@ function View() {
         $('.bottom_container').attr('id', 'tablet_bottom_container')
     }
     this.apply_click_handlers = function(){
-        
+        $("#start_button").on('click', function () {
+            if (available_cards === null) {
+                return
+            }
+            game_controller.startTimer(3000, true);
+            $("#start_button").hide();
+        });
+        $('#touch_switch').click(this.tablet_switch);
+        $('.close_modal_butt').click(this.close_youtube)
+        $('#winner_modal').on('hidden.bs.modal', this.close_youtube);
+    }
+    this.close_youtube = function(){
+        $("#video_display").removeAttr('src');
     }
 };
 
@@ -237,7 +249,6 @@ function displayWinVideo(winnerPlayerModel) {
 
 
 function close_youtube() {
-    // handle_audio.stop_victory_music();
     $("#video_display").removeAttr('src');
 }
 
