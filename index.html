@@ -154,10 +154,13 @@
         </div>
 
         <div id=player_0_container_tablet>
-            <div id="player_0_stats_tablet"> </div>
-            <div id="player_0_card_tablet"></div>
+
+            <div id="player_0_stats_tablet" class="container"> </div>
+
+            <div id="player_0_card_tablet" class="container"></div>
+
             <div class="name_hp_power_container">
-                <div id="player_0_name_tablet"></div>
+                <div id="player_0_name_tablet" class="player_name container"></div>
                 <div class="player_hpAndPower container" id="player_0_hpAndPower">
                     <div class="hp" id="player_0_hp">
                         <div class="hpAndPowerTextDiv">HP</div>
@@ -182,27 +185,31 @@
 ******************** -->
 
         <div id="player_1_container_tablet">
-            <div id="player_1_stats_tablet"> </div>
-            <div id="player_1_card_tablet"></div>
-            <div id="name_hp_power_container">
-                <div id="player_1_name_tablet"></div>
-                <div class="player_hpAndPower container" id="player_1_hpAndPower">
-                    <div class="hp" id="player_1_hp">
-                        <div class="hpAndPowerTextDiv">HP</div>
-                        <div class="hpAndPowerBar progress">
-                            <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+                <div id="name_hp_power_container">
+                        <div id="player_1_name_tablet" class="player_name container"></div>
+                        <div class="player_hpAndPower container" id="player_1_hpAndPower">
+                            <div class="hp" id="player_1_hp">
+                                <div class="hpAndPowerTextDiv">HP</div>
+                                <div class="hpAndPowerBar progress">
+                                    <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="hpDetails" id="hp_1"></div>
+                            </div>
+                            <div class="power" id="player_1_power">
+                                <div class="hpAndPowerTextDiv" id="powerLabel1">PP</div>
+                                <div class="hpAndPowerBar progress">
+                                    <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <div class="powerDetails" id="power_0"></div>
+                            </div>
                         </div>
-                        <div class="hpDetails" id="hp_1"></div>
                     </div>
-                    <div class="power" id="player_1_power">
-                        <div class="hpAndPowerTextDiv" id="powerLabel1">PP</div>
-                        <div class="hpAndPowerBar progress">
-                            <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="powerDetails" id="power_0"></div>
-                    </div>
-                </div>
-            </div>
+
+            <div id="player_1_card_tablet" class="container"></div>
+
+            <div id="player_1_stats_tablet" class="container"></div>
+ 
         </div>
         <div class="arrows_tablet_container player_1_arrows container">
             <div class="tablet_arrows" player1right>
