@@ -56,8 +56,8 @@ div#desktop {
     color: whitesmoke;
     display:flex;
     align-items:center;
-    height: 10%;
-    width: 80%;
+    height: 8%;
+    width: 70%;
     border-radius: 25px;
     text-align:center;
 }
@@ -65,8 +65,8 @@ div#desktop {
 .player_box {
     display:flex;
     align-items:center;
-    height: 67%;
-    width: 70%;
+    height: 40%;
+    width: 65%;
     padding:0px;
     border-radius: 25px;
     background-size:contain;
@@ -142,8 +142,8 @@ div#desktop {
     margin: 0;
 }
 .hpAndPowerTextDiv{
-    margin-top: 15px;
-    margin-left: 15px;
+    /* margin-top: 15px; */
+    /* margin-left: 15px; */
     width:25%;
     color:white;
     font-size: 20px;
@@ -159,12 +159,12 @@ div#desktop {
     width: 100%;
     display:flex;
     justify-content: center;
-    justify-items: center;
+    align-items: center;
 }
 
 .hpDetails, .powerDetails{
-    margin-top: 15px;
-    margin-left:15px;
+    /* margin-top: 15px; */
+    /* margin-left:15px; */
     width:25%;
     color:white;
     font-size: 18px;
@@ -267,10 +267,6 @@ div#desktop {
 #instructions li{
     font-size: 20px;
     font-family: manaspc, Arial;
-}
-
-.hpAndPowerBar {
-    margin-top: 3%;
 }
 
 #player_0_health_bar {
@@ -411,7 +407,7 @@ div#tablet {
 }
 
 .arrows_tablet_container{
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction:  column;
     justify-content: space-around;
@@ -430,5 +426,16 @@ div#tablet {
     width:35%;
 }
 
-
-
+.tablet_player_container {
+    display: flex;
+    width: 35%;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+div.tablet_bar{
+    height: 13%;
+    width: 85%;
+    display: flex;
+    flex-flow: row wrap;
+}
