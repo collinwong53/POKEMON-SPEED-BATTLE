@@ -21,8 +21,25 @@
 </head>
 
 <body>
-    <div id="desktop">
-        <div id="top_container">
+    <!-- ******************* 
+**** Tablet Player 0 Arrows*******
+******************** -->
+    <div class="arrows_tablet_container player_0_arrows container">
+        <div class="tablet_arrows" player0left>
+            <img src="images/arrow_left.png" alt="arrow left">
+        </div>
+        <div class="tablet_arrows" player0down>
+            <img src="images/arrow_down.png" alt="arrow down">
+        </div>
+        <div class="tablet_arrows" player0up>
+            <img src="images/arrow_up.png" alt="arrow up">
+        </div>
+        <div class="tablet_arrows" player0right>
+            <img src="images/arrow_right.png" alt="arrow right">
+        </div>
+    </div>
+    <div class="main" id="tablet_main">
+        <div class="top_container" id="tablet_top_container">
 
             <!-- ******************************* 
          player one (name,card,stats,key)*******
@@ -33,11 +50,11 @@
                 <img src="images/International_Pokémon_logo.svg.png">
             </div>
 
-            <div class="top_player_container">
+            <div class="top_player_container tablet_player_container">
 
-                <div id="player_0_name" class="player_name container"></div>
+                <div id="player_0_name" class="player_name container tablet_player_name"></div>
 
-                <div class="player_box container" id="player_0"></div>
+                <div class="player_box tablet_player_box container" id="player_0"></div>
 
                 <div class="player_key_display container" id="player_0_key_display"></div>
 
@@ -46,11 +63,11 @@
          player two (name,stats,card,key)****************
         **************** -->
 
-            <div class="top_player_container">
+            <div class="top_player_container tablet_player_container">
 
-                <div id="player_1_name" class="player_name container"></div>
+                <div id="player_1_name" class="player_name container tablet_player_name"></div>
 
-                <div class="player_box container" id="player_1"></div>
+                <div class="player_box tablet_player_box container" id="player_1"></div>
 
                 <div class="player_key_display container" id="player_1_key_display"></div>
 
@@ -67,14 +84,14 @@
         <!-- ******************* 
          bottom container****************
         **************** -->
-        <div class="bottom_container">
+        <div class="bottom_container" id="tablet_bottom_container">
             <!-- ******************* 
          player one (icon, health, and power)*************
         **************** -->
             <div class="player_icon" id="player_0_icon">
                 <img id="player_0_icon_image" src="">
             </div>
-            <div class="player_hpAndPower container" id="player_0_hpAndPower">
+            <div class="player_hpAndPower container tablet_player_hp_and_pp" id="player_0_hpAndPower">
                 <div class="hp" id="player_0_hp">
                     <div class="hpAndPowerTextDiv">HP</div>
                     <div class="hpAndPowerBar progress">
@@ -94,7 +111,7 @@
             <!-- ******************* 
          player two (icon, health, and power)*************
         **************** -->
-            <div class="player_hpAndPower container" id="player_1_hpAndPower">
+            <div class="player_hpAndPower container tablet_player_hp_and_pp" id="player_1_hpAndPower">
                 <div class="hp" id="player_1_hp">
                     <div class="hpAndPowerTextDiv">HP</div>
                     <div class="hpAndPowerBar progress">
@@ -115,117 +132,40 @@
                 <img id="player_1_icon_image" src="">
             </div>
         </div>
+    </div>
+    <!-- ******************* 
+**** Tablet Player 1 Arrows*******
+******************** -->
+    <div class="arrows_tablet_container player_1_arrows container">
+        <div class="tablet_arrows" player1left>
+            <img src="images/arrow_left.png" alt="arrow left">
+        </div>
+        <div class="tablet_arrows" player1down>
+            <img src="images/arrow_down.png" alt="arrow down">
+        </div>
+        <div class="tablet_arrows" player1up>
+            <img src="images/arrow_up.png" alt="arrow up">
+        </div>
+        <div class="tablet_arrows" player1right>
+            <img src="images/arrow_right.png" alt="arrow right">
+        </div>
+    </div>
 
-        <!-- ************************************** 
+
+    <!-- ************************************** 
 **** mute, countdown, dmg, pokemon*************
 ******************************************* -->
 
-        <button id="start_button" class="btn btn-default">Start</button>
-        <div id="countDown"></div>
-        <div id="mute">
-            <i class="sound_on fa fa-volume-up" aria-hidden="true"></i>
-            <i class="sound_off hidden fa fa-volume-off"></i>
-        </div>
-        <div id="pokeBall"></div>
-        <p class="attackText" id="attackText0"></p>
-        <p class="attackText" id="attackText1"></p>
+    <button id="start_button" class="btn btn-default">Start</button>
+    <div id="countDown"></div>
+    <div id="mute">
+        <i class="sound_on fa fa-volume-up" aria-hidden="true"></i>
+        <i class="sound_off hidden fa fa-volume-off"></i>
     </div>
+    <div id="pokeBall"></div>
+    <p class="attackText" id="attackText0"></p>
+    <p class="attackText" id="attackText1"></p>
 
-    <!-- ******************* 
-**** Tablet *******
-******************** -->
-    <div id="tablet">
-        <!-- ******************* 
-**** Player 0 *******
-******************** -->
-        <div class="arrows_tablet_container player_0_arrows container">
-            <div class="tablet_arrows" player0left>
-                <img src="images/arrow_left.png" alt="arrow left">
-            </div>
-            <div class="tablet_arrows" player0down>
-                <img src="images/arrow_down.png" alt="arrow down">
-            </div>
-            <div class="tablet_arrows" player0up>
-                <img src="images/arrow_up.png" alt="arrow up">
-            </div>
-            <div class="tablet_arrows" player0right>
-                <img src="images/arrow_right.png" alt="arrow right">
-            </div>
-        </div>
-
-        <div id=player_0_container_tablet>
-
-            <div id="player_0_stats_tablet" class="container"> </div>
-
-            <div id="player_0_card_tablet" class="container"></div>
-
-            <div class="name_hp_power_container">
-                <div id="player_0_name_tablet" class="player_name container"></div>
-                <div class="player_hpAndPower container" id="player_0_hpAndPower">
-                    <div class="hp" id="player_0_hp">
-                        <div class="hpAndPowerTextDiv">HP</div>
-                        <div class="hpAndPowerBar progress">
-                            <div class="progress-bar active" id="player_0_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="hpDetails" id="hp_0"></div>
-                    </div>
-                    <div class="power" id="player_0_power">
-                        <div class="hpAndPowerTextDiv" id="powerLabel0">PP</div>
-                        <div class="hpAndPowerBar progress">
-                            <div class="progress-bar active" id="player_0_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <div class="powerDetails" id="power_0"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ******************* 
-**** Player 1 *******
-******************** -->
-
-        <div id="player_1_container_tablet">
-
-                <div id="name_hp_power_container">
-                        <div id="player_1_name_tablet" class="player_name container"></div>
-                        <div class="player_hpAndPower container" id="player_1_hpAndPower">
-                            <div class="hp" id="player_1_hp">
-                                <div class="hpAndPowerTextDiv">HP</div>
-                                <div class="hpAndPowerBar progress">
-                                    <div class="progress-bar active" id="player_1_health_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="hpDetails" id="hp_1"></div>
-                            </div>
-                            <div class="power" id="player_1_power">
-                                <div class="hpAndPowerTextDiv" id="powerLabel1">PP</div>
-                                <div class="hpAndPowerBar progress">
-                                    <div class="progress-bar active" id="player_1_power_bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <div class="powerDetails" id="power_0"></div>
-                            </div>
-                        </div>
-                    </div>
-
-            <div id="player_1_card_tablet" class="container"></div>
-
-            <div id="player_1_stats_tablet" class="container"></div>
- 
-        </div>
-        <div class="arrows_tablet_container player_1_arrows container">
-            <div class="tablet_arrows" player1right>
-                <img src="images/arrow_right.png" alt="arrow right">
-            </div>
-            <div class="tablet_arrows" player1up>
-                <img src="images/arrow_up.png" alt="arrow up">
-            </div>
-            <div class="tablet_arrows" player1down>
-                <img src="images/arrow_down.png" alt="arrow down">
-            </div>
-            <div class="tablet_arrows" player1left>
-                <img src="images/arrow_left.png" alt="arrow left">
-            </div>
-        </div>
-    </div>
     <!-- ******************* 
 **** winning modal *******
 ******************** -->
