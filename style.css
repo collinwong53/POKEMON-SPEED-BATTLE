@@ -399,3 +399,81 @@ div#desktop {
     display:none;
 }
 
+/*Media queries and responsive design*/
+
+@media only screen and (min-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+
+    #mute {
+        top: 64%;
+        left: 49%;
+        color: white;
+    }
+
+    #start_button {
+        top: 51%;
+    }
+
+    .bottom_container {
+        height: 30%;
+    }
+
+    #top_container {
+        height: 58%;
+    }
+
+    .player_stats {
+        font-size: 1vw;
+        width: 19%;
+    }
+
+    #player_1_name {
+        font-size: 1vw;
+    }
+
+    .hpDetails {
+        font-size: 1vw;
+    }
+
+    .powerDetails {
+        font-size: 1vw;
+    }
+
+    .player_box {
+        height: 57%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .player_stats {
+        width: 20%;
+    }
+
+    .player_key_display {
+        position: relative;
+        top: 10%;
+        height: 33%;
+        width: 35%;
+    }
+
+    #top_container {
+        width: 80%;
+    }
+
+    #mute {
+        top: 62%;
+    }
+
+    .player_box {
+        margin-top: 6%;
+        height: 86%;
+    }
+
+    #start_button {
+        left: 44%;
+        width: 9%;
+    }
+}
+
