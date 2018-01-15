@@ -23,16 +23,9 @@ function initializeApp() {
     view.displayPlayerIcon();
     audio_handler = new Audio_handler;
     audio_handler.apply_click_handlers();
-    $("#start_button").on('click', function () {
-        if (available_cards === null) {
-            return
-        }
-        game_controller.startTimer(3000, true);
-        $("#start_button").hide();
-    });
-    $("#pause_music").click(audio_handler.toggle_victory_music);
     $("#countDown").css("display", "none");
     $("#instructions").modal('show');
     $('.close_modal_butt').click(close_youtube);
     $('#winner_modal').on('hidden.bs.modal', close_youtube);
+
 }

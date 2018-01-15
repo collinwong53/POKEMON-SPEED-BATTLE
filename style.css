@@ -1,31 +1,42 @@
 @font-face {
     font-family: 'Pokemon';
-    src:  url('font/Pokemon Solid.ttf') format('woff2')
+    src: url('font/Pokemon Solid.ttf') format('woff2')
 }
 
 @font-face {
     font-family: 'manaspc';
-    src:  url('font/Pokemon GB.ttf') format('woff2')
+    src: url('font/Pokemon GB.ttf') format('woff2')
 }
 
 body {
     font-family: Pokemon, Arial;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-user-select: none; /* Chrome/Safari */
-    -moz-user-select: none; /* Firefox */
+    -webkit-user-select: none;
+    /* Chrome/Safari */
+    -moz-user-select: none;
+    /* Firefox */
     -ms-user-select: none;
-    height:100vh;
-    width:100vw;
-    position:relative;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     flex-flow: row wrap;
+    position: relative;
     min-width: 1000px;
     min-height: 700px;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-evenly;
 }
 
+<<<<<<< HEAD
 #portrait_orientation_cover {
     /*position: relative;*/
     /*height: 100%;*/
@@ -35,56 +46,72 @@ body {
 
 .player_stats ul{
     padding:0;
+=======
+.player_stats ul {
+    padding: 0;
+>>>>>>> 9c9f0bc842b4cd2e7a20e0f4e9842106289535ad
 }
+
+
 /********************
 *******top_container
 *********************/
-.top_container{
+
+.top_container {
     width: 100%;
-    height:70%;
-    display:flex;
+    height: 70%;
+    display: flex;
     flex-flow: row;
     justify-content: space-evenly;
     align-items: center;
 }
-.top_player_container{
+
+.top_player_container {
     width: 29%;
     height: 100%;
     display: flex;
-    flex-flow:  column;
+    flex-flow: column;
     justify-content: space-around;
 }
+
 .player_name {
     font-family: manaspc, Arial;
     color: whitesmoke;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     height: 10%;
     width: 80%;
     border-radius: 25px;
-    text-align:center;
+    text-align: center;
 }
 
 .player_box {
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     height: 67%;
     width: 29vh;
     padding: 0px;
     border-radius: 25px;
     background-size: contain;
     margin-top: 1vh;
+=======
+    height: 40%;
+    width: 65%;
+    padding: 0px;
+    border-radius: 25px;
+    background-size: contain;
+>>>>>>> 9c9f0bc842b4cd2e7a20e0f4e9842106289535ad
 }
-
 
 .player_stats {
     border-radius: 25px;
     font-family: manaspc, Arial;
     width: 17%;
     height: 90%;
-    overflow:auto;
-    color:white;
+    overflow: auto;
+    color: white;
     line-height: 2em;
     font-size: 1.2em;
 }
@@ -94,35 +121,33 @@ body {
     margin-left: 13%;
 }
 
+
 /********************
-*******top_container
+*******bottom_container
 *********************/
 
-#bottom_container{
-    width:100%;
-    height:30%;
-}
-
-.attackText{
-    position:absolute;
-    color:red;
+.attackText {
+    position: absolute;
+    color: red;
     font-size: 85px;
     font-family: manaspc, arial;
     z-index: 5000;
-    bottom:21%;
+    bottom: 21%;
 }
 
-.attackText#attackText0{
+.attackText#attackText0 {
     left: 27%;
 }
-.attackText#attackText1{
+
+.attackText#attackText1 {
     left: 58%;
 }
 
-.player_key_display, .player_hpAndPower {
+.player_key_display,
+.player_hpAndPower {
     height: 18%;
     width: 30%;
-    z-index : 5;
+    z-index: 5;
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
@@ -131,60 +156,58 @@ body {
     box-sizing: border-box;
 }
 
-/**********************
-*******bottom_container
-*********************/
-
 .bottom_container {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 30%;
 }
 
-.player_hpAndPower{
+.player_hpAndPower {
     width: 30%;
     height: 60%;
     margin: 0;
 }
-.hpAndPowerTextDiv{
-    margin-top: 15px;
-    margin-left: 15px;
-    width:25%;
-    color:white;
+
+.hpAndPowerTextDiv {
+    width: 15%;
+    color: white;
     font-size: 20px;
     font-family: manaspc, Arial;
 }
 
-.hpAndPowerBar{
-    width:60%
+.hpAndPowerBar {
+    width: 55%;
 }
 
-.hp, .power{
+.hp,
+.power {
     height: 49%;
     width: 100%;
-    display:flex;
-    justify-content: center;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.hpDetails, .powerDetails{
-    margin-top: 15px;
-    margin-left:15px;
-    width:25%;
-    color:white;
+.hpDetails,
+.powerDetails {
+    width: 20%;
+    color: white;
     font-size: 18px;
     font-family: manaspc, Arial;
 }
 
-.player_icon img {width: 100%;}
+.player_icon img {
+    width: 100%;
+}
 
 .player_icon {
     width: 8%;
 }
 
 .container {
-    background-color: rgba(0,0,0,0.8)
+    background-color: rgba(0, 0, 0, 0.8)
 }
 
 #start_button {
@@ -194,8 +217,8 @@ body {
     position: absolute;
     width: 12%;
     height: 8%;
-    top: 36%;
-    left: 43%;
+    top: 50%;
+    left: 50%;
     font-size: 3em;
     line-height: 20%;
     color: #345da4;
@@ -204,6 +227,7 @@ body {
     background-color: #fcc31d;
     border-radius: 25px;
     cursor: pointer;
+    transform: translate(-50%, -50%);
 }
 
 #start_button:hover {
@@ -211,7 +235,7 @@ body {
 }
 
 #start_button:active {
-    transform: translateY(10px);
+    transform: translate(-50%, -46%);
 }
 
 #start_button:focus {
@@ -219,22 +243,22 @@ body {
 }
 
 #countDown {
-    display:flex;
-    color:#ef4036;
+    display: flex;
+    color: #ef4036;
     text-shadow: 10px 10px black;
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 50%;
     font-size: 300px;
     align-items: center;
     justify-content: center;
     z-index: 500;
-    top:0;
-    bottom:0;
-    transform:translate(-50% -50%);
+    top: 0;
+    bottom: 0;
+    transform: translate(-50% -50%);
 }
 
-#pokeBall{
+#pokeBall {
     width: 240px;
     height: 240px;
     position: absolute;
@@ -244,7 +268,7 @@ body {
     transform: translateX(-50%);
     background-image: url(images/pokeball.png);
     background-size: 100%, 100%;
-    display:none;
+    display: none;
 }
 
 .modal-content {
@@ -260,23 +284,18 @@ body {
     text-shadow: 3px 3px black;
 }
 
-
-#instructions{
-    color:white;
+#instructions {
+    color: white;
 }
 
-#instructions h1{
+#instructions h1 {
     text-align: center;
     text-shadow: 3px 3px black;
 }
 
-#instructions li{
+#instructions li {
     font-size: 20px;
     font-family: manaspc, Arial;
-}
-
-.hpAndPowerBar {
-    margin-top: 3%;
 }
 
 #player_0_health_bar {
@@ -284,8 +303,8 @@ body {
     background-color: green;
 }
 
-#player_0_power_bar{
-   width: 0%;
+#player_0_power_bar {
+    width: 0%;
     background-color: #fcc31d;
 }
 
@@ -299,51 +318,54 @@ body {
     background-color: #fcc31d;
 }
 
-
-.player_stats ul{
+.player_stats ul {
     list-style: none;
 }
 
 .got_hit {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    /* transform: translate3d(-50%, -50%, 0); */
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     backface-visibility: hidden;
     perspective: 1000px;
 }
 
 @keyframes shake {
-    10%, 90% {
+    10%,
+    90% {
         transform: translate3d(-2%, 0%, 0);
     }
-
-    20%, 80% {
+    20%,
+    80% {
         transform: translate3d(2%, 0%, 0);
     }
-
-    30%, 50%, 70% {
+    30%,
+    50%,
+    70% {
         transform: translate3d(-4%, 0%, 0);
     }
-
-    40%, 60% {
+    40%,
+    60% {
         transform: translate3d(4%, 0%, 0);
     }
 }
 
-.front{
+.front {
     transform: rotateY(180deg);
 }
-.card{
-    height:100%;
-    width:100%;
-    border-radius:11px;
-    position:relative;
+
+.card {
+    height: 100%;
+    width: 100%;
+    border-radius: 11px;
+    position: relative;
     transition: 1s;
     transform-style: preserve-3d;
 }
-.card img{
-    height:100%;
-    width:100%;
+
+.card img {
+    height: 100%;
+    width: 100%;
 }
+
 .front, .back{
     border-radius:11px;
     /*height: 100%;*/
@@ -354,7 +376,7 @@ body {
     background-size: cover;
 }
 
-.flipped{
+.flipped {
     transform: rotateY(180deg);
 }
 
@@ -369,28 +391,24 @@ body {
     overflow-y: scroll;
 }
 
-
-.style_scrollbar::-webkit-scrollbar-track
-{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+.style_scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
     background-color: dimgrey;
 }
 
-.style_scrollbar::-webkit-scrollbar
-{
+.style_scrollbar::-webkit-scrollbar {
     width: 12px;
     background-color: dimgrey;
 }
 
-.style_scrollbar::-webkit-scrollbar-thumb
-{
+.style_scrollbar::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
     background-color: #fcc31d;
 }
-#mute
-{
+
+#mute {
     font-size: 40px;
     color: aliceblue;
     position: absolute;
@@ -400,9 +418,69 @@ body {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
-.hidden{
-    display:none;
+
+.hidden {
+    display: none;
 }
+
+.progress {
+    margin: 0px;
+}
+
+
+/********************
+*******tablet styling
+*********************/
+
+.arrows_tablet_container {
+    width: 15%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0px;
+    height: 100%;
+}
+
+.tablet_arrows img {
+    width: 100%;
+}
+
+.tablet_player_container {
+    display: flex;
+    width: 50%;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.tablet_bar {
+    height: 13%;
+    width: 85%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#tablet_main {
+    width: 70%;
+}
+
+.tablet_player_hp_and_pp {
+    width: 48%;
+}
+
+div.player_box.tablet_player_box {
+    width: 90%;
+    height: 72%;
+}
+
+#tablet_top_container {
+    height: 80%;
+}
+
+#tablet_bottom_container {
+    height: 20%;
+}
+
 
 /*Media queries and responsive design*/
 
@@ -423,49 +501,34 @@ body {
     .bottom_container {
         height: 30%;
     }
-
     .top_container {
         height: 58%;
     }
-
     .player_stats {
         font-size: 1vw;
         width: 19%;
     }
-
-    #player_1_name {
-        font-size: 1vw;
-    }
-
     .hpDetails {
         font-size: 1vw;
     }
-
     .powerDetails {
         font-size: 1vw;
     }
-
-    /*.player_box {*/
-        /*height: 57%;*/
-    /*}*/
 }
 
 @media only screen and (min-width: 1440px) {
     .player_stats {
         width: 20%;
     }
-
     .player_key_display {
         position: relative;
         top: 10%;
         height: 33%;
         width: 35%;
     }
-
     .top_container {
         width: 80%;
     }
-
     .player_box {
         margin-top: 6%;
         height: 86%;
@@ -499,4 +562,3 @@ body {
         position: relative;
     }
 }
-

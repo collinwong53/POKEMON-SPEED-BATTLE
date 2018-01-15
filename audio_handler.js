@@ -64,5 +64,6 @@ function Audio_handler() {
     };
     this.apply_click_handlers = function () {
         $('#mute').click(self.toggle_mute);
+        $("#pause_music").click(audio_handler.toggle_victory_music);
     }
 }

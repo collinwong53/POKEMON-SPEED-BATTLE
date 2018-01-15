@@ -120,4 +120,10 @@ function Game_controller() {
             }
         }
     }
+    this.tablet_arrows = function(){
+        const arrow = $(this).attr('id');
+        console.log(arrow);
+        game_controller.handleKeyPress(arrow);
+        
+    }
 }
