@@ -415,6 +415,7 @@ div#desktop {
 *********************/
 
 .arrows_tablet_container {
+    visibility: hidden;
     width: 15%;
     display: flex;
     flex-direction: column;
@@ -438,9 +439,7 @@ div#desktop {
     justify-content: center;
     align-items: center;
 }
-.tablet_player_container img{
-    height:
-}
+
 div.tablet_bar {
     height: 13%;
     width: 85%;
@@ -470,7 +469,7 @@ div.tablet_bar {
 
 div.player_box.tablet_player_box {
     width: 90%;
-    height: 70%;
+    height: 72%;
 }
 
 #tablet_top_container {

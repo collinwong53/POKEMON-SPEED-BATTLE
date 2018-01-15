@@ -203,6 +203,67 @@ function View() {
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
+    // this.tablet_switch = function(){
+    //     .arrows_tablet_container {
+    //         visibility:visible;
+    //     }
+        
+    //     .player_0_arrows .tablet_arrows {
+    //         transform: rotate(90deg)
+    //     }
+        
+    //     .tablet_arrows img {
+    //         width: 100%;
+    //     }
+        
+    //     .tablet_player_container {
+    //         display: flex;
+    //         width: 50%;
+    //         flex-flow: row wrap;
+    //         justify-content: center;
+    //         align-items: center;
+    //     }
+        
+    //     div.tablet_bar {
+    //         height: 13%;
+    //         width: 85%;
+    //         display: flex;
+    //         flex-flow: row wrap;
+    //     }
+        
+    //     .player_stats {
+    //         display: none;
+    //     }
+        
+    //     .player_icon {
+    //         display: none;
+    //     }
+        
+    //     #tablet_main {
+    //         width: 70%;
+    //     }
+        
+    //     .player_key_display {
+    //         display: none;
+    //     }
+        
+    //     .tablet_player_hp_and_pp {
+    //         width: 48%;
+    //     }
+        
+    //     div.player_box.tablet_player_box {
+    //         width: 90%;
+    //         height: 72%;
+    //     }
+        
+    //     #tablet_top_container {
+    //         height: 80%;
+    //     }
+        
+    //     #tablet_bottom_container {
+    //         height: 20%;
+    //     }
+    // }
 };
 
 /***************************************************************************************************
