@@ -414,75 +414,6 @@ body {
     margin: 0px;
 }
 
-/*Media queries and responsive design*/
-
-@media only screen and (min-width: 1024px) {
-    body {
-        overflow: hidden;
-    }
-    .bottom_container {
-        height: 30%;
-    }
-    .top_container {
-        /* height: 70%; */
-    }
-    .player_stats {
-        font-size: 1vw;
-        width: 19%;
-    }
-    .hpDetails {
-        font-size: 1vw;
-    }
-    .powerDetails {
-        font-size: 1vw;
-    }
-    div.player_box.tablet_player_box {
-        width: 65%;
-    }
-}
-
-@media only screen and (min-width: 1440px) {
-    .player_stats {
-        width: 20%;
-    }
-    .player_key_display {
-        position: relative;
-        top: 10%;
-        height: 33%;
-        width: 35%;
-    }
-    .top_container {
-        width: 80%;
-    }
-    .player_box {
-        margin-top: 6%;
-        height: 86%;
-    }
-}
-
-@media screen and (orientation: portrait) {
-    #instructions {
-        z-index: -5;
-    }
-
-    #portrait_orientation_cover {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        display: block;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 6;
-        color: white;
-        font-size: 300%;
-    }
-
-    #portrait_orientation_cover p {
-        margin: 10%;
-        top: 30vh;
-        position: relative;
-    }
-}
-
 /********************
 *******tablet styling
 *********************/
@@ -546,3 +477,76 @@ div.player_box.tablet_player_box {
     border:red 10px solid;
     box-sizing: border-box;
 }
+
+/*Media queries and responsive design*/
+
+@media only screen and (min-width: 1024px) {
+    body {
+        overflow: hidden;
+    }
+    .bottom_container {
+        height: 30%;
+    }
+    .player_stats {
+        font-size: 1vw;
+        width: 19%;
+    }
+    .hpDetails {
+        font-size: 1vw;
+    }
+    .powerDetails {
+        font-size: 1vw;
+    }
+    div.player_box.tablet_player_box {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    body{
+        min-height: 800px;
+    }
+    .player_stats {
+        width: 20%;
+    }
+    .player_key_display {
+        position: relative;
+        top: 10%;
+        height: 33%;
+        width: 35%;
+    }
+    .top_container {
+        width: 80%;
+    }
+    .player_box {
+        margin-top: 6%;
+        height: 86%;
+    }
+    div.player_box.tablet_player_box {
+        width: 65%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #instructions {
+        z-index: -5;
+    }
+
+    #portrait_orientation_cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 6;
+        color: white;
+        font-size: 300%;
+    }
+
+    #portrait_orientation_cover p {
+        margin: 10%;
+        top: 30vh;
+        position: relative;
+    }
+}
+
