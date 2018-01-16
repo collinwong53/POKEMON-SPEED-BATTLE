@@ -86,7 +86,7 @@ function Game_controller() {
             }, 1000);
             setTimeout(function () {
                 $('.player_box').css('background-color', 'transparent');
-            }, 1500);
+            }, 500);
             view.remove_tablet_hightlights();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
@@ -132,7 +132,7 @@ function Game_controller() {
     this.tablet_arrows = function(){
         const arrow_container = $(this).parent();
         console.log(arrow_container[0]);
-        $(arrow_container[0]).find('.tablet_arrows').css('border','none');
+        $(arrow_container[0]).find('.tablet_arrows').css('background','none');
         const arrow = $(this).attr('id');
         console.log(arrow);
         game_controller.handleKeyPress(arrow);
