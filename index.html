@@ -21,13 +21,32 @@
 </head>
 
 <body>
-    <div id="desktop">
-        <div id="top_container">
+    <div id="portrait_orientation_cover">
+        <p>It looks like you are viewing this game in portrait mode. Please switch to landscape for a better experience.</p>
+    </div>
+    <!-- ******************* 
+**** Tablet Player 0 Arrows*******
+******************** -->
+    <div class="arrows_tablet_container player_0_arrows container">
+        <div class="tablet_arrows" id="w">
+            <img src="images/arrow_up.png" alt="arrow up">
+        </div>
+        <div class="tablet_arrows" id="d">
+            <img src="images/arrow_right.png" alt="arrow right">
+        </div>
+        <div class="tablet_arrows" id="s">
+            <img src="images/arrow_down.png" alt="arrow down">
+        </div>
+        <div class="tablet_arrows" id="a">
+            <img src="images/arrow_left.png" alt="arrow left">
+        </div>
+    </div>
+    <div class="main">
+        <div class="top_container">
 
             <!-- ******************************* 
          player one (name,card,stats,key)*******
         ************************************ -->
-
 
             <div class="player_stats container style_scrollbar force-overflow" id="player_0_stats">
                 <img src="images/International_Pokémon_logo.svg.png">
@@ -52,7 +71,7 @@
 
                 <div class="player_box container" id="player_1"></div>
 
-                <div class="player_key_display container" id="player_1_key_display"></div>
+                <div class="player_key_display container"  id="player_1_key_display"></div>
 
             </div>
 
@@ -115,21 +134,40 @@
                 <img id="player_1_icon_image" src="">
             </div>
         </div>
+    </div>
+    <!-- ******************* 
+**** Tablet Player 1 Arrows*******
+******************** -->
+    <div class="arrows_tablet_container player_1_arrows container">
+        <div class="tablet_arrows" id="ArrowUp">
+            <img src="images/arrow_up.png" alt="arrow up">
+        </div>
+        <div class="tablet_arrows" id="ArrowRight">
+            <img src="images/arrow_right.png" alt="arrow right">
+        </div>
+        <div class="tablet_arrows" id="ArrowDown">
+            <img src="images/arrow_down.png" alt="arrow down">
+        </div>
+        <div class="tablet_arrows" id="ArrowLeft">
+            <img src="images/arrow_left.png" alt="arrow left">
+        </div>
+    </div>
 
-        <!-- ************************************** 
+
+    <!-- ************************************** 
 **** mute, countdown, dmg, pokemon*************
 ******************************************* -->
 
-        <button id="start_button" class="btn btn-default">Start</button>
-        <div id="countDown"></div>
-        <div id="mute">
-            <i class="sound_on fa fa-volume-up" aria-hidden="true"></i>
-            <i class="sound_off hidden fa fa-volume-off"></i>
-        </div>
-        <div id="pokeBall"></div>
-        <p class="attackText" id="attackText0"></p>
-        <p class="attackText" id="attackText1"></p>
+    <button id="start_button" class="btn btn-default">Start</button>
+    <div id="countDown"></div>
+    <div id="mute">
+        <i class="sound_on fa fa-volume-up" aria-hidden="true"></i>
+        <i class="sound_off hidden fa fa-volume-off"></i>
     </div>
+    <div id="pokeBall"></div>
+    <p class="attackText" id="attackText0"></p>
+    <p class="attackText" id="attackText1"></p>
+
     <!-- ******************* 
 **** winning modal *******
 ******************** -->
@@ -179,7 +217,8 @@
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" id="touch_switch" data-dismiss="modal">Touch Screen</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Desktop</button>
                 </div>
             </div>
         </div>
