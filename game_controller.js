@@ -49,7 +49,7 @@ function Game_controller() {
         }
         audio_handler.play_sound('countdown');
         game_model.timerValue = time;
-
+        view.remove_tablet_hightlights();
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function () {
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
@@ -117,7 +117,7 @@ function Game_controller() {
                     $('.player_0_arrows').removeClass('tablet_right_move');
                 }
                 $('.player_0_arrows').find('.tablet_arrows').css('background', 'none');
-                
+
             } else if (game_model.players[1].availableKeys.indexOf(keyPress) !== -1) { //player 2 keys
                 if (game_model.players[1].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[1]);
