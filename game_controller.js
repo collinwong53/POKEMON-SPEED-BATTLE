@@ -82,7 +82,7 @@ function Game_controller() {
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function () {
                 $('.card').addClass('flipped'), 1000
-            })
+            });
             view.displayCards();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
