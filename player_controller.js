@@ -53,7 +53,6 @@ function Player_controller() {
         view.hideArrowForMoment(player_model);
         player_model.completedMoves += 1;
         this.checkIfWinRound(player_model);
-        this.getRequiredMove(player_model);
         view.updateBars();
         view.updateBarCounter();
     };
@@ -116,6 +115,9 @@ function Player_controller() {
                 winnerPlayerModel = player_model;
                 game_controller.endGame(winnerPlayerModel);
             }
+        }
+        else{
+            this.getRequiredMove(player_model);
         }
     }
 }

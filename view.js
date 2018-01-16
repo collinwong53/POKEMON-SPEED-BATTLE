@@ -73,7 +73,7 @@ function View() {
      */
     this.arrowBoxMadeMove = function (player_model) {
         var divID = "#player_" + player_model.index + "_key_display";
-        $(divID).css("border", "5px groove green");
+        $(divID).css("border", "5px solid green").css("box-sizing", "border-box");
         setTimeout(function () {
             $(divID).css("border", "none");
         }, 150)
@@ -87,7 +87,7 @@ function View() {
      */
     this.arrowBoxMissMove = function (player_model) {
         var divID = "#player_" + player_model.index + "_key_display";
-        $(divID).css("border", "5px groove red");
+        $(divID).css("border", "5px solid red").css("box-sizing", "border-box");
         setTimeout(function () {
             $(divID).css("border", "none");
         }, 150)

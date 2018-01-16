@@ -138,7 +138,6 @@ body {
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
-    /*box-sizing: content-box;*/
     border-radius: 25px;
     box-sizing: border-box;
 }
