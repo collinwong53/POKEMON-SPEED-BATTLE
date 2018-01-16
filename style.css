@@ -36,8 +36,15 @@ body {
     justify-content: space-evenly;
 }
 
-.player_stats ul {
-    padding: 0;
+#portrait_orientation_cover {
+    /*position: relative;*/
+    /*height: 100%;*/
+    /*width: 100%;*/
+    display: none;
+}
+
+.player_stats ul{
+    padding:0;
 }
 
 
@@ -77,11 +84,12 @@ body {
 .player_box {
     display: flex;
     align-items: center;
-    height: 40%;
-    width: 65%;
+    height: 67%;
+    width: 29vh;
     padding: 0px;
     border-radius: 25px;
     background-size: contain;
+    margin-top: 1vh;
 }
 
 .player_stats {
@@ -130,7 +138,7 @@ body {
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
-    box-sizing: content-box;
+    /*box-sizing: content-box;*/
     border-radius: 25px;
     box-sizing: border-box;
 }
@@ -345,12 +353,11 @@ body {
     width: 100%;
 }
 
-.front,
-.back {
-    border-radius: 11px;
-    height: 100%;
-    width: 100%;
-    position: absolute;
+.front, .back{
+    border-radius:11px;
+    /*height: 100%;*/
+    width:100%;
+    position:absolute;
     backface-visibility: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -492,9 +499,6 @@ div.player_box.tablet_player_box {
     .powerDetails {
         font-size: 1vw;
     }
-    .player_box {
-        height: 57%;
-    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -513,5 +517,28 @@ div.player_box.tablet_player_box {
     .player_box {
         margin-top: 6%;
         height: 86%;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    #instructions {
+        z-index: -5;
+    }
+
+    #portrait_orientation_cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 6;
+        color: white;
+        font-size: 300%;
+    }
+
+    #portrait_orientation_cover p {
+        margin: 10%;
+        top: 30vh;
+        position: relative;
     }
 }
