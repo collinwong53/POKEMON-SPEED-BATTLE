@@ -45,10 +45,11 @@ function Game_controller() {
             $(".player_stats").find('ul').remove();
             game_model.players[0].completedMoves = 0;
             game_model.players[1].completedMoves = 0;
+            view.displayCards();
         }
         audio_handler.play_sound('countdown');
         game_model.timerValue = time;
-
+        view.remove_tablet_hightlights();
         var timeBetweenUpdates = 1000;
         game_model.timerInterval = setInterval(function () {
             game_model.timerValue = game_model.timerValue - timeBetweenUpdates;
@@ -77,13 +78,16 @@ function Game_controller() {
      */
     this.startRound = function (startOfGame) {
         if (startOfGame) {
-            view.displayCards();
+            // view.displayCards();
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function () {
-                $('.card').addClass('flipped'), 1000
-            });
-            view.displayCards();
+                $('.card').addClass('flipped');
+            }, 1000);
+            setTimeout(function () {
+                $('.player_box').css('background-color', 'transparent');
+            }, 500);
+            view.remove_tablet_hightlights();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
             audio_handler.victory_phase = false;
@@ -93,7 +97,7 @@ function Game_controller() {
         player_controller.getRequiredMove(game_model.players[0]);
         player_controller.getRequiredMove(game_model.players[1]);
         view.displayPlayerName(game_model.players[0]);
-        view.displayPlayerName(game_model.players[1])
+        view.displayPlayerName(game_model.players[1]);
     };
 
     /***************************************************************************************************
@@ -105,16 +109,36 @@ function Game_controller() {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) { //player 1 keys
                 if (game_model.players[0].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[0]);
+                    $('.player_0_arrows').addClass('tablet_right_move');
+                    $('.player_0_arrows').removeClass('tablet_wrong_move');
                 } else {
                     player_controller.missMove(game_model.players[0]);
+                    $('.player_0_arrows').addClass('tablet_wrong_move');
+                    $('.player_0_arrows').removeClass('tablet_right_move');
                 }
+                $('.player_0_arrows').find('.tablet_arrows').css('background', 'none');
+
             } else if (game_model.players[1].availableKeys.indexOf(keyPress) !== -1) { //player 2 keys
                 if (game_model.players[1].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[1]);
+                    $('.player_1_arrows').addClass('tablet_right_move');
+                    $('.player_1_arrows').removeClass('tablet_wrong_move');
                 } else {
                     player_controller.missMove(game_model.players[1]);
+                    $('.player_1_arrows').addClass('tablet_wrong_move');
+                    $('.player_0_arrows').removeClass('tablet_right_move');
                 }
+                $('.player_1_arrows').find('.tablet_arrows').css('background', 'none');
             }
         }
+    }
+    this.tablet_arrows = function () {
+        // const arrow_container = $(this).parent();
+        // console.log(arrow_container[0]);
+        // $(arrow_container[0]).find('.tablet_arrows').css('background','none');
+        const arrow = $(this).attr('id');
+        console.log(arrow);
+        game_controller.handleKeyPress(arrow);
+
     }
 }

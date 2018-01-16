@@ -6,8 +6,11 @@ function View() {
      * @calls {undefined} none
      */
     this.displayCards = function () {
-        var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
-        var back_image2 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        // var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        // var back_image2 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        var card_back = "images/cardback.png";
+        var back_image1 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
+        var back_image2 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
         var player0BackgroundImage = game_model.players[0].pokemon.image;
         var player1BackgroundImage = game_model.players[1].pokemon.image;
         var player_0_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player0BackgroundImage + "'" + '/>');
@@ -46,6 +49,7 @@ function View() {
                     image = "'images/arrow_right.png'";
                     break;
             }
+            $('#'+keyInput).css('background','yellow');
             $(divID).css("background-image", "url(" + image + ")");
         }, 150)
     };
@@ -203,6 +207,36 @@ function View() {
             $("#player_1_icon_image").attr("src", playerIconArray[randomIndex]);
         }
     }
+    this.tablet_switch = function () {
+        $('.arrows_tablet_container').css('display', 'flex');
+        $('.player_key_display, .player_stats, .player_icon').css('display', 'none');
+        $('.top_player_container').addClass('tablet_player_container');
+        $('.main').attr('id', 'tablet_main');
+        $('.player_hpAndPower').addClass('tablet_player_hp_and_pp');
+        $('.player_box').addClass('tablet_player_box');
+        $('.top_container').attr('id', 'tablet_top_container');
+        $('.bottom_container').attr('id', 'tablet_bottom_container')
+    }
+    this.apply_click_handlers = function(){
+        $("#start_button").on('click', function () {
+            if (available_cards === null) {
+                return
+            }
+            game_controller.startTimer(3000, true);
+            $("#start_button").hide();
+        });
+        $('#touch_switch').click(this.tablet_switch);
+        $('.close_modal_butt').click(this.close_youtube)
+        $('#winner_modal').on('hidden.bs.modal', this.close_youtube);
+        $('.tablet_arrows').click(game_controller.tablet_arrows);
+    }
+    this.close_youtube = function(){
+        $("#video_display").removeAttr('src');
+    }
+    this.remove_tablet_hightlights = function(){
+        $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
+        $('.tablet_arrows').css('background','none');  
+    }
 };
 
 /***************************************************************************************************
@@ -218,13 +252,13 @@ function displayWinVideo(winnerPlayerModel) {
         $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index + 1) + " Wins!"); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
+        view.remove_tablet_hightlights();  
     };
     this.displayVideo();
 };
 
 
 function close_youtube() {
-    // handle_audio.stop_victory_music();
     $("#video_display").removeAttr('src');
 }
 
