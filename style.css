@@ -43,8 +43,8 @@ body {
     display: none;
 }
 
-.player_stats ul{
-    padding:0;
+.player_stats ul {
+    padding: 0;
 }
 
 
@@ -305,7 +305,7 @@ body {
 }
 
 .got_hit {
-    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
     backface-visibility: hidden;
     perspective: 1000px;
 }
@@ -348,10 +348,11 @@ body {
     width: 100%;
 }
 
-.front, .back{
-    border-radius:11px;
-    width:100%;
-    position:absolute;
+.front,
+.back {
+    border-radius: 11px;
+    width: 100%;
+    position: absolute;
     backface-visibility: hidden;
     background-repeat: no-repeat;
     background-size: cover;
@@ -408,6 +409,7 @@ body {
     margin: 0px;
 }
 
+
 /********************
 *******tablet styling
 *********************/
@@ -417,10 +419,11 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-around;
+    align-items:center;
     margin: 0px;
     height: 100%;
     box-sizing: border-box;
-    border: 10px solid rgba(0,0,0,.0);
+    border: 10px solid rgba(0, 0, 0, .0);
 }
 
 .tablet_arrows img {
@@ -463,97 +466,146 @@ div.player_box.tablet_player_box {
 #tablet_bottom_container {
     height: 20%;
 }
-.tablet_right_move{
-    border:green 10px solid;
+
+.tablet_right_move {
+    border: green 10px solid;
     box-sizing: border-box;
 }
-.tablet_wrong_move{
-    border:red 10px solid;
+
+.tablet_wrong_move {
+    border: red 10px solid;
     box-sizing: border-box;
 }
+
 
 /*Media queries and responsive design*/
 
 @media only screen and (min-width: 1024px) {
     body {
         overflow: hidden;
-        min-height:768px;
+        min-height: 768px;
     }
     .bottom_container {
         height: 30%;
     }
     .player_stats {
-        font-size: 1vw;
         width: 19%;
     }
-    .hpDetails {
-        font-size: 1vw;
-    }
-    .powerDetails {
-        font-size: 1vw;
+    .player_hpAndPower {
+        font-size: 10px;
     }
     div.player_box.tablet_player_box {
         width: 80%;
     }
 }
-@media only screen and (min-width: 1200px){
+
+@media only screen and (min-width: 1120px) {
     div.player_box.tablet_player_box {
         width: 70%;
     }
+    .player_hpAndPower {
+        font-size: 11px;
+    }
+    .player_box {
+        width: 70%;
+    }
 }
-@media only screen and (min-width: 1350px) and (min-height:950px){
+
+@media only screen and (min-width: 1300px) {
+    .player_box {
+        width: 60%;
+    }
+    .player_hpAndPower {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 1350px) and (min-height:950px) {
     div.player_box.tablet_player_box {
         width: 90%;
     }
+    .player_hpAndPower {
+        font-size: 15px;
+    }
+    .player_box {
+        width: 80%;
+    }
 }
-@media only screen and (min-width: 1440px) {
-    body{
+
+@media only screen and (min-width: 1420px) {
+    body {
         min-height: 800px;
     }
     .player_stats {
         width: 20%;
     }
-    .player_key_display {
+    /*     .player_key_display {
         position: relative;
-        top: 10%;
-        height: 33%;
-        width: 35%;
-    }
-    .top_container {
-        width: 80%;
-    }
+    } */
     .player_box {
-        height: 86%;
+        width: 60%;
     }
     div.player_box.tablet_player_box {
         width: 60%;
     }
+    .player_hpAndPower {
+        font-size: 12px;
+    }
 }
-@media only screen and (min-width: 1440px) and (min-height: 850px){
+
+@media only screen and (min-width: 1520px) {
+    body {
+        min-height: 900px;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (min-height: 850px) {
     div.player_box.tablet_player_box {
         width: 70%;
     }
-}
-@media only screen and (min-width: 1700px){
-    body{
-        min-height:900px; 
+    .player_hpAndPower {
+        font-size: 18px;
     }
 }
-@media only screen and (min-width: 1700px){
+
+@media only screen and (min-width: 1700px) {
+    .player_hpAndPower {
+        font-size: 20px;
+    }
+    .player_box {
+        width: 55%;
+    }
+    .player_key_display {
+        height: 23%;
+    }
+    .player_icon {
+        width: 5%;
+    }
     div.player_box.tablet_player_box {
         width: 65%;
     }
 }
-@media only screen and (min-width: 1850px){
+
+@media only screen and (min-width: 1850px) {
     div.player_box.tablet_player_box {
         width: 60%;
+    }
+    .player_box {
+        width: 50%;
+    }
+    .tablet_arrows{
+        width:80%;
+    }
+}
+@media only screen and (min-width: 2000px){
+    body{
+        min-height:950px;
     }
 }
 @media screen and (orientation: portrait) {
     #instructions {
         z-index: -5;
     }
-
     #portrait_orientation_cover {
         position: absolute;
         height: 100%;
@@ -564,11 +616,9 @@ div.player_box.tablet_player_box {
         color: white;
         font-size: 300%;
     }
-
     #portrait_orientation_cover p {
         margin: 10%;
         top: 30vh;
         position: relative;
     }
 }
-
