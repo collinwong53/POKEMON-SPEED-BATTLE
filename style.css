@@ -500,6 +500,9 @@ div.player_box.tablet_player_box {
     .powerDetails {
         font-size: 1vw;
     }
+    div.player_box.tablet_player_box {
+        width: 65%;
+    }
 }
 
 @media only screen and (min-width: 1440px) {
@@ -518,9 +521,6 @@ div.player_box.tablet_player_box {
     .player_box {
         margin-top: 6%;
         height: 86%;
-    }
-    div.player_box.tablet_player_box {
-        width: 65%;
     }
 }
 
