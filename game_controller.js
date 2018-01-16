@@ -86,6 +86,7 @@ function Game_controller() {
             setTimeout(function () {
                 $('.player_box').css('background-color', 'transparent');
             }, 1500);
+            view.remove_tablet_hightlights();
             view.displayCards();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
