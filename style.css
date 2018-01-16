@@ -426,6 +426,7 @@ body {
     justify-content: space-around;
     margin: 0px;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .tablet_arrows img {
@@ -467,7 +468,14 @@ div.player_box.tablet_player_box {
 #tablet_bottom_container {
     height: 20%;
 }
-
+.tablet_right_move{
+    border:green 10px solid;
+    box-sizing: border-box;
+}
+.tablet_wrong_move{
+    border:red 10px solid;
+    box-sizing: border-box;
+}
 
 /*Media queries and responsive design*/
 

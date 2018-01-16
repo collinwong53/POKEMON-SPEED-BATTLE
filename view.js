@@ -46,6 +46,7 @@ function View() {
                     image = "'images/arrow_right.png'";
                     break;
             }
+            $('#'+keyInput).css('border','5px green solid');
             $(divID).css("background-image", "url(" + image + ")");
         }, 150)
     };
@@ -229,6 +230,10 @@ function View() {
     this.close_youtube = function(){
         $("#video_display").removeAttr('src');
     }
+    this.remove_tablet_hightlights = function(){
+        $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
+        $('.tablet_arrows').css('border','none');  
+    }
 };
 
 /***************************************************************************************************
@@ -244,6 +249,7 @@ function displayWinVideo(winnerPlayerModel) {
         $(".modal-title").text("Player " + parseInt(winnerPlayerModel.index + 1) + " Wins!"); // The text will be the name of the pokemon
         $("#video_display").attr('src', winner_video_link);
         $("#winner_modal").modal('show');
+        view.remove_tablet_hightlights();  
     };
     this.displayVideo();
 };

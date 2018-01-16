@@ -108,19 +108,30 @@ function Game_controller() {
             if (game_model.players[0].availableKeys.indexOf(keyPress) !== -1) { //player 1 keys
                 if (game_model.players[0].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[0]);
+                    $('.player_0_arrows').addClass('tablet_right_move');
+                    $('.player_0_arrows').removeClass('tablet_wrong_move');
                 } else {
                     player_controller.missMove(game_model.players[0]);
+                    $('.player_0_arrows').addClass('tablet_wrong_move');
+                    $('.player_0_arrows').removeClass('tablet_right_move');
                 }
             } else if (game_model.players[1].availableKeys.indexOf(keyPress) !== -1) { //player 2 keys
                 if (game_model.players[1].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[1]);
+                    $('.player_1_arrows').addClass('tablet_right_move');
+                    $('.player_1_arrows').removeClass('tablet_wrong_move');
                 } else {
                     player_controller.missMove(game_model.players[1]);
+                    $('.player_1_arrows').addClass('tablet_wrong_move');
+                    $('.player_0_arrows').removeClass('tablet_right_move');
                 }
             }
         }
     }
     this.tablet_arrows = function(){
+        const arrow_container = $(this).parent();
+        console.log(arrow_container[0]);
+        $(arrow_container[0]).find('.tablet_arrows').css('border','none');
         const arrow = $(this).attr('id');
         console.log(arrow);
         game_controller.handleKeyPress(arrow);
