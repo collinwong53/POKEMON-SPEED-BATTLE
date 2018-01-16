@@ -6,8 +6,11 @@ function View() {
      * @calls {undefined} none
      */
     this.displayCards = function () {
-        var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
-        var back_image2 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        // var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        // var back_image2 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
+        var card_back = "images/cardback.png";
+        var back_image1 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
+        var back_image2 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
         var player0BackgroundImage = game_model.players[0].pokemon.image;
         var player1BackgroundImage = game_model.players[1].pokemon.image;
         var player_0_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player0BackgroundImage + "'" + '/>');
