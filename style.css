@@ -355,7 +355,6 @@ body {
 
 .front, .back{
     border-radius:11px;
-    /*height: 100%;*/
     width:100%;
     position:absolute;
     backface-visibility: hidden;
@@ -427,6 +426,7 @@ body {
     margin: 0px;
     height: 100%;
     box-sizing: border-box;
+    border: 10px solid rgba(0,0,0,.0);
 }
 
 .tablet_arrows img {
@@ -457,12 +457,13 @@ div.tablet_bar {
 }
 
 div.player_box.tablet_player_box {
-    width: 90%;
+    width: 80%;
     height: 72%;
 }
 
 #tablet_top_container {
     height: 80%;
+    width: 100%;
 }
 
 #tablet_bottom_container {
@@ -517,6 +518,9 @@ div.player_box.tablet_player_box {
     .player_box {
         margin-top: 6%;
         height: 86%;
+    }
+    div.player_box.tablet_player_box {
+        width: 65%;
     }
 }
 

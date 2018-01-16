@@ -235,7 +235,7 @@ function View() {
     }
     this.remove_tablet_hightlights = function(){
         $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
-        $('.tablet_arrows').css('border','none');  
+        $('.tablet_arrows').css('background','none');  
     }
 };
 

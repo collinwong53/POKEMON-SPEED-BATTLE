@@ -116,6 +116,8 @@ function Game_controller() {
                     $('.player_0_arrows').addClass('tablet_wrong_move');
                     $('.player_0_arrows').removeClass('tablet_right_move');
                 }
+                $('.player_0_arrows').find('.tablet_arrows').css('background', 'none');
+                
             } else if (game_model.players[1].availableKeys.indexOf(keyPress) !== -1) { //player 2 keys
                 if (game_model.players[1].requiredMove === keyPress) {
                     player_controller.completeMove(game_model.players[1]);
@@ -126,16 +128,17 @@ function Game_controller() {
                     $('.player_1_arrows').addClass('tablet_wrong_move');
                     $('.player_0_arrows').removeClass('tablet_right_move');
                 }
+                $('.player_1_arrows').find('.tablet_arrows').css('background', 'none');
             }
         }
     }
-    this.tablet_arrows = function(){
-        const arrow_container = $(this).parent();
-        console.log(arrow_container[0]);
-        $(arrow_container[0]).find('.tablet_arrows').css('background','none');
+    this.tablet_arrows = function () {
+        // const arrow_container = $(this).parent();
+        // console.log(arrow_container[0]);
+        // $(arrow_container[0]).find('.tablet_arrows').css('background','none');
         const arrow = $(this).attr('id');
         console.log(arrow);
         game_controller.handleKeyPress(arrow);
-        
+
     }
 }
