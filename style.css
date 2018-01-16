@@ -169,14 +169,14 @@ body {
 .player_key_display,
 .player_hpAndPower {
     height: 18%;
-    width: 30%;
+    width: 25%;
     z-index: 5;
     background-size: 85%;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 25px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .bottom_container {
@@ -195,7 +195,7 @@ body {
 
 .player_hpAndPower {
     width: 30%;
-    height: 60%;
+    height: 50%;
     margin: 0;
     font-size: 9px;
 }
@@ -237,7 +237,7 @@ body {
 }
 
 .player_icon {
-    width: 6%;
+    width: 4%;
 }
 
 .container {
@@ -617,8 +617,8 @@ div.player_box.tablet_player_box {
 
 @media only screen and (min-width: 1024px) {
     body {
-        overflow: hidden;
-        min-height: 768px;
+        /* overflow: hidden; */
+        min-height: 750px;
     }
     .bottom_container {
         height: 30%;
@@ -669,7 +669,7 @@ div.player_box.tablet_player_box {
 
 @media only screen and (min-width: 1420px) {
     body {
-        min-height: 800px;
+        min-height: 750px;
     }
     .player_stats {
         width: 20%;
@@ -678,7 +678,7 @@ div.player_box.tablet_player_box {
         position: relative;
     } */
     .player_box {
-        width: 60%;
+        width: 55%;
     }
     div.player_box.tablet_player_box {
         width: 60%;
@@ -690,7 +690,7 @@ div.player_box.tablet_player_box {
 
 @media only screen and (min-width: 1520px) {
     body {
-        min-height: 900px;
+        min-height: 800px;
     }
 }
 
