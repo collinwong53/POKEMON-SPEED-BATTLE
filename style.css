@@ -419,7 +419,7 @@ body {
     display: none;
     flex-direction: column;
     justify-content: space-around;
-    align-items:center;
+    align-items: center;
     margin: 0px;
     height: 100%;
     box-sizing: border-box;
@@ -593,15 +593,17 @@ div.player_box.tablet_player_box {
     .player_box {
         width: 50%;
     }
-    .tablet_arrows{
-        width:80%;
+    .tablet_arrows {
+        width: 80%;
     }
 }
-@media only screen and (min-width: 2000px){
-    body{
-        min-height:950px;
+
+@media only screen and (min-width: 2000px) {
+    body {
+        min-height: 950px;
     }
 }
+
 @media screen and (orientation: portrait) {
     #instructions {
         z-index: -5;
