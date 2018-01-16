@@ -45,6 +45,7 @@ function Game_controller() {
             $(".player_stats").find('ul').remove();
             game_model.players[0].completedMoves = 0;
             game_model.players[1].completedMoves = 0;
+            view.displayCards();
         }
         audio_handler.play_sound('countdown');
         game_model.timerValue = time;
@@ -77,7 +78,7 @@ function Game_controller() {
      */
     this.startRound = function (startOfGame) {
         if (startOfGame) {
-            view.displayCards();
+            // view.displayCards();
             get_card_api_data.get_pokemonDB(game_model.players[0].pokemon.name, '#player_0_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             get_card_api_data.get_pokemonDB(game_model.players[1].pokemon.name, '#player_1_stats').then(get_card_api_data.resolve_pokeDB, get_card_api_data.reject_pokeDB);
             setTimeout(function () {
@@ -87,7 +88,6 @@ function Game_controller() {
                 $('.player_box').css('background-color', 'transparent');
             }, 1500);
             view.remove_tablet_hightlights();
-            view.displayCards();
             audio_handler.play_main();
             audio_handler.stop_victory_music();
             audio_handler.victory_phase = false;
