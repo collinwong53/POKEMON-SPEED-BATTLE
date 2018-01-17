@@ -100,8 +100,7 @@ function Grab_data() {
             }
         };
         $.ajax({
-            url: 'https://danielpaschal.com/pokeyproxy.php?name=' + pokemon,
-            dataType: 'text',
+            url: 'http://danielpaschal.com/pokeyproxy.php?name=' + pokemon,
             success: function (data) {
                 var page = new DOMParser().parseFromString(data, 'text/html'); //grabs the table information from site
                 var pokemonObj = {
