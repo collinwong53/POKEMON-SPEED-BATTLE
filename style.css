@@ -92,13 +92,13 @@ body {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-flow: column;
-            flex-flow: column;
+    -ms-flex-flow: column;
+    flex-flow: column;
     -ms-flex-pack: distribute;
-        justify-content: space-around;
+    justify-content: space-around;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .player_name {
@@ -663,7 +663,11 @@ div.player_box.tablet_player_box {
         width: 65%;
     }
 }
-
+@media only screen and (min-width: 1120px) and (min-height:850px){
+    .player_box{
+        width:85%;
+    }
+}
 @media only screen and (min-width: 1300px) {
     .player_box {
         width: 60%;
@@ -672,7 +676,11 @@ div.player_box.tablet_player_box {
         font-size: 12px;
     }
 }
-
+@media only screen and (min-width: 1300px) and (min-height:850px){
+    .player_box {
+        width: 75%;
+    }
+}
 @media only screen and (min-width: 1350px) and (min-height:950px) {
     div.player_box.tablet_player_box {
         width: 90%;
@@ -708,6 +716,11 @@ div.player_box.tablet_player_box {
         width:25%;
     }
 }
+@media only screen and (min-width: 1420px) and (min-height:900px){
+    .player_box {
+        width: 70%;
+    }
+}
 
 @media only screen and (min-width: 1520px) {
     body {
@@ -720,13 +733,13 @@ div.player_box.tablet_player_box {
         width: 70%;
     }
     .player_hpAndPower {
-        font-size: 18px;
+        font-size: 13px;
     }
 }
 
 @media only screen and (min-width: 1700px) {
     .player_hpAndPower {
-        font-size: 20px;
+        font-size: 15px;
     }
     .player_box {
         width: 50%;
@@ -742,21 +755,37 @@ div.player_box.tablet_player_box {
     }
 }
 
-@media only screen and (min-width: 1850px) {
+@media only screen and (min-width: 1700px) and (min-height: 950px){
+    .player_box{
+        width:65%;
+    }
+}
+
+@media only screen and (min-width: 1820px) {
     div.player_box.tablet_player_box {
         width: 60%;
     }
     .player_box {
-        width: 45%;
+        width: 46%;
     }
     .tablet_arrows {
         width: 80%;
     }
 }
-
+@media only screen and (min-width: 1820px) and (min-height: 950px){
+    .player_box{
+        width:60%;
+    }
+}
 @media only screen and (min-width: 2000px) {
     body {
         min-height: 950px;
+    }
+    .player_box{
+        width:53%;
+    }
+    .player_icon{
+        width:4%;
     }
 }
 
