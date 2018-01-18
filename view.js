@@ -5,6 +5,7 @@ function View() {
      * @returns {undefined} none
      * @calls {undefined} none
      */
+    this.desktop = true;
     this.displayCards = function () {
         // var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
         // var back_image2 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
@@ -216,6 +217,7 @@ function View() {
         $('.player_box').addClass('tablet_player_box');
         $('.top_container').attr('id', 'tablet_top_container');
         $('.bottom_container').attr('id', 'tablet_bottom_container')
+        this.desktop = false;
     }
     this.desktop_switch = function(){
         $('.arrows_tablet_container').css('display', 'none');
@@ -239,6 +241,7 @@ function View() {
         $('.close_modal_butt').click(this.close_youtube)
         $('#winner_modal').on('hidden.bs.modal', this.close_youtube);
         $('.tablet_arrows').click(game_controller.tablet_arrows);
+        $('#toggle_view').click(this.toggle_view);
     }
     this.close_youtube = function(){
         $("#video_display").removeAttr('src');
@@ -246,6 +249,14 @@ function View() {
     this.remove_tablet_hightlights = function(){
         $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
         $('.tablet_arrows').css('background','none');  
+    }
+    this.toggle_view = function(){
+        if(view.desktop){
+            view.tablet_switch();
+        }else{
+            view.desktop_switch();
+            view.desktop = true;
+        }
     }
 };
 
