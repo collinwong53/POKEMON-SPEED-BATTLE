@@ -789,7 +789,7 @@ div.player_box.tablet_player_box {
 }
 
 /* For tablets in portrait mode*/
-@media only screen and (orientation: portrait) and (min-width: 768px){
+@media only screen and (orientation: portrait) and (min-width: 426px){
     #instructions {
         z-index: -5;
     }
