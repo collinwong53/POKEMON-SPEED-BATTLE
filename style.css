@@ -665,7 +665,7 @@ div.player_box.tablet_player_box {
 }
 @media only screen and (min-width: 1120px) and (min-height:850px){
     .player_box{
-        width:80%;
+        width:70%;
     }
 }
 @media only screen and (min-width: 1300px) {
@@ -678,7 +678,7 @@ div.player_box.tablet_player_box {
 }
 @media only screen and (min-width: 1300px) and (min-height:850px){
     .player_box {
-        width: 75%;
+        width: 70%;
     }
 }
 @media only screen and (min-width: 1350px) and (min-height:950px) {
@@ -697,9 +697,6 @@ div.player_box.tablet_player_box {
     body {
         min-height: 750px;
     }
-    /*     .player_key_display {
-        position: relative;
-    } */
     .player_box {
         width: 55%;
     }
@@ -715,7 +712,7 @@ div.player_box.tablet_player_box {
 }
 @media only screen and (min-width: 1420px) and (min-height:900px){
     .player_box {
-        width: 70%;
+        width: 65%;
     }
 }
 
@@ -754,7 +751,7 @@ div.player_box.tablet_player_box {
 
 @media only screen and (min-width: 1700px) and (min-height: 950px){
     .player_box{
-        width:65%;
+        width:60%;
     }
 }
 
