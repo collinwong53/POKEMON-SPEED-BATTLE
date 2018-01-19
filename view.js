@@ -283,11 +283,11 @@ function View() {
     };
 
     /***************************************************************************************************
-     * removeTabletHighLights - changes into tablet mode for game
-     * @param  {undefined} none
-     * @returns {undefined} none
-     * @calls {undefined} none
-     */
+ * removeTabletHighLights - remove arrow and container borders from tablet arrows
+ * @param  {undefined} none
+ * @returns {undefined} none
+ * @calls View.tabletSwitch, View.desktopSwitch
+ */
 
     this.removeTabletHighlights = function(){
         $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
@@ -321,6 +321,7 @@ function displayWinVideo(winnerPlayerModel) {
     };
     this.displayVideo();
 }
+
 
 
 function closeYoutube() {
