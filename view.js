@@ -283,10 +283,10 @@ function View() {
     }
 
     /***************************************************************************************************
- * removeTabletHighLights - changes into tablet mode for game
+ * removeTabletHighLights - remove arrow and container borders from tablet arrows
  * @param  {undefined} none
  * @returns {undefined} none
- * @calls {undefined} none
+ * @calls View.tabletSwitch, View.desktopSwitch
  */
 
     this.remove_tablet_highlights = function(){
@@ -321,10 +321,6 @@ function displayWinVideo(winnerPlayerModel) {
     this.displayVideo();
 };
 
-
-function close_youtube() {
-    $("#video_display").removeAttr('src');
-}
 
 /***************************************************************************************************
  * grab youtube api - gets the information from the youtube api
