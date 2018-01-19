@@ -248,14 +248,6 @@ body {
     font-family: manaspc, Arial;
 }
 
-.player_icon img {
-    width: 100%;
-}
-
-.player_icon {
-    width: 4%;
-}
-
 .container {
     background-color: rgba(0, 0, 0, 0.8)
 }
@@ -553,6 +545,18 @@ body {
     -webkit-text-stroke-color: black;
 }
 
+#mute:hover {
+    color: black;
+}
+
+#keyboard_icon:hover {
+    color: black
+}
+
+#info:hover {
+    color: black
+}
+
 .hidden {
     display: none;
 }
@@ -766,9 +770,6 @@ div.player_box.tablet_player_box {
     .player_key_display {
         height: 20%;
     }
-    .player_icon {
-        width: 5%;
-    }
     div.player_box.tablet_player_box {
         width: 65%;
     }
@@ -802,9 +803,6 @@ div.player_box.tablet_player_box {
     }
     .player_box{
         width:53%;
-    }
-    .player_icon{
-        width:4%;
     }
 }
 
