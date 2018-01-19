@@ -5,6 +5,7 @@ function View() {
      * @returns {undefined} none
      * @calls {undefined} none
      */
+    const self = this;
     this.desktop = true;
     this.displayCards = function () {
         // var back_image1 = $('<div>').addClass('back').css('background-image', "url('images/card_back.png')");
@@ -216,7 +217,9 @@ function View() {
         $('.player_hpAndPower').addClass('tablet_player_hp_and_pp');
         $('.player_box').addClass('tablet_player_box');
         $('.top_container').attr('id', 'tablet_top_container');
-        $('.bottom_container').attr('id', 'tablet_bottom_container')
+        $('.bottom_container').attr('id', 'tablet_bottom_container');
+        $('#tablet_icon').removeClass('hidden');
+        $('#keyboard_icon').addClass('hidden');
         this.desktop = false;
     }
     this.desktop_switch = function(){
@@ -227,7 +230,9 @@ function View() {
         $('.player_hpAndPower').removeClass('tablet_player_hp_and_pp');
         $('.player_box').removeClass('tablet_player_box');
         $('.top_container').removeAttr('id');
-        $('.bottom_container').removeAttr('id')
+        $('.bottom_container').removeAttr('id');
+        $('#tablet_icon').addClass('hidden');
+        $('#keyboard_icon').removeClass('hidden');
     }
     this.apply_click_handlers = function(){
         $("#start_button").on('click', function () {
@@ -251,11 +256,11 @@ function View() {
         $('.tablet_arrows').css('background','none');  
     }
     this.toggle_view = function(){
-        if(view.desktop){
-            view.tablet_switch();
+        if(self.desktop){
+            self.tablet_switch();
         }else{
-            view.desktop_switch();
-            view.desktop = true;
+            self.desktop_switch();
+            self.desktop = true;
         }
     }
 };
