@@ -9,9 +9,9 @@ function GrabData() {
     this.makePokemonObject = function (data) {
         availableCards = data.cards; //store cards in global for future use
     };
-    this.failedToGetData = function (data) {
-        console.log('failed', data);
-    };
+    // this.failedToGetData = function (data) {
+    //     console.log('failed', data);
+    // };
     /***************************************************************************************************
      * grab card api - gets the information from the card api
      * @param  {undefined} none
@@ -83,9 +83,9 @@ function GrabData() {
             $(player + ' ul').append(pokeInfo);
         }
     };
-    this.rejectPokeDB = function (data) {
-        console.log('error');
-    };
+    // this.rejectPokeDB = function (data) {
+    //     console.log('error');
+    // };
     /***************************************************************************************************
      * grab pokemon api - gets the information from the pokemon api
      * @param  {pokemon name and the player} none

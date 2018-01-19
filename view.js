@@ -13,8 +13,8 @@ function View() {
         var card_back = "images/cardback.png";
         var back_image1 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
         var back_image2 = $('<div>').addClass('back').prepend('<img src="'+card_back+'">');
-        var player0BackgroundImage = game_model.players[0].pokemon.image;
-        var player1BackgroundImage = game_model.players[1].pokemon.image;
+        var player0BackgroundImage = gameModel.players[0].pokemon.image;
+        var player1BackgroundImage = gameModel.players[1].pokemon.image;
         var player_0_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player0BackgroundImage + "'" + '/>');
         var player_1_front = $('<div>').addClass('front').prepend('<img src=' + "'" + player1BackgroundImage + "'" + '/>');
         var player_0_card = $('<div>').addClass('card').append(player_0_front, back_image1);
@@ -211,12 +211,12 @@ function View() {
     };
 
     /***************************************************************************************************
- * tabletSwitch - changes into tablet mode for game
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-    this.tablet_switch = function () {
+     * tabletSwitch - changes into tablet mode for game
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
+    this.tabletSwitch = function () {
         $('.arrows_tablet_container').css('display', 'flex');
         $('.player_key_display, .player_stats, .player_icon').css('display', 'none');
         $('.top_player_container').addClass('tablet_player_container');
@@ -231,12 +231,12 @@ function View() {
     };
 
     /***************************************************************************************************
- * desktopSwitch - changes into desktop mode for game
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
-    this.desktop_switch = function(){
+     * desktopSwitch - changes into desktop mode for game
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
+    this.desktopSwitch = function(){
         $('.arrows_tablet_container').css('display', 'none');
         $('.player_key_display, .player_stats, .player_icon').css('display', 'block');
         $('.top_player_container').removeClass('tablet_player_container');
@@ -249,12 +249,12 @@ function View() {
         $('#keyboard_icon').removeClass('hidden');
     };
 
-/***************************************************************************************************
- * ApplyClickHandlers - apply click handlers from view object
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
+    /***************************************************************************************************
+     * ApplyClickHandlers - apply click handlers from view object
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
 
     this.applyClickHandlers = function(){
         $("#start_button").on('click', function () {
@@ -272,27 +272,28 @@ function View() {
     };
 
     /***************************************************************************************************
- * closeYoutube- closes youtube video
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
+     * closeYoutube- closes youtube video
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
 
     this.closeYoutube = function(){
         $("#video_display").removeAttr('src');
     };
 
     /***************************************************************************************************
- * removeTabletHighLights - changes into tablet mode for game
- * @param  {undefined} none
- * @returns {undefined} none
- * @calls {undefined} none
- */
+     * removeTabletHighLights - changes into tablet mode for game
+     * @param  {undefined} none
+     * @returns {undefined} none
+     * @calls {undefined} none
+     */
 
     this.removeTabletHighlights = function(){
         $('.arrows_tablet_container').removeClass('tablet_right_move tablet_wrong_move');
-        $('.tablet_arrows').css('background','none');  
+        $('.tablet_arrows').css('background','none');
     };
+
     this.toggleView = function(){
         if(self.desktop){
             self.tabletSwitch();
@@ -367,9 +368,9 @@ function getYoutubeData(pokemonName) {
  */
 
 function winnerVideo(data) {
-    var videoList = data;
+    videoList = data;
     var randomVid = videoList.video[Math.floor(Math.random() * videoList.video.length)].id;
-   var winnerVideoLink = "https://www.youtube.com/embed/" + randomVid;
+    winnerVideoLink = "https://www.youtube.com/embed/" + randomVid;
     displayWinVideo(winnerPlayerModel);
 }
 /***************************************************************************************************
