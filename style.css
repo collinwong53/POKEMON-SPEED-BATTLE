@@ -545,16 +545,8 @@ body {
     -webkit-text-stroke-color: black;
 }
 
-#mute:hover {
-    color: black;
-}
-
-#keyboard_icon:hover {
-    color: black
-}
-
-#info:hover {
-    color: black
+#mute:hover, #keyboard_icon:hover, #info:hover {
+    color: #fcc31d;
 }
 
 .hidden {
