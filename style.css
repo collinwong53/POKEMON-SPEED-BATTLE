@@ -71,24 +71,6 @@ body {
 *******top_container
 *********************/
 
-.top_container {
-    width: 60%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-flow: row;
-    flex-flow: row;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
 .top_player_container {
     width: 45%;
     height: 100%;
@@ -148,11 +130,6 @@ body {
     width: 75%;
     margin-left: 13%;
 }
-
-
-/********************
-*******bottom_container
-*********************/
 
 .attackText {
     position: absolute;
