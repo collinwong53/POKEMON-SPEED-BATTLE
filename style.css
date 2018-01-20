@@ -66,13 +66,8 @@ body {
     box-sizing: border-box;
 }
 
-
-/********************
-*******top_container
-*********************/
-
 .top_player_container {
-    width: 45%;
+    width: 30%;
     height: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -111,7 +106,7 @@ body {
     display: -ms-flexbox;
     display: flex;
     height: 50%;
-    width: 95%;
+    width: 85%;
     border-radius: 25px;
 }
 
@@ -130,6 +125,11 @@ body {
     width: 75%;
     margin-left: 13%;
 }
+
+
+/********************
+*******bottom_container
+*********************/
 
 .attackText {
     position: absolute;
@@ -649,7 +649,7 @@ div.player_box.tablet_player_box {
         width: 80%;
     }
     .player_box{
-        width: 85%;
+        width: 80%;
     }
 }
 
@@ -661,7 +661,7 @@ div.player_box.tablet_player_box {
         font-size: 11px;
     }
     .player_box {
-        width: 80%;
+        width: 68%;
     }
 }
 @media only screen and (min-width: 1120px) and (min-height:850px){
@@ -671,7 +671,7 @@ div.player_box.tablet_player_box {
 }
 @media only screen and (min-width: 1300px) {
     .player_box {
-        width: 67%;
+        width: 60%;
     }
     .player_hpAndPower {
         font-size: 12px;
@@ -699,7 +699,7 @@ div.player_box.tablet_player_box {
 
 @media only screen and (min-width: 1420px) {
     .player_box {
-        width: 62%;
+        width: 58%;
     }
     div.player_box.tablet_player_box {
         width: 60%;
