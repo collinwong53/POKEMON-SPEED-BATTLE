@@ -29,7 +29,7 @@ body {
     position: relative;
     min-width: 1000px;
     min-height: 700px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .main {
@@ -239,6 +239,7 @@ body {
             transform: translate(-50%, -50%);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    cursor: pointer;
 }
 #start_button {
     display: -webkit-box;
@@ -507,6 +508,7 @@ body {
             transform: translate(-50%, -50%);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    cursor: pointer;
 }
 
 #mute {
@@ -520,6 +522,7 @@ body {
             transform: translate(-50%, -50%);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
+    cursor: pointer;
 }
 
 #mute:hover, #keyboard_icon:hover, #info:hover {
@@ -551,7 +554,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: 0px;
+    margin: 0;
     height: 100%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
