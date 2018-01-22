@@ -28,7 +28,7 @@
 
 ## Developers
 Created by four developers as part of a Hackathon at Learning Fuze
-  - [Collin Wong](https://www.linkedin.com/in/briandhkimucla/ "Collin's LinkedIn")
+  - [Collin Wong](https://www.linkedin.com/in/collin-wong-dev/ "Collin's LinkedIn")
   - [Anthony Sorise](https://www.linkedin.com/in/anthony-sorise-6a184b10/ "Anthony's LinkedIn")
   - [Rebecca Brewster](https://www.linkedin.com/in/rebecca-brewster-3a30a9a3/ "Rebecca's LinkedIn")
   - Jay Ko
