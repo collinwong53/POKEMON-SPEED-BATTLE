@@ -525,7 +525,7 @@ body {
     cursor: pointer;
 }
 
-#mute:hover, #keyboard_icon:hover, #info:hover {
+#mute:hover, #keyboard_icon:hover, #tablet_icon:hover, #info:hover {
     color: #fcc31d;
 }
 
