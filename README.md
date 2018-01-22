@@ -1,21 +1,21 @@
 # Pokemon Speed Battle
 
-<h3>A Pokemon Themed Competitive 2-Player Game</h3>
+<h3>A Pokemon Themed 2-Player Speed Sequence Game</h3>
 
 ![Alt text](/images/readme.png?raw=true "Pokemon Speed Battle")
 
 ## About
-- Pokemon DDR is a competitive game where two players race to hit a random sequence of keys in order to attack eachother.
+- Pokemon Speed Battle is a competitive game where two players recieve a Pokemon card out of a deck of hundereds of cards, and race to hit a random sequence of keys in order to have their Pokemon attack eachother.
 
 ## Rules
 
 - Each player is given a random Pokemon at the start of a round.
-- Player one uses WASD
-- Player two uses arrow keys
-- In tablet mode, click the highlighted arrows
-- Follow given moves to build up your power bar
-- Fill up your power bar to attack your opponent
-- Strong Pokemon require more moves to attack
+- Player one uses WASD.
+- Player two uses arrow keys.
+- In tablet mode, click the highlighted arrows.
+- Follow given moves to build up your power bar.
+- Fill up your power bar to attack your opponent.
+- Strong Pokemon require more moves to attack.
 - Bring your opponent's HP to zero to win!
 
 ## Technology
