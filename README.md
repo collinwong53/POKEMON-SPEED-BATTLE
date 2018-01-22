@@ -5,7 +5,7 @@
 ![Alt text](/images/readme.png?raw=true "Pokemon Speed Battle")
 
 ## About
-- Pokemon Speed Battle is a competitive game where two players recieve a Pokemon card out of a deck of hundereds of cards, and race to hit a random sequence of keys in order to have their Pokemon attack eachother.
+- Pokemon Speed Battle is a competitive game where two players each recieve a Pokemon card out of a deck of hundereds of cards, and race to hit a random sequence of keys in order to have their Pokemon attack eachother.
 
 ## Rules
 
