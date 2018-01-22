@@ -5,7 +5,7 @@
 ![Alt text](/images/readme.png?raw=true "Pokemon Speed Battle")
 
 ## About
-- Pokemon DDR is a competitive game where two players must race to hit a random sequence of keys in order to attack eachother.
+- Pokemon DDR is a competitive game where two players race to hit a random sequence of keys in order to attack eachother.
 
 ## Rules
 
