@@ -84,8 +84,8 @@ function GameController() {
      */
     this.startRound = function (startOfGame) {
         if (startOfGame) {
-            getCardApiData.getPokemonDB(gameModel.players[0].pokemon.name, '#player_0_stats').then(getCardApiData.resolvePokeDB, getCardApiData.rejectPokeDB);
-            getCardApiData.getPokemonDB(gameModel.players[1].pokemon.name, '#player_1_stats').then(getCardApiData.resolvePokeDB, getCardApiData.rejectPokeDB);
+            apiData.getPokemonDB(gameModel.players[0].pokemon.name, '#player_0_stats').then(apiData.resolvePokeDB, apiData.rejectPokeDB);
+            apiData.getPokemonDB(gameModel.players[1].pokemon.name, '#player_1_stats').then(apiData.resolvePokeDB, apiData.rejectPokeDB);
             view.removeTabletHighlights();
             audioHandler.playMain();
             audioHandler.stopVictoryMusic();

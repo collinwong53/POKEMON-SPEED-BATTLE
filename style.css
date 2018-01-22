@@ -434,7 +434,7 @@ body {
 .front {
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
-    z-index:2;
+    z-index: 2;
 }
 
 .card {
@@ -502,7 +502,7 @@ body {
     font-size: 40px;
     color: aliceblue;
     position: absolute;
-    top: 7.5%;
+    top: 6.5%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
@@ -516,7 +516,7 @@ body {
     font-size: 40px;
     color: aliceblue;
     position: absolute;
-    top: 93%;
+    top: 94%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
