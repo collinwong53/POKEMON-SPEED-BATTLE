@@ -6,7 +6,7 @@ function PlayerController() {
      * @returns {undefined} none
      */
     this.getPokemon = function (playerModel) {
-        playerModel.pokemon = getCardApiData.makePokemon();
+        playerModel.pokemon = apiData.makePokemon();
         playerModel.hp = playerModel.pokemon.hp;
         playerModel.attack = playerModel.pokemon.attack;
         playerModel.completedMovesGoal = Math.floor((parseInt(playerModel.hp) + parseInt(playerModel.attack)) / 20);
