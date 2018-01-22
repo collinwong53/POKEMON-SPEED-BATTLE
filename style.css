@@ -434,6 +434,7 @@ body {
 .front {
     -webkit-transform: rotateY(180deg);
             transform: rotateY(180deg);
+    z-index: 2;
 }
 
 .card {
